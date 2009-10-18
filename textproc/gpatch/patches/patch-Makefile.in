@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Sun Oct 18 22:35:07 2009
++++ Makefile.in	Sun Oct 18 22:41:05 2009
+@@ -46,10 +46,10 @@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ 
+-bindir = $(exec_prefix)/bin
++bindir = $(DESTDIR)$(exec_prefix)/bin
+ 
+ # Where to put the manual pages.
+-mandir = @mandir@
++mandir = $(DESTDIR)@mandir@
+ man1dir = $(mandir)/man1
+ # Extension (including `.') for the manual page filenames.
+ man1ext = .1
