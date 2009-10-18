@@ -1,0 +1,3 @@
+$Id$ 
+
+Unsafe functions (strcpy, mktemp,...) should be replaced...
