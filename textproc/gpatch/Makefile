@@ -1,3 +1,4 @@
+# $Id: Makefile,v 1.12 2007/09/15 20:59:38 merdely Exp $
 # $OpenBSD: Makefile,v 1.12 2007/09/15 20:59:38 merdely Exp $
 
 COMMENT=	GNU versions of the patch utility
@@ -7,6 +8,7 @@ DISTNAME=	patch-${VERSION}
 PKGNAME=	gpatch-${VERSION}p0
 CATEGORIES=	textproc
 HOMEPAGE=	http://www.gnu.org/software/patch/
+MAINTAINER=	Olivier Mehani <shtrom-openbsd@ssji.net>
 
 # GPL
 PERMIT_PACKAGE_FTP=	Yes
