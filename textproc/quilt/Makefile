@@ -1,6 +1,6 @@
 
 
-COMMENT =		quilt patch manager
+COMMENT =		patch management scripts
 
 VERSION=		0.48
 DISTNAME =		quilt-${VERSION}
@@ -20,8 +20,9 @@ MASTER_SITES =		${MASTER_SITE_SAVANNAH:=quilt/}
 WANTLIB += c
 MODULES =		devel/gettext
 BUILD_DEPENDS =         ::misc/findutils
-RUN_DEPENDS =           ::misc/fileutils ::sysutils/ggrep ::textproc/gsed \
-			::textproc/gdiff ::textproc/gpatch ::devel/p5-Time-TimeDate
+RUN_DEPENDS =           ::misc/fileutils ::textproc/gdiff ::textproc/gpatch \
+			::archivers/bzip2 ::sysutils/ggrep ::textproc/gsed \
+			::devel/p5-Time-TimeDate
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
