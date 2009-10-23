@@ -19,10 +19,9 @@ MASTER_SITES =		${MASTER_SITE_SAVANNAH:=quilt/}
 
 WANTLIB += c
 MODULES =		devel/gettext
-BUILD_DEPENDS =         ::misc/findutils
 RUN_DEPENDS =           ::misc/fileutils ::textproc/gdiff ::textproc/gpatch \
-			::archivers/bzip2 ::sysutils/ggrep ::textproc/gsed \
-			::devel/p5-Time-TimeDate
+			::archivers/bzip2 ::misc/findutils ::sysutils/ggrep \
+			::textproc/gsed ::devel/p5-Time-TimeDate
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
