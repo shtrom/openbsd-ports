@@ -21,7 +21,7 @@ WANTLIB += c
 MODULES =		devel/gettext
 BUILD_DEPENDS =         ::misc/findutils
 RUN_DEPENDS =           ::misc/fileutils ::sysutils/ggrep ::textproc/gsed \
-                        ::textproc/gdiff ::textproc/gpatch
+			::textproc/gdiff ::textproc/gpatch ::devel/p5-Time-TimeDate
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
