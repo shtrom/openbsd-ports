@@ -25,7 +25,6 @@ share/quilt/compat/
 share/quilt/compat/cp
 share/quilt/compat/date
 share/quilt/compat/diff
-share/quilt/compat/find
 share/quilt/compat/getopt
 share/quilt/compat/patch
 share/quilt/compat/sed

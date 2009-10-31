@@ -30,7 +30,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--without-getopt \
 			--without-rpmbuild \
 			--with-diff=/usr/local/bin/gdiff \
-			--with-find=/usr/local/bin/gfind \
 			--with-patch=/usr/local/bin/gpatch \
 			--with-sed=/usr/local/bin/gsed
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
