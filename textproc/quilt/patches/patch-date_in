@@ -1,0 +1,11 @@
+--- compat/date.in.orig	Sat Jan 31 03:28:05 2009
++++ compat/date.in	Sat Oct 31 23:46:57 2009
+@@ -43,7 +43,8 @@
+ 
+ GetOptions('rfc-822|R' => sub() { $spec = '%a, %d %b %Y %H:%M:%S %z' },
+ 	   'utc|universal|u' => \$utc,
+ 	   'date|d=s' => sub() { $now = parse_utc_secs($_[1]) },
++	   'reference|r=s' => sub() { @filestats = stat($_[1]); $now = '1970/01/01 UTC ' . $filestats[9] . ' seconds' },
+ 	   'help|h' => sub() { usage })
+     or usage;
+ 

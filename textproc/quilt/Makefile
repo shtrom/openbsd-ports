@@ -20,14 +20,15 @@ MASTER_SITES =		${MASTER_SITE_SAVANNAH:=quilt/}
 WANTLIB += c
 MODULES =		devel/gettext
 RUN_DEPENDS =           ::misc/fileutils ::textproc/gdiff ::textproc/gpatch \
-			::archivers/bzip2 ::misc/findutils ::sysutils/ggrep \
-			::textproc/gsed ::devel/p5-Time-TimeDate
+			::archivers/bzip2 ::sysutils/ggrep ::textproc/gsed \
+			::devel/p5-Time-TimeDate
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--without-date \
 			--without-getopt \
+			--without-rpmbuild \
 			--with-diff=/usr/local/bin/gdiff \
 			--with-find=/usr/local/bin/gfind \
 			--with-patch=/usr/local/bin/gpatch \

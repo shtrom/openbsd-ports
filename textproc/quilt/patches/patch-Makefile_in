@@ -1,6 +1,17 @@
---- Makefile.in.orig	Mon Oct 19 01:15:26 2009
-+++ Makefile.in	Mon Oct 19 01:15:42 2009
-@@ -304,71 +304,71 @@
+$Id$
+
+--- Makefile.in.orig	Sat Jan 31 18:09:47 2009
++++ Makefile.in	Sat Oct 31 23:49:00 2009
+@@ -281,7 +281,7 @@ Makefile : Makefile.in configure
+ 	@echo "Please run ./configure"
+ 	@false
+ 
+-compat_leftover := $(filter-out $(COMPAT),$(shell $(FIND) compat -maxdepth 1 -type f -perm +111))
++compat_leftover := $(filter-out $(COMPAT),$(shell $(FIND) compat -maxdepth 1 -type f '(' -perm -100 -o -perm -010 -o -perm -001 ')'))
+ 
+ .PHONY :: compat
+ compat :: $(COMPAT)
+@@ -304,71 +304,71 @@ $(COMPAT_SYMLINKS:%=compat/%) :: Makefile
  	@chmod +x $(strip $@)
  
  install-main :: scripts
@@ -106,7 +117,7 @@
  
  check: $(TESTS:test/%.test=test/.%.ok)
  check-all: $(TESTS:test/%.test=check-%)
-@@ -425,7 +425,7 @@
+@@ -425,7 +425,7 @@ distclean : clean
  ifeq ($(USE_NLS),yes)
  install-main ::
  	for lang in $(LINGUAS) ; do					\
@@ -115,7 +126,7 @@
  		$(INSTALL) -d $$dir;					\
  		$(INSTALL) -m 644 po/$$lang.mo				\
  		    $$dir/quilt.mo ;					\
-@@ -433,7 +433,7 @@
+@@ -433,7 +433,7 @@ install-main ::
  
  uninstall ::
  	for lang in $(LINGUAS) ; do					\
