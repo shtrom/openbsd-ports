@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.27 2009/09/15 17:37:22 jasper Exp $
 
-COMMENT=	web server log file analysis program with virtual host support
+COMMENT=	web server log file analysis program with vhost support
 
 DISTNAME=	webalizer-2.01-10-RB21-src
 PKGNAME=	webalizer-2.01.10p9-vhost
