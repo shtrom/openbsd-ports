@@ -1,0 +1,19 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- hashtab.h.orig	Tue Jul 27 03:20:03 2010
++++ hashtab.h	Tue Jul 27 03:20:37 2010
+@@ -71,7 +71,9 @@ struct inode {  char *string;                 /* host 
+               double oxfer;
+               struct inode *next; };
+ 
+-extern HNODEPTR sm_htab[MAXHASH];             /* hash tables               */
++extern HNODEPTR vhm_htab[MAXHASH];             /* hash tables               */
++extern HNODEPTR vhd_htab[MAXHASH];
++extern HNODEPTR sm_htab[MAXHASH];
+ extern HNODEPTR sd_htab[MAXHASH];
+ extern UNODEPTR um_htab[MAXHASH];             /* for hits, sites,          */
+ extern RNODEPTR rm_htab[MAXHASH];             /* referrers and agents...   */

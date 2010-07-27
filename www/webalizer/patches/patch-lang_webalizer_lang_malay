@@ -1,0 +1,33 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- lang/webalizer_lang.malay.orig	Mon Aug  6 18:35:08 2007
++++ lang/webalizer_lang.malay	Tue Jul 27 05:06:39 2010
+@@ -120,7 +120,7 @@ char *h_msg[]= {
+          "-h        = cetak mesej pertolongan ini"             ,
+          "-v -V     = cetak maklumat versi"           ,
+          "-d        = cetak maklumat tambahan berkenaan dengan debug"         ,
+-         "-F type   = jenis Log.  jenis= (clf | ftp | squid)",
++         "-F type   = jenis Log.  jenis= (clf | vhost | ftp | squid)",
+          "-f        = Alas turutan ralat"                ,
+          "-i        = abaikan fail terdahulu"                 ,
+          "-p        = kekalkan keadaan (secara menaik)"        ,
+@@ -214,6 +214,7 @@ char *msg_hlnk_nf = "Code 404";
+ char *msg_hlnk_ds = "Statistik Harian";
+ char *msg_hlnk_hs = "Statistik ikut Jam";
+ char *msg_hlnk_u  = "URL";
++char *msg_hlnk_vh  = "Virtual Hosts";
+ char *msg_hlnk_s  = "Halaman";
+ char *msg_hlnk_a  = "Agen";
+ char *msg_hlnk_c  = "Negara";
+@@ -258,6 +259,7 @@ char *msg_ctry_use= "Penggunaan mengikut Negara bagi";
+ /* Formatted as "Top xxx of xxx Total something" */
+ char *msg_top_top = "Antara";
+ char *msg_top_of  = "yang Terbaik dari";
++char *msg_top_vh  = "Virtual Hosts";
+ char *msg_top_s   = "Jumlah Halaman";
+ char *msg_top_u   = "Jumlah URL";
+ char *msg_top_r   = "Jumlah Penujuk";

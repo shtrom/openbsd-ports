@@ -1,0 +1,33 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- lang/webalizer_lang.norwegian.orig	Mon Aug  6 18:35:08 2007
++++ lang/webalizer_lang.norwegian	Tue Jul 27 05:06:39 2010
+@@ -129,7 +129,7 @@ char *h_msg[]= {
+          "-h         = skriv hjelpetekst"                        ,
+          "-v -V      = skriv versjonsinforasjon"              ,
+          "-d         = skriv ytterligere debuginformasjon"     ,
+-         "-F typ     = Loggtype.  type= (clf | ftp | squid)"     ,
++         "-F typ     = Loggtype.  type= (clf | vhost | ftp | squid)"     ,
+          "-f         = hantere sekvensfeil"                     ,
+          "-i         = ignorerer historiefilen"                 ,
+          "-p         = bevar tillstand (inkrementell)"        ,
+@@ -225,6 +225,7 @@ char *msg_hlnk_nf = "Code 404";
+ char *msg_hlnk_ds = "Daglig statistikkk";
+ char *msg_hlnk_hs = "Statistikkk time for time";
+ char *msg_hlnk_u  = "URLer";
++char *msg_hlnk_vh  = "Virtual Hosts";
+ char *msg_hlnk_s  = "Klientadresser";
+ char *msg_hlnk_a  = "Klienttyper";
+ char *msg_hlnk_c  = "Land";
+@@ -269,6 +270,7 @@ char *msg_ctry_use= "Statsistik sortert etter land for
+ /* Formatted as "Top xxx of xxx Total something" */
+ char *msg_top_top = "Vanligste";
+ char *msg_top_of  = "utav totalt";
++char *msg_top_vh  = "Virtual Hosts";
+ char *msg_top_s   = "sider";
+ char *msg_top_u   = "URLer";
+ char *msg_top_r   = "henvisniger";

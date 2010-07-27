@@ -1,0 +1,33 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- lang/webalizer_lang.turkish.orig	Mon Aug  6 18:35:08 2007
++++ lang/webalizer_lang.turkish	Tue Jul 27 05:06:39 2010
+@@ -120,7 +120,7 @@ char *h_msg[]= {
+          "-h        = bu yardim mesajini yazdir"                         ,
+          "-v -V     = surum bilgilerini yazdir"                          ,
+          "-d        = ek debug bilgileri yazir"                          ,
+-         "-F tip    = kutuk tipi. 'tip'= (clf | ftp | squid)"            ,
++         "-F tip    = kutuk tipi. 'tip'= (clf | vhost | ftp | squid)"            ,
+          "-f        = Siralama hatalarini duzelt"                        ,
+          "-i        = history dosyasina bakma"                           ,
+          "-p        = durumu koru (eklemeli)"                            ,
+@@ -214,6 +214,7 @@ char *msg_hlnk_nf = "Code 404";
+ char *msg_hlnk_ds = "Gunluk Istatistikler";
+ char *msg_hlnk_hs = "Saatlik Istatistikler";
+ char *msg_hlnk_u  = "URL'ler";
++char *msg_hlnk_vh  = "Virtual Hosts";
+ char *msg_hlnk_s  = "Istemciler";
+ char *msg_hlnk_a  = "Ajanlar";
+ char *msg_hlnk_c  = "Ulkeler";
+@@ -258,6 +259,7 @@ char *msg_ctry_use= "Ulkeye Gore Kullanim:";
+ /* Formatted as "Top xxx of xxx Total something" */
+ char *msg_top_top = "Top";
+ char *msg_top_of  = "/";
++char *msg_top_vh  = "Virtual Hosts";
+ char *msg_top_s   = "Toplam Istemciler";
+ char *msg_top_u   = "Toplam URL'ler";
+ char *msg_top_r   = "Toplam Referanslar";

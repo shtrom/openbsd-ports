@@ -1,0 +1,24 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- preserve.h.orig	Tue Jul 27 08:40:51 2010
++++ preserve.h	Tue Jul 27 08:41:33 2010
+@@ -10,10 +10,11 @@ extern int     hist_month[12];                /* array
+ extern int     hist_year[12];
+ extern u_long  hist_hit[12];                  /* calculations: used to    */
+ extern u_long  hist_files[12];                /* produce index.html       */
+-extern u_long  hist_site[12];                 /* these are read and saved */
+-extern double  hist_xfer[12];                 /* in the history file      */
+-extern double  hist_ixfer[12];                /* in the history file      */
+-extern double  hist_oxfer[12];                /* in the history file      */
++extern u_long  hist_vhost[12];                /* these are read and saved */
++extern u_long  hist_site[12];                 /* in the history file      */
++extern double  hist_xfer[12];
++extern double  hist_ixfer[12];
++extern double  hist_oxfer[12];
+ extern u_long  hist_page[12];
+ extern u_long  hist_visit[12];
+ 

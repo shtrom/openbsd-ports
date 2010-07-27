@@ -1,6 +1,11 @@
 $OpenBSD: patch-parser_c,v 1.2 2008/01/30 20:06:48 mbalmer Exp $
---- parser.c.orig	Wed Jan 30 13:41:49 2008
-+++ parser.c	Wed Jan 30 13:42:01 2008
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- parser.c.orig	Mon Aug  6 18:30:18 2007
++++ parser.c	Tue Jul 27 09:37:02 2010
 @@ -38,6 +38,7 @@
  #include <ctype.h>
  #include <sys/utsname.h>
@@ -9,3 +14,53 @@ $OpenBSD: patch-parser_c,v 1.2 2008/01/30 20:06:48 mbalmer Exp $
  
  /* ensure getopt */
  #ifdef HAVE_GETOPT_H
+@@ -103,6 +104,7 @@ int parse_record(char *buffer)
+    /* clear out structure */
+    memset(&log_rec,0,sizeof(struct log_struct));
+ /*
++   log_rec.vhostname[0]=0;
+    log_rec.hostname[0]=0;
+    log_rec.datetime[0]=0;
+    log_rec.url[0]=0;
+@@ -121,6 +123,7 @@ int parse_record(char *buffer)
+    switch (log_type)
+    {
+       default:
++      case LOG_CLF_VHOST:		     /* vhost: %v as first field */
+       case LOG_CLF:   return parse_record_web(buffer);   break; /* clf   */
+       case LOG_FTP:   return parse_record_ftp(buffer);   break; /* ftp   */
+       case LOG_SQUID: return parse_record_squid(buffer); break; /* squid */
+@@ -229,8 +232,32 @@ int parse_record_web(char *buffer)
+    eob = buffer+size;                     /* calculate end of buffer     */
+    fmt_logrec(buffer);                    /* seperate fields with \0's   */
+ 
++   cp1 = buffer;
++   if (LOG_CLF_VHOST == log_type)
++   {
++      cpx = cp1;
++      cp2 = log_rec.vhostname;
++      eos = (cp1+MAXHOST)-1;
++      if (eos >= eob) eos=eob-1;
++
++      while ( (*cp1 != '\0') && (cp1 != eos) ) *cp2++ = *cp1++;
++      *cp2 = '\0';
++      if (*cp1 != '\0')
++      {
++	 if (verbose)
++	 {
++	    fprintf(stderr,"%s",msg_big_host);
++	    if (debug_mode) fprintf(stderr,": %s\n",cpx);
++	    else fprintf(stderr,"\n");
++	 }
++	 while (*cp1 != '\0') cp1++;
++      }
++      if (cp1 < eob) cp1++;
++   }
++
+    /* HOSTNAME */
+-   cp1 = cpx = buffer; cp2=log_rec.hostname;
++   cpx = cp1;
++   cp2 = log_rec.hostname;
+    eos = (cp1+MAXHOST)-1;
+    if (eos >= eob) eos=eob-1;
+ 

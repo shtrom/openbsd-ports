@@ -1,6 +1,11 @@
 $OpenBSD: patch-output_c,v 1.2 2008/01/30 20:06:48 mbalmer Exp $
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
 --- output.c.orig	Tue Aug  7 13:28:49 2007
-+++ output.c	Wed Jan 30 13:42:20 2008
++++ output.c	Tue Jul 27 06:33:02 2010
 @@ -38,6 +38,7 @@
  #include <ctype.h>
  #include <sys/utsname.h>
@@ -9,7 +14,85 @@ $OpenBSD: patch-output_c,v 1.2 2008/01/30 20:06:48 mbalmer Exp $
  #include <stddef.h>
  
  /* ensure limits */
-@@ -569,7 +570,7 @@ void month_links()
+@@ -91,7 +92,7 @@ void    month_total_table();                        /*
+ void    month_error_table();                        /* monthly 404 table   */
+ void    daily_total_table();                        /* daily total table   */
+ void    hourly_total_table();                       /* hourly total table  */
+-void    top_sites_table(int);                       /* top n sites table   */
++void    top_sites_table(int, int);       /* top n sites and vhosts table   */
+ void    top_urls_table(int);                        /* top n URL's table   */
+ void    top_entry_table(int);                       /* top n entry/exits   */
+ void    top_refs_table();                           /* top n referrers ""  */
+@@ -100,7 +101,7 @@ void    top_ctry_table();                           /*
+ void    top_search_table();                         /* top n search strs   */
+ void    top_users_table();                          /* top n ident table   */
+ u_long  load_url_array(  UNODEPTR *);               /* load URL array      */
+-u_long  load_site_array( HNODEPTR *);               /* load Site array     */
++u_long  load_site_array( HNODEPTR *, int);          /* load Site array     */
+ u_long  load_ref_array(  RNODEPTR *);               /* load Refs array     */
+ u_long  load_agent_array(ANODEPTR *);               /* load Agents array   */
+ u_long  load_srch_array( SNODEPTR *);               /* load srch str array */
+@@ -364,6 +365,7 @@ int write_month_html()
+    hist_files[i] =  t_file;
+    hist_page[i]  =  t_page;
+    hist_visit[i] =  t_visit;
++   hist_vhost[i]  =  t_vhost;
+    hist_site[i]  =  t_site;
+    hist_xfer[i]  =  t_xfer/1024;
+    hist_ixfer[i] =  t_ixfer/1024;
+@@ -462,22 +464,47 @@ int write_month_html()
+     else if (verbose) fprintf(stderr,"%s [u_array]\n",msg_nomem_tu); /* err */
+    }
+ 
++   if (LOG_CLF_VHOST == log_type)
++   {
++      /* do Virtual Host related stuff here, sorting appropriatel...      */
++      /* Use the data structures for hostnames */
++      if ( (a_ctr=load_site_array(NULL,1)) )
++      {
++	 if ( (h_array=malloc(sizeof(HNODEPTR)*(a_ctr))) !=NULL )
++	 {
++	    a_ctr=load_site_array(h_array,1);       /* load up our sort array        */
++	    if (ntop_sites || dump_sites)
++	    {
++	       qsort(h_array,a_ctr,sizeof(HNODEPTR),qs_site_cmph);
++	       if (ntop_sites) top_sites_table(0,1); /* Top VHosts table (by hits)     */
++	    }
++	    if (ntop_sitesK)                      /* Top VHosts table (by kbytes)   */
++	    {
++	       qsort(h_array,a_ctr,sizeof(HNODEPTR),qs_site_cmpk);
++	       top_sites_table(1,1);
++	    }
++	    free(h_array);
++	 }
++	 else if (verbose) fprintf(stderr,"%s [h_array]\n",msg_nomem_ts); /* err */
++      }
++   }
++
+    /* do hostname (sites) related stuff here, sorting appropriately...      */
+-   if ( (a_ctr=load_site_array(NULL)) )
++   if ( (a_ctr=load_site_array(NULL,0)) )
+    {
+     if ( (h_array=malloc(sizeof(HNODEPTR)*(a_ctr))) !=NULL )
+     {
+-     a_ctr=load_site_array(h_array);       /* load up our sort array        */
++     a_ctr=load_site_array(h_array,0);       /* load up our sort array        */
+      if (ntop_sites || dump_sites)
+      {
+        qsort(h_array,a_ctr,sizeof(HNODEPTR),qs_site_cmph);
+-       if (ntop_sites) top_sites_table(0); /* Top sites table (by hits)     */
++       if (ntop_sites) top_sites_table(0,0); /* Top sites table (by hits)     */
+        if (dump_sites) dump_all_sites();   /* Dump sites tab file           */
+      }
+      if (ntop_sitesK)                      /* Top Sites table (by kbytes)   */
+      {
+        qsort(h_array,a_ctr,sizeof(HNODEPTR),qs_site_cmpk);
+-       top_sites_table(1);
++       top_sites_table(1,0);
+      }
+      free(h_array);
+     }
+@@ -569,7 +596,7 @@ void month_links()
     char index_fname[256];
     
     fprintf(out_fp,"<SMALL>\n");
@@ -18,7 +101,16 @@ $OpenBSD: patch-output_c,v 1.2 2008/01/30 20:06:48 mbalmer Exp $
     fprintf(out_fp, "<A HREF=\"%s\">[%s]</A>\n", index_fname, msg_hlnk_in);
     if (ntop_notfound && response[21].count)
        fprintf(out_fp,"<A HREF=\"#ERRORSTATS\">[%s]</A>\n",msg_hlnk_nf);
-@@ -818,8 +819,8 @@ void month_total_table()
+@@ -583,6 +610,8 @@ void month_links()
+       fprintf(out_fp,"<A HREF=\"#TOPENTRY\">[%s]</A>\n",msg_hlnk_en);
+    if (ntop_exit)
+       fprintf(out_fp,"<A HREF=\"#TOPEXIT\">[%s]</A>\n",msg_hlnk_ex);
++   if (log_type == LOG_CLF_VHOST && (ntop_sites || ntop_sitesK))
++      fprintf(out_fp,"<A HREF=\"#TOPVHOSTS\">[%s]</A>\n",msg_hlnk_vh);
+    if (ntop_sites || ntop_sitesK)
+       fprintf(out_fp,"<A HREF=\"#TOPSITES\">[%s]</A>\n",msg_hlnk_s);
+    if (ntop_refs && t_ref)
+@@ -818,8 +847,8 @@ void month_total_table()
           }
        }
  
@@ -29,7 +121,7 @@ $OpenBSD: patch-output_c,v 1.2 2008/01/30 20:06:48 mbalmer Exp $
        
        pie_chart(pie_fname,pie_title,t_hit,pie_data,pie_legend);
        
-@@ -971,12 +972,12 @@ int all_errors_page()
+@@ -971,12 +1000,12 @@ int all_errors_page()
     int i;
  
     /* generate file name */
@@ -44,3 +136,77 @@ $OpenBSD: patch-output_c,v 1.2 2008/01/30 20:06:48 mbalmer Exp $
     write_html_head(buffer, out_fp);
  
     fprintf(out_fp,"<FONT SIZE=\"-1\"></CENTER><PRE>\n");
+@@ -1271,7 +1300,7 @@ void hourly_total_table()
+ /* TOP_SITES_TABLE - generate top n table    */
+ /*********************************************/
+ 
+-void top_sites_table(int flag)
++void top_sites_table(int flag, int vhost)
+ {
+    u_long cnt=0, h_reg=0, h_grp=0, h_hid=0, tot_num;
+    int i;
+@@ -1307,8 +1336,10 @@ void top_sites_table(int flag)
+    i=(flag)?ntop_sitesK:ntop_sites;                     /* Hits or KBytes?? */
+    if (tot_num > i) tot_num = i;                        /* get max to do... */
+ 
+-   if ((!flag) || (flag&&!ntop_sites))                  /* now do <A> tag   */
+-      fprintf(out_fp,"<A NAME=\"TOPSITES\"></A>\n");
++   if ((!flag) || (flag&&!ntop_sites)) {                /* now do <A> tag   */
++      if (vhost) fprintf(out_fp,"<A NAME=\"TOPVHOSTS\"></A>\n");
++      else fprintf(out_fp,"<A NAME=\"TOPSITES\"></A>\n");
++   }
+ 
+    fprintf(out_fp,"<TABLE WIDTH=510 BORDER=%i CELLSPACING=1 CELLPADDING=1>\n",
+            table_border);
+@@ -1316,11 +1347,11 @@ void top_sites_table(int flag)
+    if (flag) fprintf(out_fp,"<TR><TH BGCOLOR=\"%s\" ALIGN=CENTER COLSPAN=%d>" \
+            "%s %lu %s %lu %s %s %s</TH></TR>\n",
+            HEADLINECOLOR, cols, msg_top_top,tot_num,msg_top_of,
+-           t_site,msg_top_s,msg_h_by,msg_h_xfer);
++           vhost?t_vhost:t_site,vhost?msg_top_vh:msg_top_s,msg_h_by,msg_h_xfer);
+    else      fprintf(out_fp,"<TR><TH BGCOLOR=\"%s\" ALIGN=CENTER COLSPAN=%d>" \
+            "%s %lu %s %lu %s</TH></TR>\n",
+-           HEADLINECOLOR, cols, msg_top_top, tot_num, msg_top_of, t_site, 
+-	   msg_top_s);
++           HEADLINECOLOR, cols, msg_top_top, tot_num, msg_top_of,
++	   vhost?t_vhost:t_site, vhost?msg_top_vh:msg_top_s);
+    fprintf(out_fp,"<TR><TH HEIGHT=4></TH></TR>\n");
+    fprintf(out_fp,"<TR><TH BGCOLOR=\"%s\" ALIGN=center>"                    \
+           "<FONT SIZE=\"-1\">#</FONT></TH>\n",COUNTERCOLOR);
+@@ -1342,7 +1373,7 @@ void top_sites_table(int flag)
+    fprintf(out_fp,"<TH BGCOLOR=\"%s\" ALIGN=center>"                        \
+           "<FONT SIZE=\"-1\">%s</FONT></TH>\n",PAGECOLOR,msg_h_hname);
+ #ifdef USE_GEOIP
+-   if (use_geoip)
++   if (use_geoip && !vhost)
+       fprintf(out_fp,"<TH BGCOLOR=\"%s\" ALIGN=center>"                     \
+              "<FONT SIZE=\"-1\">%s</FONT></TH>\n",PAGECOLOR,msg_h_ctry);
+ #endif	/* USE_GEOIP */
+@@ -1405,7 +1436,7 @@ void top_sites_table(int flag)
+               (t_visit==0)?0:((float)hptr->visit/t_visit)*100.0);
+ 	 }
+ 
+-         if ((hptr->flag==OBJ_GRP)&&hlite_groups)
++         if ((hptr->flag==OBJ_GRP)&&hlite_groups || vhost)
+              fprintf(out_fp,"<STRONG>%s</STRONG></FONT></TD></TR>\n",
+                hptr->string);
+ #ifdef USE_GEOIP
+@@ -3715,7 +3746,7 @@ int qs_ident_cmph(const void *cp1, const void *cp2)
+ /* LOAD_SITE_ARRAY - load up the sort array  */
+ /*********************************************/
+ 
+-u_long load_site_array(HNODEPTR *pointer)
++u_long load_site_array(HNODEPTR *pointer, int vhost)
+ {
+    HNODEPTR hptr;
+    int      i;
+@@ -3724,7 +3755,8 @@ u_long load_site_array(HNODEPTR *pointer)
+    /* load the array */
+    for (i=0;i<MAXHASH;i++)
+    {
+-      hptr=sm_htab[i];
++      if (vhost) hptr=vhm_htab[i];
++      else hptr=sm_htab[i];
+       while (hptr!=NULL)
+       {
+          if (pointer==NULL) ctr++;       /* fancy way to just count 'em    */

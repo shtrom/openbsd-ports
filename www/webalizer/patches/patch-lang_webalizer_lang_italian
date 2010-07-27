@@ -1,0 +1,33 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- lang/webalizer_lang.italian.orig	Mon Aug  6 18:35:08 2007
++++ lang/webalizer_lang.italian	Tue Jul 27 05:06:39 2010
+@@ -121,7 +121,7 @@ char *h_msg[]= {
+          "-h        = visualizza questa schermata"         ,
+          "-v -V     = mostra il numero di versione"        ,
+          "-d        = visualizza informazioni di debug addizionali",
+-         "-F tipo   = specifica il tipo di log (clf | ftp | squid)",
++         "-F tipo   = specifica il tipo di log (clf | vhost | ftp | squid)",
+          "-f        = elenca sequenzialmente gli errori"   ,
+          "-i        = tralascia il file di history"        ,
+          "-p        = conserva le statistiche (modalita' incrementale)",
+@@ -215,6 +215,7 @@ char *msg_hlnk_nf = "Code 404";
+ char *msg_hlnk_ds = "Statistiche Giornaliere";
+ char *msg_hlnk_hs = "Statistiche Orarie";
+ char *msg_hlnk_u  = "URL";
++char *msg_hlnk_vh  = "Virtual Hosts";
+ char *msg_hlnk_s  = "Nomi di Host";
+ char *msg_hlnk_a  = "Browser";
+ char *msg_hlnk_c  = "Paesi";
+@@ -259,6 +260,7 @@ char *msg_ctry_use= "Riepilogo dei Paesi per";
+ /* Formatted as "Top xxx of xxx Total something" */
+ char *msg_top_top = "Top";
+ char *msg_top_of  = "di";
++char *msg_top_vh  = "Virtual Hosts";
+ char *msg_top_s   = "Nomi di Host Totali";
+ char *msg_top_u   = "URL Totali";
+ char *msg_top_r   = "Referrer Totali";

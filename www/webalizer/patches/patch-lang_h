@@ -1,0 +1,24 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- lang.h.orig	Mon Aug  6 18:30:00 2007
++++ lang.h	Tue Jul 27 05:07:17 2010
+@@ -116,6 +116,7 @@ extern char *msg_hlnk_nf ;
+ extern char *msg_hlnk_ds ;
+ extern char *msg_hlnk_hs ;
+ extern char *msg_hlnk_u  ;
++extern char *msg_hlnk_vh ;
+ extern char *msg_hlnk_s  ;
+ extern char *msg_hlnk_a  ;
+ extern char *msg_hlnk_c  ;
+@@ -154,6 +155,7 @@ extern char *msg_ctry_use;
+ 
+ extern char *msg_top_top ;
+ extern char *msg_top_of  ;
++extern char *msg_top_vh  ;
+ extern char *msg_top_s   ;
+ extern char *msg_top_u   ;
+ extern char *msg_top_r   ;

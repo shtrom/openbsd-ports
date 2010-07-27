@@ -1,0 +1,33 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- lang/webalizer_lang.simplified_chinese.orig	Mon Aug  6 18:35:08 2007
++++ lang/webalizer_lang.simplified_chinese	Tue Jul 27 05:06:39 2010
+@@ -113,7 +113,7 @@ char *h_msg[]= {
+          "-h        = 显示本帮助信息"             ,
+          "-v -V     = 显示本版本信息"           ,
+          "-d        = 显示附加的调试信息"         ,
+-         "-F type   = 日志类型.  类型= (clf | ftp | squid)",
++         "-F type   = 日志类型.  类型= (clf | vhost | ftp | squid)",
+          "-f        = 合并次序错误?(Fold sequence errors)"                ,
+          "-i        = 忽略历史信息文件"                 ,
+          "-p        = 保持状态信息(增量方式)"        ,
+@@ -207,6 +207,7 @@ char *msg_hlnk_nf = "Code 404";
+ char *msg_hlnk_ds = "每日统计";
+ char *msg_hlnk_hs = "每小时统计";
+ char *msg_hlnk_u  = "URLs";
++char *msg_hlnk_vh  = "Virtual Hosts";
+ char *msg_hlnk_s  = "站点";
+ char *msg_hlnk_a  = "代理";
+ char *msg_hlnk_c  = "国家";
+@@ -251,6 +252,7 @@ char *msg_ctry_use= "按国家使用情况";
+ /* Formatted as "Top xxx of xxx Total something" */
+ char *msg_top_top = "最前";
+ char *msg_top_of  = "----";
++char *msg_top_vh  = "Virtual Hosts";
+ char *msg_top_s   = "总站点数";
+ char *msg_top_u   = "总 URL 数";
+ char *msg_top_r   = "总引用者数";

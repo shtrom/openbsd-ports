@@ -1,6 +1,11 @@
 $OpenBSD: patch-hashtab_c,v 1.1 2008/01/30 20:06:48 mbalmer Exp $
---- hashtab.c.orig	Wed Jan 30 13:40:22 2008
-+++ hashtab.c	Wed Jan 30 13:40:33 2008
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- hashtab.c.orig	Mon Aug  6 18:29:40 2007
++++ hashtab.c	Tue Jul 27 03:23:01 2010
 @@ -38,6 +38,7 @@
  #include <ctype.h>
  #include <sys/utsname.h>
@@ -9,3 +14,31 @@ $OpenBSD: patch-hashtab_c,v 1.1 2008/01/30 20:06:48 mbalmer Exp $
  
  /* ensure getopt */
  #ifdef HAVE_GETOPT_H
+@@ -83,7 +84,9 @@ u_long   hash(char *);                        /* hash 
+ 
+ /* local data */
+ 
+-HNODEPTR sm_htab[MAXHASH];                    /* hash tables              */
++HNODEPTR vhm_htab[MAXHASH];                    /* hash tables              */
++HNODEPTR vhd_htab[MAXHASH];
++HNODEPTR sm_htab[MAXHASH];
+ HNODEPTR sd_htab[MAXHASH];
+ UNODEPTR um_htab[MAXHASH];                    /* for hits, sites,         */
+ RNODEPTR rm_htab[MAXHASH];                    /* referrers and agents...  */
+@@ -102,10 +105,12 @@ u_long   pre_tstamp = 0;                      /* prev.
+ 
+ void del_htabs()
+ {
+-   del_hlist(sd_htab);                        /* Clear out our various    */
+-   del_ulist(um_htab);                        /* hash tables here by      */
+-   del_hlist(sm_htab);                        /* calling the appropriate  */
+-   del_rlist(rm_htab);                        /* del_* fuction for each   */
++   del_hlist(vhd_htab);                       /* Clear out our various    */
++   del_hlist(vhm_htab);                       /* hash tables here by      */
++   del_hlist(sd_htab);                        /* calling the appropriate  */
++   del_ulist(um_htab);                        /* del_* fuction for each   */
++   del_hlist(sm_htab);
++   del_rlist(rm_htab);
+    del_alist(am_htab);
+    del_slist(sr_htab);
+    del_ilist(im_htab);

@@ -1,0 +1,33 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- lang/webalizer_lang.icelandic.orig	Mon Aug  6 18:35:08 2007
++++ lang/webalizer_lang.icelandic	Tue Jul 27 05:06:39 2010
+@@ -126,7 +126,7 @@ char *h_msg[]= {
+          "-h        = prentar þessa hjálp"             ,
+          "-v -V     = prentar útgáfu upplýsingar"           ,
+          "-d        = print additional debug info"         ,
+-         "-F tegund = Annála tegund.  tegund= (clf | ftp | squid)",
++         "-F tegund = Annála tegund.  tegund= (clf | vhost | ftp | squid)",
+          "-f        = Fold sequence errors"                ,
+          "-i        = hunsa history skrá"                 ,
+          "-p        = preserve state (incremental)"        ,
+@@ -220,6 +220,7 @@ char *msg_hlnk_nf = "Code 404";
+ char *msg_hlnk_ds = "Daglegar samtölur";
+ char *msg_hlnk_hs = "Klukkustundar samtölur";
+ char *msg_hlnk_u  = "Slóðir";
++char *msg_hlnk_vh  = "Virtual Hosts";
+ char *msg_hlnk_s  = "Síður";
+ char *msg_hlnk_a  = "Agents";
+ char *msg_hlnk_c  = "Lönd";
+@@ -264,6 +265,7 @@ char *msg_ctry_use= "Notkun eftir Landi fyrir";
+ /* Formatted as "Top xxx of xxx Total something" */
+ char *msg_top_top = "Efstu";
+ char *msg_top_of  = "af";
++char *msg_top_vh  = "Virtual Hosts";
+ char *msg_top_s   = "Heildar Síður";
+ char *msg_top_u   = "Heildar slóðir";
+ char *msg_top_r   = "Heildar Referrers";

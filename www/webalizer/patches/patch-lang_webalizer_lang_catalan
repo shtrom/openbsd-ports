@@ -1,0 +1,33 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- lang/webalizer_lang.catalan.orig	Mon Aug  6 18:35:07 2007
++++ lang/webalizer_lang.catalan	Tue Jul 27 05:06:39 2010
+@@ -123,7 +123,7 @@ char *h_msg[]= {
+          "-h        = veure aquesta ajuda"                        ,
+          "-v -V     = veure la versió del programa"               ,
+          "-d        = activar el mode trassa (depuració)"         ,
+-         "-F tipus  = tipus de fitxer de registre.  tipus=(clf | ftp | squid)"       ,
++         "-F tipus  = tipus de fitxer de registre.  tipus=(clf | vhost | ftp | squid)"       ,
+          "-f        = ignorar errors de seqüència"                ,
+          "-i        = ignorar el fitxer"                          ,
+          "-p        = conservem dades actuals (incremental)"      ,
+@@ -219,6 +219,7 @@ char *msg_hlnk_nf = "Code 404";
+ char *msg_hlnk_ds = "Estad&iacute;stiques per dia";
+ char *msg_hlnk_hs = "Estad&iacute;stiques per hores";
+ char *msg_hlnk_u  = "URLs";
++char *msg_hlnk_vh  = "Virtual Hosts";
+ char *msg_hlnk_s  = "Visitants";
+ char *msg_hlnk_a  = "Navegadors";
+ char *msg_hlnk_c  = "Pa&iuml;sos";
+@@ -263,6 +264,7 @@ char *msg_ctry_use= "Accessos per país a";
+ /* Formatted as "Top xxx of xxx Total something" */
+ char *msg_top_top = "Els";
+ char *msg_top_of  = "primers d'un total de";
++char *msg_top_vh  = "Virtual Hosts";
+ char *msg_top_s   = "visitants";
+ char *msg_top_u   = "URLs";
+ char *msg_top_r   = "enlla&ccedil; origen";

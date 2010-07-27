@@ -1,0 +1,35 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- webalizer.h.orig	Mon Aug  6 18:30:54 2007
++++ webalizer.h	Tue Jul 27 08:23:02 2010
+@@ -31,6 +31,7 @@
+ #define LOG_CLF   0                        /* CLF/combined log type        */
+ #define LOG_FTP   1                        /* wu-ftpd xferlog type         */
+ #define LOG_SQUID 2                        /* squid proxy log              */
++#define LOG_CLF_VHOST   3        /* CLF/combined with VHost as first field */
+ 
+ /* Response code defines as per draft ietf HTTP/1.1 rev 6 */
+ #define RC_CONTINUE           100
+@@ -154,7 +155,8 @@ struct	country_code { u_long idx;
+ typedef struct country_code *CLISTPTR;
+ 
+ /* log record structure */
+-struct  log_struct  {  char   hostname[MAXHOST];   /* hostname             */
++struct  log_struct  {  char   vhostname[MAXHOST];   /* Virtual Host name   */
++                       char   hostname[MAXHOST];   /* hostname             */
+                        char   datetime[29];        /* raw timestamp        */
+                        char   url[MAXURL];         /* raw request field    */
+                        int    resp_code;           /* response code        */
+@@ -263,7 +265,7 @@ extern int     cur_year,cur_month,            /* year/
+ extern double  t_xfer;                        /* monthly total xfer value */
+ extern double  t_ixfer;                       /* monthly total in xfer    */
+ extern double  t_oxfer;                       /* monthly total out xfer   */
+-extern u_long  t_hit, t_file, t_site,         /* monthly total vars       */
++extern u_long  t_hit, t_file, t_vhost, t_site,/* monthly total vars       */
+                t_url, t_ref,  t_agent,
+                t_page,t_visit,t_user;
+ 

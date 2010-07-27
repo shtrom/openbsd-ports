@@ -1,0 +1,24 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- lang/webalizer_lang.greek.orig	Mon Aug  6 18:35:08 2007
++++ lang/webalizer_lang.greek	Tue Jul 27 05:06:39 2010
+@@ -211,6 +211,7 @@ char *msg_hlnk_nf = "Code 404";
+ char *msg_hlnk_ds = "Ανά ημέρα";
+ char *msg_hlnk_hs = "Ανά ώρα";
+ char *msg_hlnk_u  = "URLs";
++char *msg_hlnk_vh  = "Virtual Hosts";
+ char *msg_hlnk_s  = "Συστήματα";
+ char *msg_hlnk_a  = "Προγράμματα";
+ char *msg_hlnk_c  = "Χώρες";
+@@ -255,6 +256,7 @@ char *msg_ctry_use= "Συγκεντρωτικά στοιχεία ανά χώρα -
+ /* Formatted as "Top xxx of xxx Total something" */
+ char *msg_top_top = "Πρώτα";
+ char *msg_top_of  = "από";
++char *msg_top_vh  = "Virtual Hosts";
+ char *msg_top_s   = "συστήματα";
+ char *msg_top_u   = "URLs";
+ char *msg_top_r   = "αναφέροντες";

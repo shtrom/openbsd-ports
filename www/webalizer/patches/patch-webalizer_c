@@ -1,6 +1,11 @@
 $OpenBSD: patch-webalizer_c,v 1.4 2008/01/30 20:06:48 mbalmer Exp $
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
 --- webalizer.c.orig	Sat Dec  8 12:49:25 2007
-+++ webalizer.c	Wed Jan 30 13:44:10 2008
++++ webalizer.c	Tue Jul 27 09:37:03 2010
 @@ -38,6 +38,7 @@
  #include <ctype.h>
  #include <sys/utsname.h>
@@ -9,7 +14,62 @@ $OpenBSD: patch-webalizer_c,v 1.4 2008/01/30 20:06:48 mbalmer Exp $
  #include <zlib.h>
  
  /* ensure getopt */
-@@ -687,7 +688,7 @@ int main(int argc, char *argv[])
+@@ -136,7 +137,7 @@ int     visit_timeout= 1800;                  /* visit
+ int     graph_legend = 1;                     /* graph legend (1=yes)     */
+ int     graph_lines  = 4;                     /* graph lines (0=none)     */
+ int     fold_seq_err = 0;                     /* fold seq err (0=no)      */
+-int     log_type     = LOG_CLF;               /* (0=clf, 1=ftp, 2=squid)  */
++int     log_type     = LOG_CLF;   /* (0=clf, 1=ftp, 2=squid, 3=clf-vhost) */
+ int     group_domains= 0;                     /* Group domains 0=none     */
+ int     hide_sites   = 0;                     /* Hide ind. sites (0=no)   */
+ int	hide_iovol   = 0;                     /* Hide In/Out volume (0=no)*/
+@@ -206,7 +207,7 @@ int     gz_log=0;                             /* gzipe
+ double  t_xfer=0.0;                           /* monthly total xfer value */
+ double  t_ixfer=0.0;                          /* monthly total in xfer    */
+ double  t_oxfer=0.0;                          /* monthly total out xfer   */
+-u_long  t_hit=0,t_file=0,t_site=0,            /* monthly total vars       */
++u_long  t_hit=0,t_file=0,t_vhost=0,t_site=0,  /* monthly total vars       */
+         t_url=0,t_ref=0,t_agent=0,
+         t_page=0, t_visit=0, t_user=0;
+ 
+@@ -366,7 +367,8 @@ int main(int argc, char *argv[])
+         case 'f': fold_seq_err=1;            break;  /* Fold sequence errs  */
+         case 'F': log_type=(optarg[0]=='f')?
+                    LOG_FTP:(optarg[0]=='s')?
+-                   LOG_SQUID:LOG_CLF;        break;  /* define log type     */
++                   LOG_SQUID:(optarg[0]=='v')?
++		   LOG_CLF_VHOST:LOG_CLF;    break;  /* define log type     */
+ 	case 'g': group_domains=atoi(optarg); break; /* GroupDomains (0=no) */
+         case 'G': hourly_graph=0;            break;  /* no hourly graph     */
+         case 'h': print_opts(argv[0]);       break;  /* help                */
+@@ -415,7 +417,7 @@ int main(int argc, char *argv[])
+ 
+    if (page_type==NULL)                  /* check if page types present     */
+    {
+-      if ((log_type == LOG_CLF) || (log_type == LOG_SQUID))
++      if ((log_type == LOG_CLF) || (log_type == LOG_SQUID) || (log_type == LOG_CLF_VHOST))
+       {
+          add_nlist("htm*"  ,&page_type); /* if no page types specified, we  */
+          add_nlist("cgi"   ,&page_type); /* use the default ones here...    */
+@@ -463,7 +465,8 @@ int main(int argc, char *argv[])
+ 
+    for (i=0;i<MAXHASH;i++)
+    {
+-      sm_htab[i]=sd_htab[i]=NULL;        /* initalize hash tables           */
++      vhm_htab[i]=vhd_htab[i]=NULL;        /* initalize hash tables           */
++      sm_htab[i]=sd_htab[i]=NULL;
+       um_htab[i]=NULL;
+       rm_htab[i]=NULL;
+       am_htab[i]=NULL;
+@@ -525,6 +528,7 @@ int main(int argc, char *argv[])
+          case LOG_CLF:   printf("clf)\n");   break;
+          case LOG_FTP:   printf("ftp)\n");   break;
+          case LOG_SQUID: printf("squid)\n"); break;
++         case LOG_CLF_VHOST:   printf("clf-vhost)\n");   break;
+       }
+    }
+ 
+@@ -687,7 +691,7 @@ int main(int argc, char *argv[])
        }
  
        /* got a record... */
@@ -18,7 +78,22 @@ $OpenBSD: patch-webalizer_c,v 1.4 2008/01/30 20:06:48 mbalmer Exp $
        if (parse_record(buffer))           /* parse the record             */
        {
           /*********************************************/
-@@ -891,7 +892,7 @@ int main(int argc, char *argv[])
+@@ -847,6 +851,14 @@ int main(int argc, char *argv[])
+                cp1++;
+             }
+          }
++	 else if (log_rec.vhostname[0] != 0)
++	 {
++	    char tempurl[MAXURL];
++	    strlcpy(tempurl,log_rec.url,MAXURL);
++	    strlcpy(log_rec.url, "http://", MAXURL);
++	    strlcat(log_rec.url, log_rec.vhostname, MAXURL);
++	    strlcat(log_rec.url, tempurl, MAXURL);
++	 }
+ 
+          /* strip off index.html (or any aliases) */
+          lptr=index_alias;
+@@ -891,7 +903,7 @@ int main(int argc, char *argv[])
                 if (!isurlchar(*cp1))
                 {
                    /* Save query portion in log.rec.srchstr */
@@ -27,7 +102,7 @@ $OpenBSD: patch-webalizer_c,v 1.4 2008/01/30 20:06:48 mbalmer Exp $
                    *cp1++='\0';
                    break;
                 }
-@@ -1269,7 +1270,7 @@ int main(int argc, char *argv[])
+@@ -1269,7 +1281,7 @@ int main(int argc, char *argv[])
  
           /* if this is a IPv4 address in IPv6 notation, normalize it back */
  	 if (strncmp(log_rec.hostname, "::ffff:", 7) == 0) {
@@ -36,7 +111,7 @@ $OpenBSD: patch-webalizer_c,v 1.4 2008/01/30 20:06:48 mbalmer Exp $
  	 }
  
           /* Save IP address for later checks */
-@@ -1307,9 +1308,9 @@ int main(int argc, char *argv[])
+@@ -1307,9 +1319,9 @@ int main(int argc, char *argv[])
                 else
                 {
                    if (strcmp(log_rec.hostname,ip)!=0)
@@ -48,7 +123,7 @@ $OpenBSD: patch-webalizer_c,v 1.4 2008/01/30 20:06:48 mbalmer Exp $
                    invalid = 1; break;
                 }
              }
-@@ -1322,7 +1323,7 @@ int main(int argc, char *argv[])
+@@ -1322,7 +1334,7 @@ int main(int argc, char *argv[])
  
           /* Catch blank hostnames here */
           if (log_rec.hostname[0]=='\0')
@@ -57,7 +132,57 @@ $OpenBSD: patch-webalizer_c,v 1.4 2008/01/30 20:06:48 mbalmer Exp $
  
           /* Ignore/Include check */
           if ( (isinlist(include_sites,log_rec.hostname)==NULL) &&
-@@ -2260,7 +2261,7 @@ void srch_string(char *ptr)
+@@ -1469,6 +1481,30 @@ int main(int argc, char *argv[])
+              }
+          }
+ 
++	 if (LOG_CLF_VHOST == log_type) {
++	    /* Virtual Host hash table - daily */
++	    if (put_hnode(log_rec.vhostname,OBJ_REG,
++		     1,(u_long)i,log_rec.xfer_size,
++		     log_rec.ixfer_size,log_rec.oxfer_size,&dt_site,
++		     0,rec_tstamp,"",vhd_htab))
++	    {
++	       if (verbose)
++		  /* Error adding vhost node (daily), skipping .... */
++		  fprintf(stderr,"%s %s\n",msg_nomem_dh, log_rec.vhostname);
++	    }
++
++	    /* Virtual Host hash table - monthly */
++	    if (put_hnode(log_rec.vhostname,OBJ_REG,
++		     1,(u_long)i,log_rec.xfer_size,
++		     log_rec.ixfer_size,log_rec.oxfer_size,&t_vhost,
++		     0,rec_tstamp,"",vhm_htab))
++	    {
++	       if (verbose)
++		  /* Error adding vhost node (monthly), skipping .... */
++		  fprintf(stderr,"%s %s\n", msg_nomem_mh, log_rec.vhostname);
++	    }
++	 }
++
+          /* hostname (site) hash table - daily */
+          if (put_hnode(log_rec.hostname,OBJ_REG,
+              1,(u_long)i,log_rec.xfer_size,
+@@ -1966,7 +2002,8 @@ void get_config(char *fname)
+         case 59: ntop_search = atoi(value);        break; /* Top Search pgs */
+         case 60: log_type=(value[0]=='f')?
+                  LOG_FTP:((value[0]=='s')?
+-                 LOG_SQUID:LOG_CLF);               break; /* LogType        */
++                 LOG_SQUID:((value[0]=='v')?
++                 LOG_CLF_VHOST:LOG_CLF));           break; /* LogType        */
+         case 61: add_glist(value,&search_list);    break; /* SearchEngine   */
+         case 62: group_domains=atoi(value);        break; /* GroupDomains   */
+         case 63: hide_sites=(value[0]=='y')?1:0;   break; /* HideAllSites   */
+@@ -2089,7 +2126,7 @@ void init_counters()
+       ctry[i].files=0;
+       ctry[i].xfer=ctry[i].ixfer=ctry[i].oxfer=0;
+    }
+-   t_hit=t_file=t_site=t_url=t_ref=t_agent=t_page=t_visit=t_user=0;
++   t_hit=t_file=t_vhost=t_site=t_url=t_ref=t_agent=t_page=t_visit=t_user=0;
+    t_xfer=t_ixfer=t_oxfer=0.0;
+    mh_hit = dt_site = 0;
+    f_day=l_day=1;
+@@ -2260,7 +2297,7 @@ void srch_string(char *ptr)
     if ( (cps=isinglist(search_list,log_rec.refer))==NULL) return; 
  
     /* Try to find query variable */

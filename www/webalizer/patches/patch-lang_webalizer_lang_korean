@@ -1,0 +1,33 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- lang/webalizer_lang.korean.orig	Mon Aug  6 18:35:08 2007
++++ lang/webalizer_lang.korean	Tue Jul 27 05:06:39 2010
+@@ -117,7 +117,7 @@ char *h_msg[]= {
+          "-h        = 도움말 화면 출력"                    ,
+          "-v -V     = 판번호 출력"                         ,
+          "-d        = 추가 디버깅 정보 출력"               ,
+-         "-F type   = Log type.  type= (clf | ftp | squid)",
++         "-F type   = Log type.  type= (clf | vhost | ftp | squid)",
+          "-f        = fold sequence errors"                ,
+          "-i        = 히스토리 파일 무시"                  ,
+          "-p        = 통계 정보 저장 (incremental)"        ,
+@@ -213,6 +213,7 @@ char *msg_hlnk_nf = "Code 404";
+ char *msg_hlnk_ds = "일별 통계";
+ char *msg_hlnk_hs = "시간대별 통계";
+ char *msg_hlnk_u  = "URL";
++char *msg_hlnk_vh  = "Virtual Hosts";
+ char *msg_hlnk_s  = "사이트";
+ char *msg_hlnk_a  = "에이전트";
+ char *msg_hlnk_c  = "국가";
+@@ -257,6 +258,7 @@ char *msg_ctry_use= "Usage by Country for";
+ /* Formatted as "Top xxx of xxx Total something" */
+ char *msg_top_top = "상위";
+ char *msg_top_of  = "/";
++char *msg_top_vh  = "Virtual Hosts";
+ char *msg_top_s   = "사이트";
+ char *msg_top_u   = "URL";
+ char *msg_top_r   = "레퍼럴";

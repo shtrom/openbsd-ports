@@ -1,0 +1,33 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- lang/webalizer_lang.romanian-iso-8859-2.orig	Mon Aug  6 18:35:08 2007
++++ lang/webalizer_lang.romanian-iso-8859-2	Tue Jul 27 05:06:39 2010
+@@ -119,7 +119,7 @@ char *h_msg[]= {
+          "-h        = afiºeazã acest mesaj de ajutor"        	,
+          "-v -V     = afiºeazã informaþii despre versiune" 	,
+          "-d        = afiºeazã informaþii de depanare suplimentare" ,
+-         "-F type   = Tip jurnal.  type= (clf | ftp | squid)"     ,
++         "-F type   = Tip jurnal.  type= (clf | vhost | ftp | squid)"     ,
+          "-f        = eroare la secvenþa de fold"          	,
+          "-i        = ignorã fiºierul de istoric"          	,
+          "-p        = pãstreazã starea (incremental)"      	,
+@@ -216,6 +216,7 @@ char *msg_hlnk_nf = "Code 404";
+ char *msg_hlnk_ds = "Statistici zilnice";
+ char *msg_hlnk_hs = "Statistici orare";
+ char *msg_hlnk_u  = "URL-uri";
++char *msg_hlnk_vh  = "Virtual Hosts";
+ char *msg_hlnk_s  = "Situri";
+ char *msg_hlnk_a  = "Navigator";
+ char *msg_hlnk_c  = "Þãri";
+@@ -260,6 +261,7 @@ char *msg_ctry_use= "Utilizarea dupã þarã pe lunã";
+ /* Formatted as "Topul xxx din xxx total ceva" */
+ char *msg_top_top = "Top";
+ char *msg_top_of  = "din";
++char *msg_top_vh  = "Virtual Hosts";
+ char *msg_top_s   = "al Siturilor";
+ char *msg_top_u   = "al URL-urilor";
+ char *msg_top_r   = "al Paginilor referente";

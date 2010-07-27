@@ -1,6 +1,6 @@
 $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
 --- preserve.c.orig	Tue Jul  3 12:19:00 2007
-+++ preserve.c	Wed Jan 30 13:41:34 2008
++++ preserve.c	Tue Jul 27 06:30:49 2010
 @@ -38,6 +38,7 @@
  #include <ctype.h>
  #include <sys/utsname.h>
@@ -9,7 +9,108 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
  
  /* ensure getopt */
  #ifdef HAVE_GETOPT_H
-@@ -203,7 +204,7 @@ int save_state()
+@@ -69,10 +70,11 @@
+ int     hist_month[12], hist_year[12];        /* arrays for monthly total */
+ u_long  hist_hit[12];                         /* calculations: used to    */
+ u_long  hist_files[12];                       /* produce index.html       */
+-u_long  hist_site[12];                        /* these are read and saved */
+-double  hist_xfer[12];                        /* in the history file      */
+-double  hist_ixfer[12];                       /* in the history file      */
+-double  hist_oxfer[12];                       /* in the history file      */
++u_long  hist_vhost[12];                       /* these are read and saved */
++u_long  hist_site[12];                        /* in the history file      */
++double  hist_xfer[12];
++double  hist_ixfer[12];
++double  hist_oxfer[12];
+ u_long  hist_page[12];
+ u_long  hist_visit[12];
+ 
+@@ -92,7 +94,7 @@ void get_history()
+    for (i=0;i<12;i++)
+    {
+       hist_month[i]=hist_year[i]=hist_fday[i]=hist_lday[i]=0;
+-      hist_hit[i]=hist_files[i]=hist_site[i]=hist_page[i]=hist_visit[i]=0;
++      hist_hit[i]=hist_files[i]=hist_vhost[i]=hist_site[i]=hist_page[i]=hist_visit[i]=0;
+       hist_xfer[i]=hist_ixfer[i]=hist_oxfer[i]=0.0;
+    }
+ 
+@@ -112,20 +114,42 @@ void get_history()
+          }
+ 
+          /* month# year# requests files sites xfer firstday lastday */
+-         numfields = sscanf(buffer,
+-                       "%d %d %lu %lu %lu %lf %d %d %lu %lu %lf %lf",
+-                       &hist_month[i],
+-                       &hist_year[i],
+-                       &hist_hit[i],
+-                       &hist_files[i],
+-                       &hist_site[i],
+-                       &hist_xfer[i],
+-                       &hist_fday[i],
+-                       &hist_lday[i],
+-                       &hist_page[i],
+-                       &hist_visit[i],
+-                       &hist_ixfer[i],
+-                       &hist_oxfer[i]);
++	 if (LOG_CLF_VHOST == log_type)
++	 {
++            numfields = sscanf(buffer,
++                          "%d %d %lu %lu %lu %lf %d %d %lu %lu %lf %lf",
++                          &hist_month[i],
++                          &hist_year[i],
++                          &hist_hit[i],
++                          &hist_files[i],
++                          &hist_site[i],
++                          &hist_xfer[i],
++                          &hist_fday[i],
++                          &hist_lday[i],
++                          &hist_page[i],
++                          &hist_visit[i],
++                          &hist_ixfer[i],
++                          &hist_oxfer[i],
++                          &hist_vhost[i]);
++	 }
++	 else
++	 {
++            numfields = sscanf(buffer,
++                          "%d %d %lu %lu %lu %lf %d %d %lu %lu %lf %lf",
++                          &hist_month[i],
++                          &hist_year[i],
++                          &hist_hit[i],
++                          &hist_files[i],
++                          &hist_site[i],
++                          &hist_xfer[i],
++                          &hist_fday[i],
++                          &hist_lday[i],
++                          &hist_page[i],
++                          &hist_visit[i],
++                          &hist_ixfer[i],
++                          &hist_oxfer[i]);
++	    hist_vhost[i] = 1;
++	 }
+ 
+          if (numfields==8)     /* kludge for reading 1.20.xx history files */
+          {
+@@ -156,7 +180,7 @@ void put_history()
+       {
+          if ((hist_month[i] != 0) && (hist_hit[i] != 0))
+          {
+-            fprintf(hist_fp,"%d %d %lu %lu %lu %.0f %d %d %lu %lu %.0f %.0f\n",
++            fprintf(hist_fp,"%d %d %lu %lu %lu %.0f %d %d %lu %lu %.0f %.0f %lu\n",
+                             hist_month[i],
+                             hist_year[i],
+                             hist_hit[i],
+@@ -168,7 +192,8 @@ void put_history()
+                             hist_page[i],
+                             hist_visit[i],
+                             hist_ixfer[i],
+-                            hist_oxfer[i]);
++                            hist_oxfer[i],
++                            hist_vhost[i]);
+          }
+       }
+       fclose(hist_fp);
+@@ -203,7 +228,7 @@ int save_state()
     /* Saving current run data... */
     if (verbose>1)
     {
@@ -18,7 +119,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
         cur_month,cur_day,cur_year,cur_hour,cur_min,cur_sec);
        printf("%s [%s]\n",msg_put_data,buffer);
     }
-@@ -216,25 +217,25 @@ int save_state()
+@@ -216,25 +241,25 @@ int save_state()
     if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
  
     /* Current date/time          */
@@ -48,7 +149,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
          tm_hit[i],tm_file[i],tm_xfer[i],tm_site[i],
          tm_page[i],tm_visit[i],tm_ixfer[i],tm_oxfer[i]);
        if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
-@@ -243,7 +244,7 @@ int save_state()
+@@ -243,7 +268,7 @@ int save_state()
     /* Daily (by hour) total array */
     for (i=0;i<24;i++)
     {
@@ -57,7 +158,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
          th_hit[i],th_file[i],th_xfer[i],th_page[i],th_ixfer[i],th_oxfer[i]);
        if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
     }
-@@ -251,7 +252,7 @@ int save_state()
+@@ -251,7 +276,7 @@ int save_state()
     /* Response codes */
     for (i=0;i<TOTAL_RC;i++)
     {
@@ -66,7 +167,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
        if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
     }
  
-@@ -263,7 +264,7 @@ int save_state()
+@@ -263,7 +288,7 @@ int save_state()
        uptr=um_htab[i];
        while (uptr!=NULL)
        {
@@ -75,7 +176,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
                uptr->flag, uptr->count, uptr->files, uptr->xfer,
                uptr->entry, uptr->exit,uptr->ixfer, uptr->oxfer);
           if (fputs(buffer,fp)==EOF) return 1;
-@@ -280,7 +281,7 @@ int save_state()
+@@ -280,7 +305,7 @@ int save_state()
        hptr=sm_htab[i];
        while (hptr!=NULL)
        {
@@ -84,7 +185,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
                hptr->string,
                hptr->flag,
                hptr->count,
-@@ -304,7 +305,7 @@ int save_state()
+@@ -304,7 +329,7 @@ int save_state()
        hptr=sd_htab[i];
        while (hptr!=NULL)
        {
@@ -93,7 +194,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
                hptr->string,
                hptr->flag,
                hptr->count,
-@@ -330,7 +331,7 @@ int save_state()
+@@ -330,7 +355,7 @@ int save_state()
           rptr=rm_htab[i];
           while (rptr!=NULL)
           {
@@ -102,7 +203,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
                   rptr->flag, rptr->count);
              if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
              rptr=rptr->next;
-@@ -348,7 +349,7 @@ int save_state()
+@@ -348,7 +373,7 @@ int save_state()
           aptr=am_htab[i];
           while (aptr!=NULL)
           {
@@ -111,7 +212,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
                   aptr->flag, aptr->count);
              if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
              aptr=aptr->next;
-@@ -364,7 +365,7 @@ int save_state()
+@@ -364,7 +389,7 @@ int save_state()
        sptr=sr_htab[i];
        while (sptr!=NULL)
        {
@@ -120,7 +221,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
           if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
           sptr=sptr->next;
        }
-@@ -379,7 +380,7 @@ int save_state()
+@@ -379,7 +404,7 @@ int save_state()
        iptr=im_htab[i];
        while (iptr!=NULL)
        {
@@ -129,7 +230,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
                iptr->string,
                iptr->flag,
                iptr->count,
-@@ -396,13 +397,13 @@ int save_state()
+@@ -396,13 +421,13 @@ int save_state()
     if (fputs("# End Of Table - usernames\n",fp)==EOF) return 1;
  
     /* 404 error list */
@@ -145,7 +246,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
        	if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
        }
     }
-@@ -444,7 +445,7 @@ int restore_state()
+@@ -444,7 +469,7 @@ int restore_state()
     if (verbose>1) printf("%s %s\n",msg_get_data,state_fname);
  
     /* get easy stuff */
@@ -154,7 +255,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
     if ((fgets(buffer,BUFSIZE,fp)) != NULL)                 /* Header record */
       {if (strncmp(buffer,tmp_buf,17)) return 99;} /* bad magic? */
     else return 1;   /* error exit */
-@@ -537,7 +538,7 @@ int restore_state()
+@@ -537,7 +562,7 @@ int restore_state()
     while ((fgets(buffer,BUFSIZE,fp)) != NULL)
     {
        if (!strncmp(buffer,"# End Of Table ",15)) break;
@@ -163,7 +264,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
        tmp_buf[strlen(tmp_buf)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 10;  /* error exit */
-@@ -574,7 +575,7 @@ int restore_state()
+@@ -574,7 +599,7 @@ int restore_state()
     {
        /* Check for end of table */
        if (!strncmp(buffer,"# End Of Table ",15)) break;
@@ -172,7 +273,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
        tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 8;  /* error exit */
-@@ -620,7 +621,7 @@ int restore_state()
+@@ -620,7 +645,7 @@ int restore_state()
     {
        /* Check for end of table */
        if (!strncmp(buffer,"# End Of Table ",15)) break;
@@ -181,7 +282,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
        tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 9;  /* error exit */
-@@ -664,7 +665,7 @@ int restore_state()
+@@ -664,7 +689,7 @@ int restore_state()
     while ((fgets(buffer,BUFSIZE,fp)) != NULL)
     {
        if (!strncmp(buffer,"# End Of Table ",15)) break;
@@ -190,7 +291,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
        tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 11;  /* error exit */
-@@ -689,7 +690,7 @@ int restore_state()
+@@ -689,7 +714,7 @@ int restore_state()
     while ((fgets(buffer,BUFSIZE,fp)) != NULL)
     {
        if (!strncmp(buffer,"# End Of Table ",15)) break;
@@ -199,7 +300,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
        tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 12;  /* error exit */
-@@ -714,7 +715,7 @@ int restore_state()
+@@ -714,7 +739,7 @@ int restore_state()
     while ((fgets(buffer,BUFSIZE,fp)) != NULL)
     {
        if (!strncmp(buffer,"# End Of Table ",15)) break;
@@ -208,7 +309,7 @@ $OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
        tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 13;  /* error exit */
-@@ -739,7 +740,7 @@ int restore_state()
+@@ -739,7 +764,7 @@ int restore_state()
     {
        /* Check for end of table */
        if (!strncmp(buffer,"# End Of Table ",15)) break;

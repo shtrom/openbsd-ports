@@ -1,0 +1,33 @@
+$OpenBSD$
+
+$Id$
+Implement crude Virtual Host support.
+Olivier Mehani <shtrom@ssji.net>, Tue, 27 Jul 2010 10:11:38 +1000
+
+--- lang/webalizer_lang.galician.orig	Mon Aug  6 18:35:07 2007
++++ lang/webalizer_lang.galician	Tue Jul 27 05:06:39 2010
+@@ -121,7 +121,7 @@ char *h_msg[]= {
+          "-h        = sacar esta mensaxe"                          ,
+          "-v -V     = ver informacion de versión"                  ,
+          "-d        = sacar información adicional para depuración" ,
+-         "-F type   = Log type.  type= (clf | ftp | squid)"        ,
++         "-F type   = Log type.  type= (clf | vhost | ftp | squid)"        ,
+          "-f        = procesa historicos fóra de secuencia (ver man)",
+          "-i        = ignorar arquivo"                             ,
+          "-p        = lembrar estado (incremental)"               ,
+@@ -217,6 +217,7 @@ char *msg_hlnk_nf = "Code 404";
+ char *msg_hlnk_ds = "Estatísiticas díarias";
+ char *msg_hlnk_hs = "Estatísticas por horas";
+ char *msg_hlnk_u  = "URLs";
++char *msg_hlnk_vh  = "Virtual Hosts";
+ char *msg_hlnk_s  = "Clientes";
+ char *msg_hlnk_a  = "Programas visores";
+ char *msg_hlnk_c  = "Países";
+@@ -261,6 +262,7 @@ char *msg_ctry_use= "Accesos por países en";
+ /* Formatted as "Top xxx of xxx Total something" */
+ char *msg_top_top = "Os";
+ char *msg_top_of  = "primeiros dun total de";
++char *msg_top_vh  = "Virtual Hosts";
+ char *msg_top_s   = "clientes";
+ char *msg_top_u   = "URLs";
+ char *msg_top_r   = "ligazóns orixe";
