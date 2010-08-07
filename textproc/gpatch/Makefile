@@ -1,7 +1,7 @@
 # $Id: Makefile,v 1.12 2007/09/15 20:59:38 merdely Exp $
 # $OpenBSD: Makefile,v 1.12 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	GNU versions of the patch utility
+COMMENT=	GNU version of the patch utility
 
 VERSION=	2.5.9
 DISTNAME=	patch-${VERSION}
