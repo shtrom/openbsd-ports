@@ -71,7 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/rdiff_backup/TempFile.pyc
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/Time.pyc
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/user_group.pyc
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/win_acls.pyc
-lib/python${MODPY_VERSION}/site-packages/rdiff_backup-1.2.2-py2.5.egg-info
+lib/python${MODPY_VERSION}/site-packages/rdiff_backup-1.2.8-py2.5.egg-info
 @man man/man1/rdiff-backup.1
 @man man/man1/rdiff-backup-statistics.1
 share/doc/rdiff-backup/
