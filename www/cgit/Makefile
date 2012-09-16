@@ -3,7 +3,7 @@
 COMMENT =	web frontend for git repositories
 
 DISTNAME =	cgit-0.8.3.5
-REVISION = 	1
+REVISION = 	4sh
 CATEGORIES =	www devel
 
 DISTFILES = 	cgit-0.8.3.5.tar.gz:0 \
@@ -23,8 +23,17 @@ PERMIT_DISTFILES_FTP =	Yes
 
 USE_GMAKE =	yes
 
+FLAVORS=	static
+FLAVOR?=
+
 MODULES =	converters/libiconv
+.if ${FLAVOR:L} == "static"
+CFLAGS +=	-static
+LDFLAGS +=	-static
+MAKEFLAGS +=	CFLAGS+=-static LDFLAGS+=-static
+.else
 WANTLIB +=	c crypto pthread z
+.endif
 
 PREFIX =	/var/www
 MAKE_FLAGS +=	V=1 NEEDS_LIBICONV=1 LDFLAGS+=-L${LOCALBASE}/lib
