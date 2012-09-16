@@ -1,0 +1,26 @@
+$OpenBSD$
+--- IkiWiki/Plugin/recentchangesdiff.pm.orig	Fri Jul  8 11:35:40 2011
++++ IkiWiki/Plugin/recentchangesdiff.pm	Wed Aug  3 04:12:05 2011
+@@ -4,6 +4,7 @@ package IkiWiki::Plugin::recentchangesdiff;
+ use warnings;
+ use strict;
+ use IkiWiki 3.00;
++use Encode;
+ use HTML::Entities;
+ 
+ my $maxlines=200;
+@@ -39,12 +40,13 @@ sub pagetemplate (@) {
+ 				$diff=join("", @lines);
+ 			}
+ 			# escape html
+-			$diff = encode_entities($diff);
++			$diff = encode_entities(decode_utf8($diff));
+ 			# escape links and preprocessor stuff
+ 			$diff = encode_entities($diff, '\[\]');
+ 			$template->param(diff => $diff);
+ 		}
+ 	}
+ }
++
+ 
+ 1

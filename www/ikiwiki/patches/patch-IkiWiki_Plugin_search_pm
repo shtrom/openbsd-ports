@@ -1,0 +1,12 @@
+$OpenBSD$
+--- IkiWiki/Plugin/search.pm.orig	Fri Jul  8 11:35:40 2011
++++ IkiWiki/Plugin/search.pm	Wed Aug  3 04:12:05 2011
+@@ -41,7 +41,7 @@ sub checkconfig () {
+ 	}
+ 	
+ 	if (! defined $config{omega_cgi}) {
+-		$config{omega_cgi}="/usr/lib/cgi-bin/omega/omega";
++		$config{omega_cgi}="/var/www/xapian-omega/cgi-bin/omega";
+ 	}
+ 
+ 	# This is a mass dependency, so if the search form template

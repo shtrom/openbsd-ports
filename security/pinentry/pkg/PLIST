@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+bin/pinentry
+@bin bin/pinentry-curses
+@info info/pinentry.info
