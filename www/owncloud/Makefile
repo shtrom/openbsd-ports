@@ -3,7 +3,7 @@
 COMMENT =		self-hosted, location independent cloud storage engine
 
 DISTNAME =		owncloud-4.5.0
-#REVISION =		1
+REVISION =		1
 CATEGORIES =		www lang/php
 HOMEPAGE =		http://owncloud.org/
 
@@ -46,8 +46,9 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/owncloud.conf \
 		${PREFIX}/conf/modules.sample/owncloud.conf.dist
 	mv ${INSTDIR}/config/config.sample.php ${INSTDIR}/config/config.php.dist
-	perl -pi -e 's/"appstoreenabled" =>.*/"appstoreenabled" => false,/;' \
-		-e 's,/var/www/owncloud,/owncloud,g;' \
+	perl -pi -e 's,/var/www/owncloud,/owncloud,g;' \
+		-e 's/"appstoreenabled" =>.*/"appstoreenabled" => false,/;' \
+		-e 's/"loglevel" =>.*/"loglevel" => "2",/;' \
 		${INSTDIR}/config/config.php.dist
 
 .include <bsd.port.mk>
