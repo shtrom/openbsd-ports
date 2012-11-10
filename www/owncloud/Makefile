@@ -3,7 +3,7 @@
 COMMENT =		self-hosted, location independent cloud storage engine
 
 DISTNAME =		owncloud-4.5.0
-REVISION =		1
+REVISION =		2
 CATEGORIES =		www lang/php
 HOMEPAGE =		http://owncloud.org/
 
@@ -26,11 +26,10 @@ PREFIX =		/var/www
 INSTDIR =	${PREFIX}/owncloud
 
 MODULES =		lang/php # Defaults to 5.3 at the time of this writing
-RUN_DEPENDS =		lang/php/${MODPHP_VERSION},-gd \
-			php-sqlite-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-sqlite \
-			lang/php/${MODPHP_VERSION},-pdo_sqlite \
-			lang/php/${MODPHP_VERSION},-curl \
-			archivers/pecl-zip
+RUN_DEPENDS =		lang/php/${MODPHP_VERSION},-curl \
+			lang/php/${MODPHP_VERSION},-gd \
+			lang/php/${MODPHP_VERSION},-xmlrpc \
+			lang/php/${MODPHP_VERSION},-zip
 
 # Put source in the expected place, and use absolute path to php binary (stolen
 # and adapted from mail/roundcubemail)
