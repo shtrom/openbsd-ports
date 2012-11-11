@@ -81,9 +81,11 @@ ${P5SITE}/IkiWiki/Plugin/moderatedcomments.pm
 ${P5SITE}/IkiWiki/Plugin/monotone.pm
 ${P5SITE}/IkiWiki/Plugin/more.pm
 ${P5SITE}/IkiWiki/Plugin/norcs.pm
+${P5SITE}/IkiWiki/Plugin/notifyemail.pm
 ${P5SITE}/IkiWiki/Plugin/opendiscussion.pm
 ${P5SITE}/IkiWiki/Plugin/openid.pm
 ${P5SITE}/IkiWiki/Plugin/orphans.pm
+${P5SITE}/IkiWiki/Plugin/osm.pm
 ${P5SITE}/IkiWiki/Plugin/otl.pm
 ${P5SITE}/IkiWiki/Plugin/pagecount.pm
 ${P5SITE}/IkiWiki/Plugin/pagestats.pm
@@ -128,6 +130,7 @@ ${P5SITE}/IkiWiki/Plugin/theme.pm
 ${P5SITE}/IkiWiki/Plugin/tla.pm
 ${P5SITE}/IkiWiki/Plugin/toc.pm
 ${P5SITE}/IkiWiki/Plugin/toggle.pm
+${P5SITE}/IkiWiki/Plugin/trail.pm
 ${P5SITE}/IkiWiki/Plugin/transient.pm
 ${P5SITE}/IkiWiki/Plugin/txt.pm
 ${P5SITE}/IkiWiki/Plugin/typography.pm
@@ -154,23 +157,27 @@ ${P5SITE}/IkiWiki/Wrapper.pm
 @man man/man8/ikiwiki-mass-rebuild.8
 sbin/ikiwiki-mass-rebuild
 share/examples/ikiwiki/
-@sample ${SYSCONFDIR}/ikiwiki/
 share/examples/ikiwiki/auto-blog.setup
-@sample ${SYSCONFDIR}/ikiwiki/auto-blog.setup
 share/examples/ikiwiki/auto.setup
-@sample ${SYSCONFDIR}/ikiwiki/auto.setup
 share/examples/ikiwiki/wikilist
-@sample ${SYSCONFDIR}/ikiwiki/wikilist
 share/ikiwiki/
 share/ikiwiki/attachment/
 share/ikiwiki/attachment/ikiwiki/
 share/ikiwiki/attachment/ikiwiki/images/
 share/ikiwiki/attachment/ikiwiki/images/pbar-ani.gif
+share/ikiwiki/attachment/ikiwiki/images/ui-bg_flat_0_aaaaaa_40x100.png
 share/ikiwiki/attachment/ikiwiki/images/ui-bg_flat_75_ffffff_40x100.png
+share/ikiwiki/attachment/ikiwiki/images/ui-bg_glass_55_fbf9ee_1x400.png
+share/ikiwiki/attachment/ikiwiki/images/ui-bg_glass_65_ffffff_1x400.png
+share/ikiwiki/attachment/ikiwiki/images/ui-bg_glass_75_dadada_1x400.png
 share/ikiwiki/attachment/ikiwiki/images/ui-bg_glass_75_e6e6e6_1x400.png
+share/ikiwiki/attachment/ikiwiki/images/ui-bg_glass_95_fef1ec_1x400.png
 share/ikiwiki/attachment/ikiwiki/images/ui-bg_highlight-soft_75_cccccc_1x100.png
 share/ikiwiki/attachment/ikiwiki/images/ui-icons_222222_256x240.png
+share/ikiwiki/attachment/ikiwiki/images/ui-icons_2e83ff_256x240.png
+share/ikiwiki/attachment/ikiwiki/images/ui-icons_454545_256x240.png
 share/ikiwiki/attachment/ikiwiki/images/ui-icons_888888_256x240.png
+share/ikiwiki/attachment/ikiwiki/images/ui-icons_cd0a0a_256x240.png
 share/ikiwiki/attachment/ikiwiki/jquery-ui.min.css
 share/ikiwiki/attachment/ikiwiki/jquery-ui.min.js
 share/ikiwiki/attachment/ikiwiki/jquery.fileupload-ui.js
@@ -238,6 +245,7 @@ share/ikiwiki/directives/ikiwiki/directive/map.mdwn
 share/ikiwiki/directives/ikiwiki/directive/meta.mdwn
 share/ikiwiki/directives/ikiwiki/directive/more.mdwn
 share/ikiwiki/directives/ikiwiki/directive/orphans.mdwn
+share/ikiwiki/directives/ikiwiki/directive/osm.mdwn
 share/ikiwiki/directives/ikiwiki/directive/pagecount.mdwn
 share/ikiwiki/directives/ikiwiki/directive/pagestats.mdwn
 share/ikiwiki/directives/ikiwiki/directive/pagetemplate.mdwn
@@ -259,7 +267,12 @@ share/ikiwiki/directives/ikiwiki/directive/teximg.mdwn
 share/ikiwiki/directives/ikiwiki/directive/toc.mdwn
 share/ikiwiki/directives/ikiwiki/directive/toggle.mdwn
 share/ikiwiki/directives/ikiwiki/directive/toggleable.mdwn
+share/ikiwiki/directives/ikiwiki/directive/trailitem.mdwn
+share/ikiwiki/directives/ikiwiki/directive/trailitems.mdwn
+share/ikiwiki/directives/ikiwiki/directive/traillink.mdwn
+share/ikiwiki/directives/ikiwiki/directive/trailoptions.mdwn
 share/ikiwiki/directives/ikiwiki/directive/version.mdwn
+share/ikiwiki/directives/ikiwiki/directive/waypoint.mdwn
 share/ikiwiki/examples/
 share/ikiwiki/examples/blog/
 share/ikiwiki/examples/blog.mdwn
@@ -305,6 +318,11 @@ share/ikiwiki/openid-selector/
 share/ikiwiki/openid-selector/ikiwiki/
 share/ikiwiki/openid-selector/ikiwiki/openid/
 share/ikiwiki/openid-selector/ikiwiki/openid/openid-jquery.js
+share/ikiwiki/osm/
+share/ikiwiki/osm/ikiwiki/
+share/ikiwiki/osm/ikiwiki/images/
+share/ikiwiki/osm/ikiwiki/images/osm.png
+share/ikiwiki/osm/ikiwiki/osm.js
 share/ikiwiki/plugins/
 share/ikiwiki/plugins/404/
 share/ikiwiki/plugins/404.mdwn
@@ -341,6 +359,8 @@ share/ikiwiki/plugins/contrib/album/discussion.mdwn
 share/ikiwiki/plugins/contrib/attach/
 share/ikiwiki/plugins/contrib/attach.mdwn
 share/ikiwiki/plugins/contrib/attach/discussion.mdwn
+share/ikiwiki/plugins/contrib/bibtex.mdwn
+share/ikiwiki/plugins/contrib/created_in_future.mdwn
 share/ikiwiki/plugins/contrib/default_content_for___42__copyright__42___and___42__license__42__.mdwn
 share/ikiwiki/plugins/contrib/field/
 share/ikiwiki/plugins/contrib/field.mdwn
@@ -367,13 +387,22 @@ share/ikiwiki/plugins/contrib/groupfile.mdwn
 share/ikiwiki/plugins/contrib/highlightcode.mdwn
 share/ikiwiki/plugins/contrib/ikiwiki/
 share/ikiwiki/plugins/contrib/ikiwiki/directive/
+share/ikiwiki/plugins/contrib/ikiwiki/directive/album.mdwn
+share/ikiwiki/plugins/contrib/ikiwiki/directive/albumimage.mdwn
+share/ikiwiki/plugins/contrib/ikiwiki/directive/albumsection.mdwn
+share/ikiwiki/plugins/contrib/ikiwiki/directive/jssearchfield.mdwn
+share/ikiwiki/plugins/contrib/ikiwiki/directive/ymlfront/
 share/ikiwiki/plugins/contrib/ikiwiki/directive/ymlfront.mdwn
+share/ikiwiki/plugins/contrib/ikiwiki/directive/ymlfront/discussion.mdwn
 share/ikiwiki/plugins/contrib/imailhide.mdwn
 share/ikiwiki/plugins/contrib/img/
 share/ikiwiki/plugins/contrib/img.mdwn
 share/ikiwiki/plugins/contrib/img/discussion.mdwn
+share/ikiwiki/plugins/contrib/jscalendar.mdwn
+share/ikiwiki/plugins/contrib/jssearchfield.mdwn
 share/ikiwiki/plugins/contrib/justlogin.mdwn
 share/ikiwiki/plugins/contrib/linguas.mdwn
+share/ikiwiki/plugins/contrib/localfavicon.mdwn
 share/ikiwiki/plugins/contrib/mailbox/
 share/ikiwiki/plugins/contrib/mailbox.mdwn
 share/ikiwiki/plugins/contrib/mailbox/discussion.mdwn
@@ -381,12 +410,18 @@ share/ikiwiki/plugins/contrib/mandoc.mdwn
 share/ikiwiki/plugins/contrib/mediawiki/
 share/ikiwiki/plugins/contrib/mediawiki.mdwn
 share/ikiwiki/plugins/contrib/mediawiki/discussion.mdwn
+share/ikiwiki/plugins/contrib/monthcalendar.mdwn
+share/ikiwiki/plugins/contrib/mscgen.mdwn
 share/ikiwiki/plugins/contrib/navbar/
 share/ikiwiki/plugins/contrib/navbar.mdwn
 share/ikiwiki/plugins/contrib/navbar/discussion.mdwn
+share/ikiwiki/plugins/contrib/newpage/
+share/ikiwiki/plugins/contrib/newpage.mdwn
+share/ikiwiki/plugins/contrib/newpage/discussion.mdwn
 share/ikiwiki/plugins/contrib/opml/
 share/ikiwiki/plugins/contrib/opml.mdwn
 share/ikiwiki/plugins/contrib/opml/discussion.mdwn
+share/ikiwiki/plugins/contrib/pagespec_alias.mdwn
 share/ikiwiki/plugins/contrib/pandoc.mdwn
 share/ikiwiki/plugins/contrib/plusone.mdwn
 share/ikiwiki/plugins/contrib/pod/
@@ -411,7 +446,7 @@ share/ikiwiki/plugins/contrib/syntax/discussion.mdwn
 share/ikiwiki/plugins/contrib/tex4ht.mdwn
 share/ikiwiki/plugins/contrib/texinfo.mdwn
 share/ikiwiki/plugins/contrib/tracking.mdwn
-share/ikiwiki/plugins/contrib/trail.mdwn
+share/ikiwiki/plugins/contrib/trail/
 share/ikiwiki/plugins/contrib/unixauth/
 share/ikiwiki/plugins/contrib/unixauth.mdwn
 share/ikiwiki/plugins/contrib/unixauth/discussion.mdwn
@@ -509,6 +544,7 @@ share/ikiwiki/plugins/moderatedcomments.mdwn
 share/ikiwiki/plugins/more/
 share/ikiwiki/plugins/more.mdwn
 share/ikiwiki/plugins/more/discussion.mdwn
+share/ikiwiki/plugins/notifyemail.mdwn
 share/ikiwiki/plugins/opendiscussion.mdwn
 share/ikiwiki/plugins/openid/
 share/ikiwiki/plugins/openid.mdwn
@@ -516,6 +552,7 @@ share/ikiwiki/plugins/openid/discussion.mdwn
 share/ikiwiki/plugins/orphans/
 share/ikiwiki/plugins/orphans.mdwn
 share/ikiwiki/plugins/orphans/discussion.mdwn
+share/ikiwiki/plugins/osm.mdwn
 share/ikiwiki/plugins/otl.mdwn
 share/ikiwiki/plugins/pagecount.mdwn
 share/ikiwiki/plugins/pagestats.mdwn
@@ -531,7 +568,9 @@ share/ikiwiki/plugins/pinger.mdwn
 share/ikiwiki/plugins/po/
 share/ikiwiki/plugins/po.mdwn
 share/ikiwiki/plugins/po/discussion.mdwn
+share/ikiwiki/plugins/poll/
 share/ikiwiki/plugins/poll.mdwn
+share/ikiwiki/plugins/poll/discussion.mdwn
 share/ikiwiki/plugins/polygen.mdwn
 share/ikiwiki/plugins/postsparkline.mdwn
 share/ikiwiki/plugins/prettydate.mdwn
@@ -587,6 +626,9 @@ share/ikiwiki/plugins/toc/discussion.mdwn
 share/ikiwiki/plugins/toggle/
 share/ikiwiki/plugins/toggle.mdwn
 share/ikiwiki/plugins/toggle/discussion.mdwn
+share/ikiwiki/plugins/trail/
+share/ikiwiki/plugins/trail.mdwn
+share/ikiwiki/plugins/trail/discussion.mdwn
 share/ikiwiki/plugins/transient.mdwn
 share/ikiwiki/plugins/txt/
 share/ikiwiki/plugins/txt.mdwn
@@ -595,6 +637,7 @@ share/ikiwiki/plugins/type/
 share/ikiwiki/plugins/type/auth.mdwn
 share/ikiwiki/plugins/type/bundle.mdwn
 share/ikiwiki/plugins/type/chrome.mdwn
+share/ikiwiki/plugins/type/comments.mdwn
 share/ikiwiki/plugins/type/core.mdwn
 share/ikiwiki/plugins/type/date.mdwn
 share/ikiwiki/plugins/type/format.mdwn
@@ -613,12 +656,16 @@ share/ikiwiki/plugins/userlist.mdwn
 share/ikiwiki/plugins/version.mdwn
 share/ikiwiki/plugins/websetup.mdwn
 share/ikiwiki/plugins/wikitext.mdwn
+share/ikiwiki/plugins/wmd/
 share/ikiwiki/plugins/wmd.mdwn
+share/ikiwiki/plugins/wmd/discussion.mdwn
 share/ikiwiki/plugins/write/
 share/ikiwiki/plugins/write.mdwn
 share/ikiwiki/plugins/write/discussion.mdwn
 share/ikiwiki/plugins/write/external.mdwn
+share/ikiwiki/plugins/write/tutorial/
 share/ikiwiki/plugins/write/tutorial.mdwn
+share/ikiwiki/plugins/write/tutorial/discussion.mdwn
 share/ikiwiki/po/
 share/ikiwiki/po/cs/
 share/ikiwiki/po/cs/basewiki/
@@ -944,6 +991,7 @@ share/ikiwiki/templates/feedlink.tmpl
 share/ikiwiki/templates/googleform.tmpl
 share/ikiwiki/templates/inlinepage.tmpl
 share/ikiwiki/templates/microblog.tmpl
+share/ikiwiki/templates/notifyemail.tmpl
 share/ikiwiki/templates/openid-selector.tmpl
 share/ikiwiki/templates/page.tmpl
 share/ikiwiki/templates/passwordmail.tmpl
@@ -956,6 +1004,7 @@ share/ikiwiki/templates/rsspage.tmpl
 share/ikiwiki/templates/searchform.tmpl
 share/ikiwiki/templates/searchquery.tmpl
 share/ikiwiki/templates/titlepage.tmpl
+share/ikiwiki/templates/trails.tmpl
 share/ikiwiki/themes/
 share/ikiwiki/themes/actiontabs/
 share/ikiwiki/themes/actiontabs/style.css
@@ -967,6 +1016,9 @@ share/ikiwiki/themes/goldtype/
 share/ikiwiki/themes/goldtype/background_darkness.png
 share/ikiwiki/themes/goldtype/header_background.png
 share/ikiwiki/themes/goldtype/style.css
+share/ikiwiki/themes/monochrome/
+share/ikiwiki/themes/monochrome/gradient.png
+share/ikiwiki/themes/monochrome/style.css
 share/locale/bg/LC_MESSAGES/ikiwiki.mo
 share/locale/cs/LC_MESSAGES/ikiwiki.mo
 share/locale/da/LC_MESSAGES/ikiwiki.mo

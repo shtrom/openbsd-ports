@@ -29,13 +29,13 @@ BUILD_DEPENDS= www/p5-HTML-Parser \
 RUN_DEPENDS=   devel/p5-File-MimeInfo \
                net/p5-RPC-XML \
                www/p5-XML-Feed \
-               security/p5-Authen-Passphrase \
                devel/p5-File-chdir \
                devel/p5-File-ReadBackwards \
                devel/cvsps \
-               devel/p5-Scalar-List-Utils \
-               www/p5-HTML-Tree \
-               lang/python/2.6
+               www/p5-HTML-Tree #\
+#               lang/python/2.6
+#               security/p5-Authen-Passphrase \
+#               devel/p5-Scalar-List-Utils \
 
 # Dependencies according to [0]
 # [0] http://ikiwiki.info/install/
@@ -58,6 +58,8 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	perl
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
+
+MAKE_ENV+=	LD_PRELOAD=/usr/lib/libpthread.so.16.0
 
 FLAVORS =		search
 FLAVOR ?=
