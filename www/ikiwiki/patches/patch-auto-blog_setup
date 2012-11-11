@@ -1,6 +1,6 @@
 $OpenBSD$
---- auto-blog.setup.orig	Fri Jul  8 11:35:40 2011
-+++ auto-blog.setup	Wed Aug  3 04:12:05 2011
+--- auto-blog.setup.orig	Sat Aug 25 17:12:13 2012
++++ auto-blog.setup	Sat Nov 10 14:56:24 2012
 @@ -28,13 +28,15 @@ IkiWiki::Setup::Automator->import(
  	wikiname => $wikiname,
  	adminuser => [$admin],
@@ -17,5 +17,5 @@ $OpenBSD$
 +	cgiurl => "http://$domain/~$ENV{USER}/cgi-bin/ikiwiki.cgi",
 +	cgi_wrapper => "$ENV{HOME}/cgi-bin/ikiwiki.cgi",
  	adminemail => "$ENV{USER}\@$domain",
- 	add_plugins => [qw{goodstuff websetup comments blogspam calendar sidebar}],
+ 	add_plugins => [qw{goodstuff websetup comments blogspam calendar sidebar trail}],
  	disable_plugins => [qw{}],

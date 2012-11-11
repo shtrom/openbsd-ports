@@ -1,6 +1,6 @@
 $OpenBSD$
---- IkiWiki/Plugin/highlight.pm.orig	Fri Jul  8 11:35:40 2011
-+++ IkiWiki/Plugin/highlight.pm	Wed Aug  3 04:19:02 2011
+--- IkiWiki/Plugin/highlight.pm.orig	Sat Aug 25 17:12:13 2012
++++ IkiWiki/Plugin/highlight.pm	Sat Nov 10 14:56:24 2012
 @@ -43,7 +43,7 @@ sub getsetup () {
  		},
  		langdefdir => {
@@ -10,7 +10,7 @@ $OpenBSD$
  			description => "location of highlight's langDefs directory",
  			safe => 0,
  			rebuild => undef,
-@@ -72,7 +72,7 @@ sub checkconfig () {
+@@ -67,7 +67,7 @@ sub checkconfig () {
  	if (! exists $config{langdefdir}) {
  		$config{langdefdir}=
  		     ($data_dir ? $data_dir->getLangPath("")

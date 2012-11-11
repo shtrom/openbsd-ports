@@ -1,7 +1,7 @@
 $OpenBSD$
---- IkiWiki/Plugin/mdwn.pm.orig	Sat Sep 18 20:24:19 2010
-+++ IkiWiki/Plugin/mdwn.pm	Wed Oct 13 19:39:09 2010
-@@ -66,7 +66,7 @@ sub htmlize (@) {
+--- IkiWiki/Plugin/mdwn.pm.orig	Sat Aug 25 17:12:13 2012
++++ IkiWiki/Plugin/mdwn.pm	Sat Nov 10 14:56:24 2012
+@@ -92,7 +92,7 @@ sub htmlize (@) {
  					$markdown_sub=\&Markdown::Markdown;
  				}
  				else {

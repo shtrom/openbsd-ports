@@ -1,6 +1,6 @@
 $OpenBSD$
---- IkiWiki/Plugin/recentchangesdiff.pm.orig	Fri Jul  8 11:35:40 2011
-+++ IkiWiki/Plugin/recentchangesdiff.pm	Wed Aug  3 04:12:05 2011
+--- IkiWiki/Plugin/recentchangesdiff.pm.orig	Wed Oct 17 02:40:56 2012
++++ IkiWiki/Plugin/recentchangesdiff.pm	Sat Nov 10 14:56:24 2012
 @@ -4,6 +4,7 @@ package IkiWiki::Plugin::recentchangesdiff;
  use warnings;
  use strict;
@@ -9,8 +9,8 @@ $OpenBSD$
  use HTML::Entities;
  
  my $maxlines=200;
-@@ -39,12 +40,13 @@ sub pagetemplate (@) {
- 				$diff=join("", @lines);
+@@ -49,13 +50,14 @@ sub pagetemplate (@) {
+ 				$diff.="\n".gettext("(Diff truncated)");
  			}
  			# escape html
 -			$diff = encode_entities($diff);
@@ -23,4 +23,5 @@ $OpenBSD$
  }
 +
  
- 1
+ sub format (@) {
+         my %params=@_;

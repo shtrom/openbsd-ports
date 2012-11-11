@@ -1,7 +1,7 @@
 $OpenBSD$
---- IkiWiki/Plugin/recentchanges.pm.orig	Fri Jul  8 11:35:40 2011
-+++ IkiWiki/Plugin/recentchanges.pm	Wed Aug  3 04:21:06 2011
-@@ -171,14 +171,14 @@ sub store ($$$) {
+--- IkiWiki/Plugin/recentchanges.pm.orig	Wed Oct 17 02:40:56 2012
++++ IkiWiki/Plugin/recentchanges.pm	Sat Nov 10 14:56:24 2012
+@@ -172,14 +172,14 @@ sub store ($$$) {
  				$_->{link} = "<a href=\"".
  					IkiWiki::cgiurl(
  						do => "goto",
@@ -17,9 +17,9 @@ $OpenBSD$
 -				$_->{link} = pagetitle($_->{page});
 +				$_->{link} =  decode_utf8(pagetitle($_->{page}));
  			}
- 
- 			$_;
-@@ -212,9 +212,9 @@ sub store ($$$) {
+ 			if (defined $_->{diffurl}) {
+ 				$has_diffurl=1;
+@@ -216,9 +216,9 @@ sub store ($$$) {
  		foreach my $field (@{$change->{message}}) {
  			if (exists $field->{line}) {
  				# escape html
@@ -31,7 +31,7 @@ $OpenBSD$
  			}
  		}
  	}
-@@ -223,7 +223,7 @@ sub store ($$$) {
+@@ -227,7 +227,7 @@ sub store ($$$) {
  	my $template=template("change.tmpl", blind_cache => 1);
  	$template->param(
  		%$change,
@@ -40,7 +40,7 @@ $OpenBSD$
  		wikiname => $config{wikiname},
  	);
  	
-@@ -241,5 +241,6 @@ sub store ($$$) {
+@@ -247,5 +247,6 @@ sub store ($$$) {
  
  	return $page;
  }
