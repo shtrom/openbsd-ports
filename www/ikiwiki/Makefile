@@ -1,4 +1,5 @@
 # $RuOBSD: Makefile,v 1.6 2011/08/03 08:31:36 dinar Exp $
+# $Id$
 
 PKGNAME=	ikiwiki-${VERSION}
 VERSION=	3.20121017
@@ -59,7 +60,8 @@ CONFIGURE_STYLE=	perl
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 
-MAKE_ENV+=	LD_PRELOAD=/usr/lib/libpthread.so.16.0
+#MAKE_ENV+=	LD_PRELOAD=/usr/lib/libpthread.so.16.0
+WANTLIB=	pthread
 
 FLAVORS =		search
 FLAVOR ?=
