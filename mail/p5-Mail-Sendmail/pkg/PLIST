@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+${P5SITE}/Mail/Sendmail.pm
+man/man3p/Mail::Sendmail.3p
+share/examples/p5-Mail-Sendmail/
+share/examples/p5-Mail-Sendmail/Sendmail.html
+share/examples/p5-Mail-Sendmail/test.pl
