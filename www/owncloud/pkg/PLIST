@@ -1,8 +1,8 @@
-@comment $OpenBSD$
-@group www
-conf/modules.sample/owncloud.conf.dist
-@sample conf/modules.sample/owncloud.conf
+@comment $OpenBSD: PLIST,v 1.14 2012/11/14 12:19:23 ajacoutot Exp $
+@extra owncloud/config/config.php
 owncloud/
+owncloud/.htaccess.dist
+@sample owncloud/.htaccess
 owncloud/3rdparty/
 owncloud/3rdparty/Archive/
 owncloud/3rdparty/Archive/Tar.php
@@ -787,7 +787,9 @@ owncloud/AUTHORS
 owncloud/COPYING-AGPL
 owncloud/COPYING-README
 owncloud/README
+@owner www
 owncloud/apps/
+@owner
 owncloud/apps/admin_dependencies_chk/
 owncloud/apps/admin_dependencies_chk/appinfo/
 owncloud/apps/admin_dependencies_chk/appinfo/app.php
@@ -989,6 +991,7 @@ owncloud/apps/calendar/appinfo/
 owncloud/apps/calendar/appinfo/app.php
 owncloud/apps/calendar/appinfo/database.xml
 owncloud/apps/calendar/appinfo/info.xml
+owncloud/apps/calendar/appinfo/migrate.php
 owncloud/apps/calendar/appinfo/remote.php
 owncloud/apps/calendar/appinfo/update.php
 owncloud/apps/calendar/appinfo/version
@@ -1710,6 +1713,7 @@ owncloud/apps/files_sharing/lib/share/
 owncloud/apps/files_sharing/lib/share/file.php
 owncloud/apps/files_sharing/lib/share/folder.php
 owncloud/apps/files_sharing/lib/sharedstorage.php
+owncloud/apps/files_sharing/lib/util.php
 owncloud/apps/files_sharing/public.php
 owncloud/apps/files_sharing/templates/
 owncloud/apps/files_sharing/templates/authenticate.php
@@ -2410,6 +2414,7 @@ owncloud/apps/updater/l10n/zh_TW.php
 owncloud/apps/updater/lib/
 owncloud/apps/updater/lib/backup.php
 owncloud/apps/updater/lib/downloader.php
+owncloud/apps/updater/lib/helper.php
 owncloud/apps/updater/lib/updater.php
 owncloud/apps/updater/templates/
 owncloud/apps/updater/templates/admin.php
@@ -2546,7 +2551,6 @@ owncloud/apps/user_openid/l10n/eu.php
 owncloud/apps/user_openid/l10n/fi_FI.php
 owncloud/apps/user_openid/l10n/fr.php
 owncloud/apps/user_openid/l10n/gl.php
-owncloud/apps/user_openid/l10n/he.php
 owncloud/apps/user_openid/l10n/it.php
 owncloud/apps/user_openid/l10n/ja_JP.php
 owncloud/apps/user_openid/l10n/ko.php
@@ -2573,6 +2577,7 @@ owncloud/apps/user_webdavauth/
 owncloud/apps/user_webdavauth/appinfo/
 owncloud/apps/user_webdavauth/appinfo/app.php
 owncloud/apps/user_webdavauth/appinfo/info.xml
+owncloud/apps/user_webdavauth/appinfo/version
 owncloud/apps/user_webdavauth/settings.php
 owncloud/apps/user_webdavauth/templates/
 owncloud/apps/user_webdavauth/templates/settings.php
@@ -2585,13 +2590,26 @@ owncloud/apps/user_webfinger/appinfo/info.xml
 owncloud/apps/user_webfinger/appinfo/version
 owncloud/apps/user_webfinger/host-meta.php
 owncloud/apps/user_webfinger/webfinger.php
-@mode 0770
+owncloud/apps/user_yubikey/
+owncloud/apps/user_yubikey/Yubikey.php
+owncloud/apps/user_yubikey/admin_settings.php
+owncloud/apps/user_yubikey/ajax/
+owncloud/apps/user_yubikey/ajax/changeprefix.php
+owncloud/apps/user_yubikey/appinfo/
+owncloud/apps/user_yubikey/appinfo/app.php
+owncloud/apps/user_yubikey/appinfo/info.xml
+owncloud/apps/user_yubikey/settings.php
+owncloud/apps/user_yubikey/templates/
+owncloud/apps/user_yubikey/templates/admin_settings.php
+owncloud/apps/user_yubikey/templates/settings.php
+owncloud/apps/user_yubikey/user_yubikey.php
+@mode 0700
+@owner www
 owncloud/config/
-@dir owncloud/data
-@mode 0660
-owncloud/config/config.php.dist
-@sample owncloud/config/config.php
+@mode 0600
+owncloud/config/config.sample.php
 @mode
+@owner
 owncloud/core/
 owncloud/core/ajax/
 owncloud/core/ajax/appconfig.php
@@ -4325,6 +4343,7 @@ owncloud/lib/filecache/update.php
 owncloud/lib/filechunking.php
 owncloud/lib/fileproxy/
 owncloud/lib/fileproxy.php
+owncloud/lib/fileproxy/fileoperations.php
 owncloud/lib/fileproxy/quota.php
 owncloud/lib/files.php
 owncloud/lib/filestorage/
@@ -4447,6 +4466,8 @@ owncloud/lib/vobject.php
 owncloud/ocs/
 owncloud/ocs/providers.php
 owncloud/ocs/v1.php
+owncloud/owncloud.conf.dist
+@sample /var/www/conf/modules.sample/owncloud.conf
 owncloud/public.php
 owncloud/remote.php
 owncloud/search/
@@ -4572,3 +4593,10 @@ owncloud/settings/users.php
 owncloud/status.php
 owncloud/themes/
 owncloud/themes/README
+@mode 0700
+@owner www
+@sample owncloud/data/
+@mode
+@owner
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

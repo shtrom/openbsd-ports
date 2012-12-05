@@ -1,53 +1,60 @@
-# $Id$
+# $OpenBSD: Makefile,v 1.32 2012/12/03 14:13:00 ajacoutot Exp $
 
-COMMENT =		self-hosted, location independent cloud storage engine
+COMMENT=	easy and universal access to shared and/or personnal files
 
-DISTNAME =		owncloud-4.5.0
-REVISION =		2
-CATEGORIES =		www lang/php
-HOMEPAGE =		http://owncloud.org/
+V=		4.5.4
+DISTNAME=	owncloud-${V}
+EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER =		Olivier Mehani <shtrom-openbsd@ssji.net>
+CATEGORIES=	www
 
-# AGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
+HOMEPAGE=	http://owncloud.org/
 
-MASTER_SITES =		http://mirrors.owncloud.org/releases/
-EXTRACT_SUFX =		.tar.bz2
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-NO_BUILD =	Yes
-NO_REGRESS =	Yes
-PKG_ARCH =	*
+# AGPLv3 (GNU Affero Public License)
+# jQuery: MIT / GPLv3
+# HTTP: 3 clause BSD
+# MDB2: BSD-like
+# User: AGPL
+# XML/RPC: MIT / PHP
+# Silk icons: Creative Commons Attribution
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-PREFIX =		/var/www
-INSTDIR =	${PREFIX}/owncloud
+MASTER_SITES=	${HOMEPAGE}releases/
 
-MODULES =		lang/php # Defaults to 5.3 at the time of this writing
-RUN_DEPENDS =		lang/php/${MODPHP_VERSION},-curl \
-			lang/php/${MODPHP_VERSION},-gd \
-			lang/php/${MODPHP_VERSION},-xmlrpc \
-			lang/php/${MODPHP_VERSION},-zip
+# Yubikey support
+MASTER_SITES0=		http://nerd.hu/
+PATCHFILES=		owncloud-4.5.1-yubikey.patch:0
+PATCH_DIST_STRIP=	-p1
 
-# Put source in the expected place, and use absolute path to php binary (stolen
-# and adapted from mail/roundcubemail)
-do-configure:
-	mv ${WRKDIR}/owncloud/* ${WRKSRC}/
-	find ${WRKSRC} -type f -exec perl -pi \
-		-e '$$. == 1 && s,^#!.*env.*php.*,#!${MODPHP_BIN},;' \
-		-e 'close ARGV if eof;' {} \;
+MODULES=	lang/php
+
+NO_BUILD=	Yes
+NO_REGRESS=	Yes
+PKG_ARCH=	*
+
+WRKDIST=	${WRKDIR}/owncloud
+
+PREFIX=		/var/www
+INSTDIR=	${PREFIX}/owncloud
+TINSTDIR=	${TRUEPREFIX}/owncloud
+SUBST_VARS=	INSTDIR TINSTDIR MODPHP_BIN
+
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
+		lang/php/${MODPHP_VERSION},-gd \
+		lang/php/${MODPHP_VERSION},-xmlrpc \
+		lang/php/${MODPHP_VERSION},-zip
 
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
-	${INSTALL_DATA_DIR} ${PREFIX}/conf/modules.sample
-	${INSTALL_DATA} ${FILESDIR}/owncloud.conf \
-		${PREFIX}/conf/modules.sample/owncloud.conf.dist
-	mv ${INSTDIR}/config/config.sample.php ${INSTDIR}/config/config.php.dist
-	perl -pi -e 's,/var/www/owncloud,/owncloud,g;' \
-		-e 's/"appstoreenabled" =>.*/"appstoreenabled" => false,/;' \
-		-e 's/"loglevel" =>.*/"loglevel" => "2",/;' \
-		${INSTDIR}/config/config.php.dist
+	${SUBST_CMD} -c ${FILESDIR}/owncloud.conf \
+		${INSTDIR}/owncloud.conf.dist
+	mv ${INSTDIR}/.htaccess ${INSTDIR}/.htaccess.dist
+	find ${INSTDIR} -name '*.orig' -exec rm {} \;
+	chown -R ${BINOWN}:${BINGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
