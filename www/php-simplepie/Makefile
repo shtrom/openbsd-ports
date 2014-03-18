@@ -19,7 +19,6 @@ MASTER_SITES =		https://github.com/simplepie/simplepie/archive/
 DIST_SUBDIR =		${DISTNAME}
 DISTFILES =		${V}${EXTRACT_SUFX}
 
-NO_BUILD =		Yes
 NO_TEST =		Yes
 PKG_ARCH =		*
 
@@ -31,7 +30,7 @@ PKG_ARCH =		*
 #SHAREDIR = 		${PREFIX}/share/php-${MODPHP_VERSION}/SimplePie/
 #EXAMPLEDIR = 		${PREFIX}/share/examples/php-${MODPHP_VERSION}/SimplePie/
 PREFIX =		${VARBASE}/www
-INSTDIR =		${PREFIX}/pear/lib/
+INSTDIR =		${PREFIX}/pear/lib/SimplePie/
 
 SUBST_VARS =		INSTDIR
 
@@ -39,9 +38,15 @@ MODULES =		lang/php
 RUN_DEPENDS =		textproc/libxml \
 			lang/php/${MODPHP_VERSION},-curl
 
+do-build:
+	cd ${WRKSRC}; php-${MODPHP_VERSION} build/compile.php
+
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
-	cp -Rp ${WRKSRC}/library/* ${INSTDIR}
+	cp -Rp ${WRKSRC}/library ${INSTDIR}
+	cp -Rp ${WRKSRC}/autoloader.php ${INSTDIR}
+	cp -Rp ${WRKSRC}/SimplePie.compiled.php ${INSTDIR}/..
+	ln -s SimplePie.compiled.php ${INSTDIR}/../simplepie.inc
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 #	${INSTALL_DATA_DIR} ${SHAREDIR}
 #	cp -Rp ${WRKSRC}/build ${SHAREDIR}
