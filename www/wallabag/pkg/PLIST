@@ -274,10 +274,10 @@ wallabag/inc/3rdparty/htmlpurifier/HTMLPurifier/DefinitionCache/Null.php
 @owner www
 @group www
 wallabag/inc/3rdparty/htmlpurifier/HTMLPurifier/DefinitionCache/Serializer/
-wallabag/inc/3rdparty/htmlpurifier/HTMLPurifier/DefinitionCache/Serializer.php
-wallabag/inc/3rdparty/htmlpurifier/HTMLPurifier/DefinitionCache/Serializer/README
 @owner
 @group
+wallabag/inc/3rdparty/htmlpurifier/HTMLPurifier/DefinitionCache/Serializer.php
+wallabag/inc/3rdparty/htmlpurifier/HTMLPurifier/DefinitionCache/Serializer/README
 wallabag/inc/3rdparty/htmlpurifier/HTMLPurifier/DefinitionCacheFactory.php
 wallabag/inc/3rdparty/htmlpurifier/HTMLPurifier/Doctype.php
 wallabag/inc/3rdparty/htmlpurifier/HTMLPurifier/DoctypeRegistry.php
