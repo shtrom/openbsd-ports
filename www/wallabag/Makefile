@@ -44,5 +44,7 @@ do-install:
 	chown www:www ${INSTDIR}/db
 	chown www:www ${INSTDIR}/cache
 	chown www:www ${INSTDIR}/inc/poche/config.inc.php.dist
+	# XXX
+	chown www:www ${INSTDIR}/inc/3rdparty/htmlpurifier/HTMLPurifier/DefinitionCache/Serializer
 
 .include <bsd.port.mk>
