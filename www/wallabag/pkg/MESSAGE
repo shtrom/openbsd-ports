@@ -1,0 +1,2 @@
+This software require to have short tags enabled, check your
+/etc/php-${MODPHP_VERSION}.ini => "short_open_tag = On"
