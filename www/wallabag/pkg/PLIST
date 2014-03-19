@@ -1311,6 +1311,12 @@ wallabag/inc/poche/User.class.php
 wallabag/inc/poche/config.inc.php.new
 wallabag/inc/poche/global.inc.php
 wallabag/inc/poche/pochePictures.php
+@owner www
+@group www
+wallabag/inc/poche/config.inc.php.dist
+@sample wallabag/inc/poche/config.inc.php
+@owner
+@group
 wallabag/index.php
 wallabag/install/
 wallabag/install/index.php

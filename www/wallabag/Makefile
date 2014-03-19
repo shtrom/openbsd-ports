@@ -39,8 +39,10 @@ do-install:
 	cp -Rp ${WRKSRC}/../vendor ${INSTDIR}
 	find ${INSTDIR} -name .gitignore -exec rm {} \;
 	find ${INSTDIR} -name .htaccess -exec mv {} {}.dist \;
+	touch ${INSTDIR}/inc/poche/config.inc.php.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 	chown www:www ${INSTDIR}/db
 	chown www:www ${INSTDIR}/cache
+	chown www:www ${INSTDIR}/inc/poche/config.inc.php.dist
 
 .include <bsd.port.mk>

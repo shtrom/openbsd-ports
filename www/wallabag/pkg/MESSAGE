@@ -1,2 +1,5 @@
 This software require to have short tags enabled, check your
 /etc/php-${MODPHP_VERSION}.ini => "short_open_tag = On"
+
+You might also need packages php-pdo_mysql or php-pdo_pgsql if you want to use
+these backends instead of SQLite3.
