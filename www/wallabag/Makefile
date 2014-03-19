@@ -14,9 +14,10 @@ MAINTAINER =		Olivier Mehani <shtrom-openbsd@ssji.net>
 # WTFPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://github.com/wallabag/wallabag/archive/
+MASTER_SITES0 =		https://github.com/wallabag/wallabag/archive/
+MASTER_SITES1 =		http://static.wallabag.org/files/
 DIST_SUBDIR =		${DISTNAME}
-DISTFILES =		${V}${EXTRACT_SUFX}
+DISTFILES =		${V}${EXTRACT_SUFX}:0 vendor.zip:1
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
@@ -35,6 +36,7 @@ RUN_DEPENDS =		textproc/libxml \
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cp -Rp ${WRKSRC}/* ${INSTDIR}
+	cp -Rp ${WRKSRC}/../vendor ${INSTDIR}
 	find ${INSTDIR} -name .gitignore -exec rm {} \;
 	find ${INSTDIR} -name .htaccess -exec mv {} {}.dist \;
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
