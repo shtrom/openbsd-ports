@@ -4,6 +4,7 @@ wallabag/CONTRIBUTING.md
 wallabag/COPYING.md
 wallabag/CREDITS.md
 wallabag/README.md
+wallabag/TRANSLATION.md
 wallabag/assets/
 @owner www
 @group www
@@ -516,6 +517,7 @@ wallabag/inc/3rdparty/libraries/simplepie/library/SimplePie/XML/Declaration/
 wallabag/inc/3rdparty/libraries/simplepie/library/SimplePie/XML/Declaration/Parser.php
 wallabag/inc/3rdparty/libraries/simplepie/library/SimplePie/gzdecode.php
 wallabag/inc/3rdparty/makefulltextfeed.php
+wallabag/inc/3rdparty/makefulltextfeedHelpers.php
 wallabag/inc/3rdparty/paginator.php
 wallabag/inc/3rdparty/simple_html_dom.php
 wallabag/inc/3rdparty/site_config/
@@ -1312,15 +1314,14 @@ wallabag/inc/poche/Poche.class.php
 wallabag/inc/poche/Tools.class.php
 wallabag/inc/poche/Url.class.php
 wallabag/inc/poche/User.class.php
-wallabag/inc/poche/config.inc.php.new
-wallabag/inc/poche/global.inc.php
-wallabag/inc/poche/pochePictures.php
 @owner www
 @group www
 wallabag/inc/poche/config.inc.php.dist
 @sample wallabag/inc/poche/config.inc.php
 @owner
 @group
+wallabag/inc/poche/global.inc.php
+wallabag/inc/poche/pochePictures.php
 wallabag/index.php
 wallabag/install/
 wallabag/install/index.php
@@ -1362,6 +1363,10 @@ wallabag/locale/pl_PL.utf8/
 wallabag/locale/pl_PL.utf8/LC_MESSAGES/
 wallabag/locale/pl_PL.utf8/LC_MESSAGES/pl_PL.utf8.mo
 wallabag/locale/pl_PL.utf8/LC_MESSAGES/pl_PL.utf8.po
+wallabag/locale/pt_BR.utf8/
+wallabag/locale/pt_BR.utf8/LC_MESSAGES/
+wallabag/locale/pt_BR.utf8/LC_MESSAGES/pt_BR.utf8.mo
+wallabag/locale/pt_BR.utf8/LC_MESSAGES/pt_BR.utf8.po
 wallabag/locale/ru_RU.utf8/
 wallabag/locale/ru_RU.utf8/LC_MESSAGES/
 wallabag/locale/ru_RU.utf8/LC_MESSAGES/ru_RU.utf8.mo
@@ -1370,6 +1375,8 @@ wallabag/locale/sl_SI.utf8/
 wallabag/locale/sl_SI.utf8/LC_MESSAGES/
 wallabag/locale/sl_SI.utf8/LC_MESSAGES/sl_SI.utf8.mo
 wallabag/locale/sl_SI.utf8/LC_MESSAGES/sl_SI.utf8.po
+wallabag/locale/tools/
+wallabag/locale/tools/fillCache.php
 wallabag/locale/uk_UA.utf8/
 wallabag/locale/uk_UA.utf8/LC_MESSAGES/
 wallabag/locale/uk_UA.utf8/LC_MESSAGES/uk_UA.utf8.mo
@@ -1378,8 +1385,11 @@ wallabag/robots.txt
 wallabag/themes/
 wallabag/themes/baggy/
 wallabag/themes/baggy/README.md
+wallabag/themes/baggy/_display-mode.twig
 wallabag/themes/baggy/_head.twig
 wallabag/themes/baggy/_menu.twig
+wallabag/themes/baggy/_pocheit-form.twig
+wallabag/themes/baggy/_search-form.twig
 wallabag/themes/baggy/_top.twig
 wallabag/themes/baggy/config.twig
 wallabag/themes/baggy/css/
@@ -1405,17 +1415,23 @@ wallabag/themes/baggy/img/apple-touch-icon-57.png
 wallabag/themes/baggy/img/apple-touch-icon-72.png
 wallabag/themes/baggy/img/apple-touch-icon-76.png
 wallabag/themes/baggy/img/apple-touch-icon.png
+wallabag/themes/baggy/img/baggy/
+wallabag/themes/baggy/img/baggy/blank.png
+wallabag/themes/baggy/img/baggy/down.png
+wallabag/themes/baggy/img/baggy/list.png
+wallabag/themes/baggy/img/baggy/table.png
+wallabag/themes/baggy/img/baggy/top.png
 wallabag/themes/baggy/img/bg-select.png
 wallabag/themes/baggy/img/favicon.ico
+wallabag/themes/baggy/img/logo-other_themes.png
 wallabag/themes/baggy/img/logo-w.png
 wallabag/themes/baggy/img/logo-wallabag.svg
 wallabag/themes/baggy/img/logo.png
 wallabag/themes/baggy/img/logo.svg
 wallabag/themes/baggy/js/
-wallabag/themes/baggy/js/autoClose.js
 wallabag/themes/baggy/js/closeMessage.js
 wallabag/themes/baggy/js/init.js
-wallabag/themes/baggy/js/jquery-2.0.3.min.js
+wallabag/themes/baggy/js/jquery.cookie.js
 wallabag/themes/baggy/js/restoreScroll.js
 wallabag/themes/baggy/layout-login.twig
 wallabag/themes/baggy/layout.twig
@@ -1512,12 +1528,32 @@ wallabag/themes/default/
 wallabag/themes/default/_bookmarklet.twig
 wallabag/themes/default/_footer.twig
 wallabag/themes/default/_head.twig
+wallabag/themes/default/_import.twig
 wallabag/themes/default/_menu.twig
 wallabag/themes/default/_messages.twig
 wallabag/themes/default/_pocheit-form.twig
+wallabag/themes/default/_search-form.twig
+wallabag/themes/default/_sorting.twig
 wallabag/themes/default/_top.twig
 wallabag/themes/default/config.twig
 wallabag/themes/default/css/
+wallabag/themes/default/css/images/
+wallabag/themes/default/css/images/animated-overlay.gif
+wallabag/themes/default/css/images/ui-bg_flat_0_aaaaaa_40x100.png
+wallabag/themes/default/css/images/ui-bg_flat_75_ffffff_40x100.png
+wallabag/themes/default/css/images/ui-bg_glass_55_fbf9ee_1x400.png
+wallabag/themes/default/css/images/ui-bg_glass_65_ffffff_1x400.png
+wallabag/themes/default/css/images/ui-bg_glass_75_dadada_1x400.png
+wallabag/themes/default/css/images/ui-bg_glass_75_e6e6e6_1x400.png
+wallabag/themes/default/css/images/ui-bg_glass_95_fef1ec_1x400.png
+wallabag/themes/default/css/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+wallabag/themes/default/css/images/ui-icons_222222_256x240.png
+wallabag/themes/default/css/images/ui-icons_2e83ff_256x240.png
+wallabag/themes/default/css/images/ui-icons_454545_256x240.png
+wallabag/themes/default/css/images/ui-icons_888888_256x240.png
+wallabag/themes/default/css/images/ui-icons_cd0a0a_256x240.png
+wallabag/themes/default/css/jquery-ui-1.10.4.custom.css
+wallabag/themes/default/css/jquery-ui-1.10.4.custom.min.css
 wallabag/themes/default/css/knacss.css
 wallabag/themes/default/css/messages.css
 wallabag/themes/default/css/print.css
@@ -1561,9 +1597,13 @@ wallabag/themes/default/img/messages/warning.png
 wallabag/themes/default/install.twig
 wallabag/themes/default/js/
 wallabag/themes/default/js/autoClose.js
+wallabag/themes/default/js/autoCompleteTags.js
 wallabag/themes/default/js/closeMessage.js
 wallabag/themes/default/js/jquery-2.0.3.min.js
+wallabag/themes/default/js/jquery-ui-1.10.4.custom.js
+wallabag/themes/default/js/jquery-ui-1.10.4.custom.min.js
 wallabag/themes/default/js/restoreScroll.js
+wallabag/themes/default/js/saveLink.js
 wallabag/themes/default/layout.twig
 wallabag/themes/default/login.twig
 wallabag/themes/default/tags.twig

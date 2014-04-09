@@ -3,7 +3,7 @@
 
 COMMENT =		application for saving web pages and reading them later
 
-V=			1.5.2
+V=			1.6.0
 DISTNAME =		wallabag-${V}
 CATEGORIES =		www
 
@@ -39,7 +39,7 @@ do-install:
 	cp -Rp ${WRKSRC}/../vendor ${INSTDIR}
 	find ${INSTDIR} -name .gitignore -exec rm {} \;
 	find ${INSTDIR} -name .htaccess -exec mv {} {}.dist \;
-	touch ${INSTDIR}/inc/poche/config.inc.php.dist
+	mv ${INSTDIR}/inc/poche/config.inc.php.new ${INSTDIR}/inc/poche/config.inc.php.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 	chown www:www ${INSTDIR}/db
 	chown www:www ${INSTDIR}/cache
