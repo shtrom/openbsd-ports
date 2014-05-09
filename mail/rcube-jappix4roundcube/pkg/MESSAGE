@@ -1,0 +1,5 @@
+To enable jappix4roundcube, add 'jappix4roundcube' to the
+$rcmail_config['plugins'] array in
+/var/www/roundcubemail/config/main.inc.php, e.g.,
+
+  $rcmail_config['plugins'] = array("jappix4roundcube", "calendar");
