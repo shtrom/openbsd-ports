@@ -306,8 +306,10 @@ roundcubemail/plugins/jappix4roundcube/jappix/snd/notification.mp3
 roundcubemail/plugins/jappix4roundcube/jappix/snd/notification.oga
 roundcubemail/plugins/jappix4roundcube/jappix/snd/receive-message.mp3
 roundcubemail/plugins/jappix4roundcube/jappix/snd/receive-message.oga
+@user www
 roundcubemail/plugins/jappix4roundcube/jappix/store/
 roundcubemail/plugins/jappix4roundcube/jappix/store/index.html
+@user
 roundcubemail/plugins/jappix4roundcube/jappix/ttf/
 roundcubemail/plugins/jappix4roundcube/jappix/ttf/MyriadWebPro-Bold.ttf
 roundcubemail/plugins/jappix4roundcube/jappix/ttf/MyriadWebPro-Italic.ttf

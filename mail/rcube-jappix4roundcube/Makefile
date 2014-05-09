@@ -40,5 +40,6 @@ post-extract:
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cp -Rp ${WRKSRC} ${INSTDIR}/${P}
+	chown www ${INSTDIR}/${P}/jappix/store
 
 .include <bsd.port.mk>

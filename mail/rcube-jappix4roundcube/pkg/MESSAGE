@@ -3,3 +3,6 @@ $rcmail_config['plugins'] array in
 /var/www/roundcubemail/config/main.inc.php, e.g.,
 
   $rcmail_config['plugins'] = array("jappix4roundcube", "calendar");
+
+Next, connet to RoundCube, go to Settings/Preferences/[jappixSection],
+and follow the instructions of the Manager.
