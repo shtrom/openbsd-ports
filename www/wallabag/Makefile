@@ -3,7 +3,7 @@
 
 COMMENT =		application for saving web pages and reading them later
 
-V=			1.6.0
+V=			1.7.0
 DISTNAME =		wallabag-${V}
 CATEGORIES =		www
 
@@ -25,7 +25,7 @@ PKG_ARCH =		*
 
 PREFIX =		${VARBASE}/www
 INSTDIR =		${PREFIX}/wallabag
-SUBST_VARS =		INSTDIR
+SUBST_VARS =		INSTDIR V
 
 MODULES =		lang/php 
 RUN_DEPENDS =		textproc/libxml \
@@ -39,7 +39,7 @@ do-install:
 	cp -Rp ${WRKSRC}/../vendor ${INSTDIR}
 	find ${INSTDIR} -name .gitignore -exec rm {} \;
 	find ${INSTDIR} -name .htaccess -exec mv {} {}.dist \;
-	mv ${INSTDIR}/inc/poche/config.inc.php.new ${INSTDIR}/inc/poche/config.inc.php.dist
+	mv ${INSTDIR}/inc/poche/config.inc.default.php ${INSTDIR}/inc/poche/config.inc.php.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 	chown www:www ${INSTDIR}/db
 	chown www:www ${INSTDIR}/cache

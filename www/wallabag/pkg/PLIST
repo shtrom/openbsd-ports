@@ -429,6 +429,16 @@ wallabag/inc/3rdparty/htmlpurifier/HTMLPurifier/VarParser/Native.php
 wallabag/inc/3rdparty/htmlpurifier/HTMLPurifier/VarParserException.php
 wallabag/inc/3rdparty/htmlpurifier/HTMLPurifier/Zipper.php
 wallabag/inc/3rdparty/libraries/
+wallabag/inc/3rdparty/libraries/PHPePub/
+wallabag/inc/3rdparty/libraries/PHPePub/EPub.HtmlEntities.php
+wallabag/inc/3rdparty/libraries/PHPePub/EPub.NCX.php
+wallabag/inc/3rdparty/libraries/PHPePub/EPub.OPF.php
+wallabag/inc/3rdparty/libraries/PHPePub/EPub.php
+wallabag/inc/3rdparty/libraries/PHPePub/EPubChapterSplitter.php
+wallabag/inc/3rdparty/libraries/PHPePub/Logger.php
+wallabag/inc/3rdparty/libraries/PHPePub/Zip.php
+wallabag/inc/3rdparty/libraries/PHPePub/lib.uuid.LICENCE.txt
+wallabag/inc/3rdparty/libraries/PHPePub/lib.uuid.php
 wallabag/inc/3rdparty/libraries/Zend/
 wallabag/inc/3rdparty/libraries/Zend/Cache/
 wallabag/inc/3rdparty/libraries/Zend/Cache.php
@@ -461,8 +471,11 @@ wallabag/inc/3rdparty/libraries/humble-http-agent/HumbleHttpAgent.php
 wallabag/inc/3rdparty/libraries/humble-http-agent/RollingCurl.php
 wallabag/inc/3rdparty/libraries/humble-http-agent/SimplePie_HumbleHttpAgent.php
 wallabag/inc/3rdparty/libraries/language-detect/
+wallabag/inc/3rdparty/libraries/language-detect/LanguageDetect/
 wallabag/inc/3rdparty/libraries/language-detect/LanguageDetect.php
-wallabag/inc/3rdparty/libraries/language-detect/Parser.php
+wallabag/inc/3rdparty/libraries/language-detect/LanguageDetect/Exception.php
+wallabag/inc/3rdparty/libraries/language-detect/LanguageDetect/ISO639.php
+wallabag/inc/3rdparty/libraries/language-detect/LanguageDetect/Parser.php
 wallabag/inc/3rdparty/libraries/language-detect/lang.dat
 wallabag/inc/3rdparty/libraries/language-detect/unicode_blocks.dat
 wallabag/inc/3rdparty/libraries/readability/
@@ -524,10 +537,14 @@ wallabag/inc/3rdparty/site_config/
 wallabag/inc/3rdparty/site_config/README.txt
 wallabag/inc/3rdparty/site_config/custom/
 wallabag/inc/3rdparty/site_config/custom/bfmtv.com.txt
+wallabag/inc/3rdparty/site_config/custom/dailymotion.com.txt
 wallabag/inc/3rdparty/site_config/custom/dilbert.com.txt
+wallabag/inc/3rdparty/site_config/custom/index.php
 wallabag/inc/3rdparty/site_config/custom/interviewmagazine.com.txt
+wallabag/inc/3rdparty/site_config/custom/mobile.lemondeinformatique.fr.txt
 wallabag/inc/3rdparty/site_config/custom/stackexchange.com.txt
 wallabag/inc/3rdparty/site_config/custom/stackoverflow.com.txt
+wallabag/inc/3rdparty/site_config/custom/ted.com.txt
 wallabag/inc/3rdparty/site_config/custom/tldp.org.txt
 wallabag/inc/3rdparty/site_config/index.php
 wallabag/inc/3rdparty/site_config/standard/
@@ -1517,6 +1534,7 @@ wallabag/themes/dark/img/dark/flattr.png
 wallabag/themes/dark/img/dark/left.png
 wallabag/themes/dark/img/dark/link.png
 wallabag/themes/dark/img/dark/remove.png
+wallabag/themes/dark/img/dark/rss.png
 wallabag/themes/dark/img/dark/shaarli.png
 wallabag/themes/dark/img/dark/star-off.png
 wallabag/themes/dark/img/dark/star-on.png
@@ -1579,6 +1597,7 @@ wallabag/themes/default/img/default/envelop.png
 wallabag/themes/default/img/default/flattr.png
 wallabag/themes/default/img/default/left.png
 wallabag/themes/default/img/default/link.png
+wallabag/themes/default/img/default/print.png
 wallabag/themes/default/img/default/remove.png
 wallabag/themes/default/img/default/rss.png
 wallabag/themes/default/img/default/shaarli.png
@@ -1602,6 +1621,7 @@ wallabag/themes/default/js/closeMessage.js
 wallabag/themes/default/js/jquery-2.0.3.min.js
 wallabag/themes/default/js/jquery-ui-1.10.4.custom.js
 wallabag/themes/default/js/jquery-ui-1.10.4.custom.min.js
+wallabag/themes/default/js/popupForm.js
 wallabag/themes/default/js/restoreScroll.js
 wallabag/themes/default/js/saveLink.js
 wallabag/themes/default/layout.twig
@@ -1625,6 +1645,7 @@ wallabag/themes/dmagenta/img/dmagenta/flattr.png
 wallabag/themes/dmagenta/img/dmagenta/left.png
 wallabag/themes/dmagenta/img/dmagenta/link.png
 wallabag/themes/dmagenta/img/dmagenta/remove.png
+wallabag/themes/dmagenta/img/dmagenta/rss.png
 wallabag/themes/dmagenta/img/dmagenta/shaarli.png
 wallabag/themes/dmagenta/img/dmagenta/star-off.png
 wallabag/themes/dmagenta/img/dmagenta/star-on.png
@@ -1650,6 +1671,7 @@ wallabag/themes/solarized-dark/img/solarized-dark/flattr.png
 wallabag/themes/solarized-dark/img/solarized-dark/left.png
 wallabag/themes/solarized-dark/img/solarized-dark/link.png
 wallabag/themes/solarized-dark/img/solarized-dark/remove.png
+wallabag/themes/solarized-dark/img/solarized-dark/rss.png
 wallabag/themes/solarized-dark/img/solarized-dark/shaarli.png
 wallabag/themes/solarized-dark/img/solarized-dark/star-off.png
 wallabag/themes/solarized-dark/img/solarized-dark/star-on.png
@@ -1673,6 +1695,7 @@ wallabag/themes/solarized/img/solarized/flattr.png
 wallabag/themes/solarized/img/solarized/left.png
 wallabag/themes/solarized/img/solarized/link.png
 wallabag/themes/solarized/img/solarized/remove.png
+wallabag/themes/solarized/img/solarized/rss.png
 wallabag/themes/solarized/img/solarized/shaarli.png
 wallabag/themes/solarized/img/solarized/star-off.png
 wallabag/themes/solarized/img/solarized/star-on.png
