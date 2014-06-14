@@ -39,11 +39,9 @@ do-install:
 	cp -Rp ${WRKSRC}/../vendor ${INSTDIR}
 	find ${INSTDIR} -name .gitignore -exec rm {} \;
 	find ${INSTDIR} -name .htaccess -exec mv {} {}.dist \;
-	mv ${INSTDIR}/inc/poche/config.inc.default.php ${INSTDIR}/inc/poche/config.inc.php.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 	chown www:www ${INSTDIR}/db
 	chown www:www ${INSTDIR}/cache
-	chown www:www ${INSTDIR}/inc/poche/config.inc.php.dist
 	# XXX
 	chown www:www ${INSTDIR}/inc/3rdparty/htmlpurifier/HTMLPurifier/DefinitionCache/Serializer
 
