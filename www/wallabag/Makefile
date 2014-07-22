@@ -3,7 +3,7 @@
 
 COMMENT =		application for saving web pages and reading them later
 
-V=			1.7.0
+V=			1.7.1
 DISTNAME =		wallabag-${V}
 CATEGORIES =		www
 
@@ -30,8 +30,7 @@ SUBST_VARS =		INSTDIR V
 MODULES =		lang/php 
 RUN_DEPENDS =		textproc/libxml \
 			lang/php/${MODPHP_VERSION},-tidy \
-			lang/php/${MODPHP_VERSION},-curl \
-			lang/php/${MODPHP_VERSION},-sqlite
+			lang/php/${MODPHP_VERSION},-curl
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
