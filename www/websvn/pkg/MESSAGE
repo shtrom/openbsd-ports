@@ -1,0 +1,17 @@
+Repositories to be browsed must be specified in
+${INSTDIR}/include/config.php so WebSVN knows how to access them. The
+two simplest ways to specify repositories are to use:
+
+    $config->addRepository(...) to add repositories one-by-one, or
+    $config->parentPath(...) to add a directory full of repositories at once.
+
+If WebSVN must supply a username and password to access a remote
+repository, you can supply these arguments in the
+$config->addRepository(...) call for that repository
+
+WebSVN allows you to group repositories logically if desired.When groups
+exist, using $config->useTreeIndex() will create a hierarchical index
+page with collapsible/expandable group sections.
+
+SECURITY NOTE: WebSVN won't work in a chroot, due to the need to call the svn
+and svnlook commands.
