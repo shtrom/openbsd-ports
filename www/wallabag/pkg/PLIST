@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+conf/modules.sample/wallabag.conf.dist
 wallabag/
 wallabag/CONTRIBUTING.md
 wallabag/COPYING.md
@@ -548,6 +549,7 @@ wallabag/inc/3rdparty/site_config/custom/ted.com.txt
 wallabag/inc/3rdparty/site_config/custom/tldp.org.txt
 wallabag/inc/3rdparty/site_config/index.php
 wallabag/inc/3rdparty/site_config/standard/
+wallabag/inc/3rdparty/site_config/standard/.about.com.txt
 wallabag/inc/3rdparty/site_config/standard/.wikipedia.org.txt
 wallabag/inc/3rdparty/site_config/standard/24ways.org.txt
 wallabag/inc/3rdparty/site_config/standard/37signals.com.txt
@@ -968,6 +970,7 @@ wallabag/inc/3rdparty/site_config/standard/mobileopportunity.blogspot.com.txt
 wallabag/inc/3rdparty/site_config/standard/modernghana.com.txt
 wallabag/inc/3rdparty/site_config/standard/money.cnn.com.txt
 wallabag/inc/3rdparty/site_config/standard/monkeyzen.com.txt
+wallabag/inc/3rdparty/site_config/standard/moo.nac.uci.edu.txt
 wallabag/inc/3rdparty/site_config/standard/moonsault.de.txt
 wallabag/inc/3rdparty/site_config/standard/moreintelligentlife.com.txt
 wallabag/inc/3rdparty/site_config/standard/motherboard.vice.com.txt

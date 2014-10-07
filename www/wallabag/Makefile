@@ -3,8 +3,9 @@
 
 COMMENT =		application for saving web pages and reading them later
 
-V=			1.7.1
+V=			1.7.2
 DISTNAME =		wallabag-${V}
+PKGNAME =		${DISTNAME}p1
 CATEGORIES =		www
 
 HOMEPAGE =		https://www.wallabag.org
@@ -13,6 +14,8 @@ MAINTAINER =		Olivier Mehani <shtrom-openbsd@ssji.net>
 
 # WTFPL
 PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES0 =		https://github.com/wallabag/wallabag/archive/
 MASTER_SITES1 =		http://static.wallabag.org/files/
@@ -33,9 +36,10 @@ RUN_DEPENDS =		textproc/libxml \
 			lang/php/${MODPHP_VERSION},-curl
 
 do-install:
-	${INSTALL_DATA_DIR} ${INSTDIR}
 	cp -Rp ${WRKSRC}/* ${INSTDIR}
 	cp -Rp ${WRKSRC}/../vendor ${INSTDIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/conf/modules.sample/
+	${INSTALL_DATA} ${FILESDIR}/wallabag.conf ${PREFIX}/conf/modules.sample/wallabag.conf.dist
 	find ${INSTDIR} -name .gitignore -exec rm {} \;
 	find ${INSTDIR} -name .htaccess -exec mv {} {}.dist \;
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
