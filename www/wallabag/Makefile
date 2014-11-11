@@ -12,7 +12,7 @@ HOMEPAGE =		https://www.wallabag.org
 
 MAINTAINER =		Olivier Mehani <shtrom-openbsd@ssji.net>
 
-# WTFPL
+# MIT
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_FTP =	Yes
