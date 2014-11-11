@@ -3,9 +3,9 @@
 
 COMMENT =		application for saving web pages and reading them later
 
-V=			1.7.2
+V=			1.8.0
 DISTNAME =		wallabag-${V}
-PKGNAME =		${DISTNAME}p1
+PKGNAME =		${DISTNAME}
 CATEGORIES =		www
 
 HOMEPAGE =		https://www.wallabag.org
@@ -36,6 +36,7 @@ RUN_DEPENDS =		textproc/libxml \
 			lang/php/${MODPHP_VERSION},-curl
 
 do-install:
+	mkdir -p ${INSTDIR}
 	cp -Rp ${WRKSRC}/* ${INSTDIR}
 	cp -Rp ${WRKSRC}/../vendor ${INSTDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/conf/modules.sample/
