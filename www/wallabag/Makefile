@@ -17,6 +17,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+#GH_ACCOUNT =		wallabag
+#GH_PROJECT =		wallabag
+#GH_TAGNAME =		$V
+#GH_COMMIT =		44d35257e8
 MASTER_SITES0 =		https://github.com/wallabag/wallabag/archive/
 MASTER_SITES1 =		http://static.wallabag.org/files/
 DIST_SUBDIR =		${DISTNAME}
