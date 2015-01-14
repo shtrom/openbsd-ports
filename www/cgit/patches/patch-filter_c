@@ -1,0 +1,19 @@
+$OpenBSD$
+--- filter.c.orig	Tue Jan 13 13:48:14 2015
++++ filter.c	Tue Jan 13 13:29:10 2015
+@@ -31,6 +31,7 @@ static inline void reap_filter(struct cgit_filter *fil
+ 		filter->cleanup(filter);
+ }
+ 
++#ifndef STATIC
+ void cgit_cleanup_filters(void)
+ {
+ 	int i;
+@@ -60,6 +61,7 @@ ssize_t write(int fd, const void *buf, size_t count)
+ 		return libc_write(fd, buf, count);
+ 	return filter_write(current_write_filter, buf, count);
+ }
++#endif
+ 
+ static inline void hook_write(struct cgit_filter *filter, ssize_t (*new_write)(struct cgit_filter *base, const void *buf, size_t count))
+ {

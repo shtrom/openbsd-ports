@@ -6,3 +6,5 @@ conf/modules.sample/cgit.conf.dist
 @sample conf/modules.sample/cgit.conf
 htdocs/cgit.css
 htdocs/cgit.png
+htdocs/favicon.ico
+htdocs/robots.txt

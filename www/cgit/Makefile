@@ -2,15 +2,14 @@
 
 COMMENT =	web frontend for git repositories
 
-DISTNAME =	cgit-0.9.2
-REVISION =	0
+DISTNAME =	cgit-0.10.2
 CATEGORIES =	www devel
 
 DISTFILES =	${DISTNAME}.tar.gz:0 \
-		git-1.8.3.2.tar.gz:1
+		git-2.0.1.tar.gz:1
 
 MASTER_SITES0 =		http://git.zx2c4.com/cgit/snapshot/
-MASTER_SITES1 =		https://git-core.googlecode.com/files/
+MASTER_SITES1 =		https://www.kernel.org/pub/software/scm/git/
 HOMEPAGE =		http://git.zx2c4.com/cgit/about/
 
 # GPLv2
@@ -21,7 +20,7 @@ USE_GMAKE =	yes
 MODULES =	converters/libiconv
 
 PREFIX =	${VARBASE}/www
-MAKE_FLAGS +=	V=1 NEEDS_LIBICONV=1 LDFLAGS+='-static -L${LOCALBASE}/lib'
+MAKE_FLAGS +=	V=1 NEEDS_LIBICONV=1 CFLAGS+='-DSTATIC' LDFLAGS+='-static -L${LOCALBASE}/lib'
 
 post-extract:
 	rmdir ${WRKSRC}/git

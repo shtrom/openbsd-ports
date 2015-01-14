@@ -1,0 +1,24 @@
+$OpenBSD$
+--- cgit.c.orig	Tue Jan 13 13:48:45 2015
++++ cgit.c	Tue Jan 13 13:46:08 2015
+@@ -1015,8 +1015,10 @@ int main(int argc, const char **argv)
+ 	const char *path;
+ 	int err, ttl;
+ 
++#ifndef STATIC
+ 	cgit_init_filters();
+ 	atexit(cgit_cleanup_filters);
++#endif
+ 
+ 	prepare_context();
+ 	cgit_repolist.length = 0;
+@@ -1070,7 +1072,9 @@ int main(int argc, const char **argv)
+ 		ctx.cfg.cache_size = 0;
+ 	err = cache_process(ctx.cfg.cache_size, ctx.cfg.cache_root,
+ 			    ctx.qry.raw, ttl, process_request);
++#ifndef STATIC
+ 	cgit_cleanup_filters();
++#endif
+ 	if (err)
+ 		cgit_print_error("Error processing page: %s (%d)",
+ 				 strerror(err), err);
