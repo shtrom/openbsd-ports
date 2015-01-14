@@ -14,18 +14,29 @@ MAINTAINER =		Scott Vokes <vokes.s@gmail.com>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c
+FLAVORS=	static
+FLAVOR?=
+
+.if ${FLAVOR:Mstatic}
+STATIC=	-static
+CONFIGURE_ENV+=	SHLIBEXT=""
+.else
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+WANTLIB=	c
+.endif
 
 MASTER_SITES =		http://www.pell.portland.or.us/~orc/Code/discount/
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	configure.sh
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
 INSTALL_TARGET =	install.everything
 #TEST_TARGET =		test
 
 pre-configure:
 	@perl -pi -e 's,\./markdown,\./discount,' ${WRKSRC}/tests/*
+
+pre-build:
+	@perl -pi -e 's,^LFLAGS.*,$$& ${STATIC},' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
