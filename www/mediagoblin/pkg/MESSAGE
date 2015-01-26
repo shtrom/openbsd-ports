@@ -1,0 +1,5 @@
+By default, it uses an SQLit3 backend, but can alternatively use
+PostgreSQL (databases/pastgresql,-server). Additional dependencies are
+needed in this case:
+ * databases/pastgresql,-client
+ * databases/py-psycopg2
