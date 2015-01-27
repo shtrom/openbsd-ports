@@ -14,47 +14,38 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-# "make port-lib-depends-check" can help
-#WANTLIB =		???
-
-# where the source files and patches can be fetched
-#
 MASTER_SITES =		https://gitorious.org/mediagoblin/mediagoblin/archive/
 DISTFILES =		v${VERSION}.tar.gz
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-# BUILD_DEPENDS =		py-virtualenv
-RUN_DEPENDS =		graphics/py-Imaging	\
+BUILD_DEPENDS =		devel/py-virtualenv
+RUN_DEPENDS =		graphics/py-Imaging		\
 			textproc/py-lxml
+
+# www/py-paste			\
+# www/py-pastescript		\
+# databases/py-sqlalchemy-migrate \
+# devel/py-mock			\
+# graphics/py-ExifRead
 
 #TEST_DEPENDS =		???
 
-# Is the build automagic or is it interactive
-#
-#IS_INTERACTIVE =		Yes
-#TEST_IS_INTERACTIVE =		Yes
-
 #NO_BUILD =		Yes
-#NO_TEST =		Yes
 
-# Overrides for default values
-#
-#CFLAGS =		???
-#LDFLAGS =		???
-#MAKE_FILE =		???
-#PKG_ARCH =		??? (* for arch-independent packages)
 WRKDIST =		${WRKDIR}/mediagoblin-mediagoblin
-#WRKSRC =		??? if other than ${WRKDIST}
-#WRKBUILD =		??? if other than ${WRKSRC}
-#WRKCONF =		??? if other than ${WRKBUILD}
 
-#ALL_TARGET =		???
-#INSTALL_TARGET =	???
-#TEST_TARGET =		???
+INSTDIR =		${PREFIX}/share/mediagoblin
+SUBST_VARS =		INSTDIR VERSION
 
-post-install:
-	rm ${PREFIX}/bin/pybabel
+do-build:
+	cd ${WRKSRC}; virtualenv .
+	cd ${WRKSRC}; ./bin/python ./setup.py develop
+
+do-install:
+	mkdir -p ${INSTDIR}
+	cp -Rp ${WRKSRC}/* ${INSTDIR}
+	ln -s ../share/mediagoblin/bin/gmg ${PREFIX}/bin/gmg
 
 do-test:
 	cd ${WRKSRC} && sh ./run_tests.sh
