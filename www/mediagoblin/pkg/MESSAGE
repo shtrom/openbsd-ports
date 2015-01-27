@@ -1,5 +1,17 @@
-By default, it uses an SQLit3 backend, but can alternatively use
+An example configuration file as at ${INSTDIR}/paste.ini. You need to
+copy it to /etc/mediagoblin.paste.ini,
+
+    sudo cp ${INSTDIR}/paste.ini /etc/mediagoblin.paste.ini
+
+and adjust it to your needs, before you start the rc script in
+/etr/rc.d/mediagoblin. By default, a separate celery server will be
+started.
+
+By default, an SQLite3 backend is uses, but can alternatively use
 PostgreSQL (databases/pastgresql,-server). Additional dependencies are
 needed in this case:
  * databases/pastgresql,-client
  * databases/py-psycopg2
+
+An example Nginx configuration is also available at
+${INSTDIR}/nginx.mediagoblin.conf.

@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@newgroup _mediagoblin:999
+@newuser _mediagoblin:999:_mediagoblin:daemon:Mediagoblin Account:/nonexistent:/sbin/nologin
 @group wheel
 bin/gmg
 share/mediagoblin/
@@ -5826,6 +5828,11 @@ share/mediagoblin/mediagoblin/user_pages/lib.py
 share/mediagoblin/mediagoblin/user_pages/routing.py
 share/mediagoblin/mediagoblin/user_pages/views.py
 share/mediagoblin/mediagoblin/views.py
+share/mediagoblin/nginx.mediagoblin.conf
 share/mediagoblin/paste.ini
 share/mediagoblin/runtests.sh
 share/mediagoblin/setup.py
+etc/rc.d/mediagoblin
+@owner _mediagoblin
+@group _mediagoblin
+var/mediagoblin

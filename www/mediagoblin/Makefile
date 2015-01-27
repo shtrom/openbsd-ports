@@ -46,6 +46,8 @@ do-install:
 	mkdir -p ${INSTDIR}
 	cp -Rp ${WRKSRC}/* ${INSTDIR}
 	ln -s ../share/mediagoblin/bin/gmg ${PREFIX}/bin/gmg
+	install -m 644 files/nginx.mediagoblin.conf ${INSTDIR}/
+	install -m 755 -d ${WRKINST}/var/mediagoblin
 
 do-test:
 	cd ${WRKSRC} && sh ./run_tests.sh
