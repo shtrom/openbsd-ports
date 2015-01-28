@@ -6601,7 +6601,8 @@ share/mediagoblin/nginx.mediagoblin.conf
 share/mediagoblin/paste.ini
 share/mediagoblin/runtests.sh
 share/mediagoblin/setup.py
+@cwd /
 etc/rc.d/mediagoblin
 @owner _mediagoblin
 @group _mediagoblin
-var/mediagoblin
+@dir var/mediagoblin
