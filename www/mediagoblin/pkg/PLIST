@@ -6597,12 +6597,13 @@ share/mediagoblin/mediagoblin/user_pages/lib.py
 share/mediagoblin/mediagoblin/user_pages/routing.py
 share/mediagoblin/mediagoblin/user_pages/views.py
 share/mediagoblin/mediagoblin/views.py
-share/mediagoblin/nginx.mediagoblin.conf
 share/mediagoblin/paste.ini
 share/mediagoblin/runtests.sh
 share/mediagoblin/setup.py
-@cwd /
-etc/rc.d/mediagoblin
+@sample ${SYSCONFDIR}/mediagoblin.paste.ini
+@sample ${SYSCONFDIR}/mediagoblin.celery.ini
+@sample ${SYSCONFDIR}/nginx.mediagoblin.conf
+@rcscript ${RCDIR}/mediagoblin
 @owner _mediagoblin
 @group _mediagoblin
-@dir var/mediagoblin
+@dir ${VARBASE}/mediagoblin

@@ -1,17 +1,20 @@
-An example configuration file as at ${INSTDIR}/paste.ini. You need to
-copy it to /etc/mediagoblin.paste.ini,
+An example configuration file as at ${SYSCONFDIR}/paste.ini. You need to
+adjust it to your needs. If you don't see what you need there, have a
+look at ${TRUEPREFIX}mediagoblin/config_spec.ini You can then start the
+rc script in /etr/rc.d/mediagoblin, or adding "mediagoblin" to the
+pkg_scripts variable in ${SYSCONFDIR}/rc.conf.local. By default, a
+separate celery server will be started.
 
-    sudo cp ${INSTDIR}/paste.ini /etc/mediagoblin.paste.ini
+You might want to set-up logrotation by adding the following lines to
+${SYSCONFDIR}/newsyslog.conf
+    /var/log/mediagoblin.log _mediagoblin:_mediagoblin        644  9 10000 *     Z "/etc/rc.d/mediagoblin restart > /dev/null"
+    /var/log/mediagoblin.celery.log _mediagoblin:_mediagoblin        644  9 10000 *     Z "/etc/rc.d/mediagoblin restart > /dev/null"
 
-and adjust it to your needs, before you start the rc script in
-/etr/rc.d/mediagoblin. By default, a separate celery server will be
-started.
-
-By default, an SQLite3 backend is uses, but can alternatively use
-PostgreSQL (databases/pastgresql,-server). Additional dependencies are
-needed in this case:
+By default, an SQLite3 backend is used, but can alternatively be
+replaced by PostgreSQL (databases/postgresql,-server). Additional
+dependencies are needed in this case:
  * databases/pastgresql,-client
  * databases/py-psycopg2
 
 An example Nginx configuration is also available at
-${INSTDIR}/nginx.mediagoblin.conf.
+${SYSCONFDIR}/nginx.mediagoblin.conf.

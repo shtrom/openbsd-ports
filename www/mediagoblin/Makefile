@@ -63,7 +63,9 @@ do-install:
 	cp -Rp ${WRKDIR}/${SKELETONDIR}/* ${INSTDIR}/extlib/skeleton/
 	cp -Rp ${WRKDIR}/${SPEEDBOATDIR}/* ${INSTDIR}/extlib/sandyseventiesspeedboat/
 	ln -s ../share/mediagoblin/bin/gmg ${PREFIX}/bin/gmg
-	install -m 644 files/nginx.mediagoblin.conf ${INSTDIR}/
+	install -m 644 files/nginx.mediagoblin.conf ${SYSCONFDIR}/
+	install -m 644 files/mediagoblin.ini ${SYSCONFDIR}/mediagoblin.celery.ini
+	install -m 644 ${INSTDIR}/paste.ini ${SYSCONFDIR}/mediagoblin.paste.ini
 
 do-test:
 	cd ${WRKSRC} && sh ./run_tests.sh

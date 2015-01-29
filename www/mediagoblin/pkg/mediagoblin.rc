@@ -2,10 +2,11 @@
 #
 # $OpenBSD: rc.template,v 1.5 2011/03/10 13:46:59 ajacoutot Exp $
 
-CONFFILE=/etc/mediagoblin.paste.ini
-PIDFILE=/var/run/mediagoblin.pid
-LOGFILE=/var/log/mediagoblin.log
-CELERY_LOGFILE=/var/log/mediagoblin.celery.log
+CONFFILE=${SYSCONFDIR}/mediagoblin.paste.ini
+PIDFILE=${VARBASE}/run/mediagoblin.pid
+LOGFILE=${VARBASE}/log/mediagoblin.log
+CELERY_CONFFILE=${SYSCONFDIR}/mediagoblin.celery.ini
+CELERY_LOGFILE=${VARBASE}/log/mediagoblin.celery.log
 FCGIPORT=26543
 CELERY_ALWAYS_EAGER=false
 
@@ -32,7 +33,10 @@ rc_reload=NO
 rc_start() {
 	${rcexec} env -i CELERY_ALWAYS_EAGER=${CELERY_ALWAYS_EAGER} "${daemon} ${daemon_flags} ${_bg}"
 	test "x$CELERY_ALWAYS_EAGER"!="xtrue" && \
-		${rcexec} env -i CELERY_CONFIG_MODULE=mediagoblin.init.celery.from_celery "${daemon_celery} ${daemon_flags_celery} ${_bg}"
+		${rcexec} "env -i \
+		MEDIAGOBLIN_CONFIG=${CELERY_CONFFILE} \
+		CELERY_CONFIG_MODULE=mediagoblin.init.celery.from_celery \
+		${daemon_celery} ${daemon_flags_celery} ${_bg}"
 }
 
 rc_check() {
