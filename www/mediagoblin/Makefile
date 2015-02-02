@@ -53,9 +53,10 @@ INSTDIR =		${PREFIX}/share/mediagoblin
 SUBST_VARS =		INSTDIR VERSION
 
 do-build:
-	cd ${WRKSRC}; virtualenv --no-site-packages .
+	cd ${WRKSRC}; virtualenv --system-site-packages .
 	cd ${WRKSRC}; ./bin/python ./setup.py develop
 	cd ${WRKSRC}; ./bin/easy_install flup
+	cd ${WRKSRC}; virtualenv --relocatable .
 
 do-install:
 	mkdir -p ${INSTDIR}
