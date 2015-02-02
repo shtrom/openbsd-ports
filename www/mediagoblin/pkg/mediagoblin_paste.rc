@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# $OpenBSD: rc.template,v 1.5 2011/03/10 13:46:59 ajacoutot Exp $
+
+CONFFILE=${SYSCONFDIR}/mediagoblin/paste.ini
+PIDFILE=/var/run/mediagoblin/paste.pid
+LOGFILE=/var/log/mediagoblin/paste.log
+
+# set to false and start mediagoblin.celery to delegate processing to a
+# separate process
+CELERY_ALWAYS_EAGER=false
+PYTHON_EGG_CACHE=/var/mediagoblin/.python-eggs
+FCGIPORT=26543
+
+daemon="${TRUEPREFIX}/share/mediagoblin/bin/paster"
+daemon_flags="serve ${CONFFILE} \
+	--pid-file=${PIDFILE} \
+	--log-file ${LOGFILE} \
+	--server-name=fcgi fcgi_host=127.0.0.1 fcgi_port=${FCGIPORT}
+	--daemon"
+daemon_user="_mediagoblin"
+
+. /etc/rc.d/rc.subr
+
+rcexec="su -c ${daemon_class} -s /bin/sh ${daemon_user} -c"
+
+#pexp="${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_bg=YES
+rc_reload=NO
+
+#rc_pre() {
+#}
+
+# rc_start() {
+# 	${rcexec} "env -i CELERY_ALWAYS_EAGER=${CELERY_ALWAYS_EAGER} ${daemon} ${daemon_flags} ${_bg}"
+# }
+
+# rc_check() {
+# 	kill -0 `cat ${PIDFILE}`
+# }
+
+#rc_reload() {
+#	pkill -HUP -f "^${pexp}"
+#}
+
+# rc_stop() {
+# 	kill `cat ${PIDFILE}`
+# }
+
+#rc_post() {
+#}
+
+rc_cmd $1

@@ -1,9 +1,10 @@
 An example configuration file as at ${SYSCONFDIR}/paste.ini. You need to
 adjust it to your needs. If you don't see what you need there, have a
 look at ${TRUEPREFIX}mediagoblin/config_spec.ini You can then start the
-rc script in /etr/rc.d/mediagoblin, or adding "mediagoblin" to the
-pkg_scripts variable in ${SYSCONFDIR}/rc.conf.local. By default, a
-separate celery server will be started.
+rc script in /etr/rc.d/mediagoblin.*, or adding "mediagoblin_celery
+ediagoblin_paste" to the pkg_scripts variable in
+${SYSCONFDIR}/rc.conf.local. By default, a separate celery server will
+be started.
 
 You might want to set-up logrotation by adding the following lines to
 ${SYSCONFDIR}/newsyslog.conf

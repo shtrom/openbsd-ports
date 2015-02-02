@@ -55,6 +55,7 @@ SUBST_VARS =		INSTDIR VERSION
 do-build:
 	cd ${WRKSRC}; virtualenv --no-site-packages .
 	cd ${WRKSRC}; ./bin/python ./setup.py develop
+	cd ${WRKSRC}; ./bin/easy_install flup
 
 do-install:
 	mkdir -p ${INSTDIR}
@@ -63,9 +64,10 @@ do-install:
 	cp -Rp ${WRKDIR}/${SKELETONDIR}/* ${INSTDIR}/extlib/skeleton/
 	cp -Rp ${WRKDIR}/${SPEEDBOATDIR}/* ${INSTDIR}/extlib/sandyseventiesspeedboat/
 	ln -s ../share/mediagoblin/bin/gmg ${PREFIX}/bin/gmg
-	install -m 644 files/nginx.mediagoblin.conf ${SYSCONFDIR}/
-	install -m 644 files/mediagoblin.ini ${SYSCONFDIR}/mediagoblin.celery.ini
-	install -m 644 ${INSTDIR}/paste.ini ${SYSCONFDIR}/mediagoblin.paste.ini
+	install -m 755 -d ${SYSCONFDIR}/mediagoblin
+	install -m 644 files/mediagoblin.ini ${SYSCONFDIR}/mediagoblin/celery.ini
+	install -m 644 ${INSTDIR}/paste.ini ${SYSCONFDIR}/mediagoblin/paste.ini
+	install -m 644 files/nginx.conf ${SYSCONFDIR}/mediagoblin/nginx.conf
 
 do-test:
 	cd ${WRKSRC} && sh ./run_tests.sh

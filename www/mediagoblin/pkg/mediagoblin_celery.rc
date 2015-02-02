@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# $OpenBSD: rc.template,v 1.5 2011/03/10 13:46:59 ajacoutot Exp $
+
+CONFFILE=${SYSCONFDIR}/mediagoblin/celery.ini
+PIDFILE=/var/run/mediagoblin/celery.pid
+LOGFILE=/var/log/mediagoblin/celery.log
+
+MEDIAGOBLIN_CONFIG=${CONFFILE}
+CONFIG_MODULE=mediagoblin.init.celery.from_celery
+
+daemon="${TRUEPREFIX}/share/mediagoblin/bin/celeryd"
+daemon_flags="--pidfile=${PIDFILE} -f ${LOGFILE}"
+daemon_user="_mediagoblin"
+
+. /etc/rc.d/rc.subr
+
+rcexec="su -c ${daemon_class} -s /bin/sh ${daemon_user} -c"
+
+#pexp="${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_bg=YES
+rc_reload=NO
+
+#rc_pre() {
+#}
+
+# rc_start() {
+# 	${rcexec} "env -i \
+# 		MEDIAGOBLIN_CONFIG=${CONFFILE} \
+# 		CONFIG_MODULE=mediagoblin.init.celery.from_celery \
+# 		${daemon} ${daemon_flags} ${_bg}"
+# }
+
+# rc_check() {
+# 	kill -0 `cat ${PIDFILE}`
+# }
+
+#rc_reload() {
+#	pkill -HUP -f "^${pexp}"
+#}
+
+# rc_stop() {
+# 	kill `cat ${PIDFILE}`
+# }
+
+#rc_post() {
+#}
+
+rc_cmd $1
