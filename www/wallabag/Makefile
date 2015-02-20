@@ -1,9 +1,8 @@
-# $Id$
 # $OpenBSD: Makefile.template,v 1.67 2013/07/10 15:22:23 bcallah Exp $
 
 COMMENT =		application for saving web pages and reading them later
 
-V=			1.8.0
+V=			1.9
 DISTNAME =		wallabag-${V}
 PKGNAME =		${DISTNAME}
 CATEGORIES =		www

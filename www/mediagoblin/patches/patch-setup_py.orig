@@ -1,0 +1,14 @@
+$OpenBSD$
+--- setup.py.orig	Mon Feb  2 12:04:42 2015
++++ setup.py	Mon Feb  2 12:04:56 2015
+@@ -87,8 +87,8 @@ try:
+         # 'translitcodec',
+         ## For now we're expecting that users will install this from
+         ## their package managers.
+-        # 'lxml',
+-        # 'PIL',
++        'lxml',
++        'PIL',
+         ],
+     # requires=['gst'],
+     test_suite='nose.collector',
