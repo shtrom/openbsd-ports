@@ -1,0 +1,37 @@
+$OpenBSD$
+--- config/jail.conf.orig	Sun Mar  8 10:25:30 2015
++++ config/jail.conf	Sun Mar  8 10:26:00 2015
+@@ -33,7 +33,7 @@
+ [INCLUDES]
+ 
+ #before = paths-distro.conf
+-before = paths-debian.conf
++before = paths-openbsd.conf
+ 
+ # The DEFAULT allows a global definition of the options. They can be overridden
+ # in each jail afterwards.
+@@ -148,7 +148,7 @@ port = 0:65535
+ # iptables-multiport, shorewall, etc) It is used to define
+ # action_* variables. Can be overridden globally or per
+ # section within jail.local file
+-banaction = iptables-multiport
++banaction = pf
+ 
+ # The simplest action to take: ban only
+ action_ = %(banaction)s[name=%(__name__)s, bantime="%(bantime)s", port="%(port)s", protocol="%(protocol)s", chain="%(chain)s"]
+@@ -325,7 +325,7 @@ logpath = %(lighttpd_error_log)s
+ [roundcube-auth]
+ 
+ port     = http,https
+-logpath  = /var/log/roundcube/userlogins
++logpath  = /var/www/roundcubemail/logs/errors
+ 
+ 
+ [openwebmail]
+@@ -723,4 +723,4 @@ port = 2222
+ [portsentry]
+ enabled  = false
+ logpath  = /var/lib/portsentry/portsentry.history
+-maxretry = 1
+\ No newline at end of file
++maxretry = 1
