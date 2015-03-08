@@ -1,7 +1,25 @@
 #!/bin/sh
 
 daemon="/usr/local/bin/fail2ban-client"
-daemon_flags="start"
+daemon_flags=""
 #daemon_user="root"
 
 . /etc/rc.d/rc.subr
+
+rc_start() {
+	${rcexec} "${daemon} -q start"
+}
+
+rc_check() {
+	${rcexec} "${daemon} -q ping"
+}
+
+rc_reload() {
+	${rcexec} "${daemon} -q reload"
+}
+
+rc_stop() {
+	${rcexec} "${daemon} -q stop"
+}
+
+rc_cmd $1
