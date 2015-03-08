@@ -1,6 +1,6 @@
 #!/bin/sh
 
-daemon="${TRUEPREFIX}/bin/fail2ban-client"
+daemon="/usr/local/bin/fail2ban-client"
 daemon_flags="start"
 #daemon_user="root"
 

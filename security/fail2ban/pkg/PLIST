@@ -474,6 +474,8 @@ share/fail2ban/etc/paths-common.conf
 @sample /etc/fail2ban/paths-common.conf
 share/fail2ban/etc/paths-openbsd.conf
 @sample /etc/fail2ban/paths-openbsd.conf
-@dir ${LOCALSTATEDIR}/lib/fail2ban
-@dir ${LOCALSTATEDIR}/run/fail2ban
 @rcscript ${RCDIR}/fail2ban
+@exec mkdir -p /var/lib/fail2ban
+@exec mkdir -p /var/run/fail2ban
+@unexec rmdir /var/lib/fail2ban
+@unexec rmdir /var/run/fail2ban
