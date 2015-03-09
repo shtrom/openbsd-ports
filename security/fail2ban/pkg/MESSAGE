@@ -5,6 +5,11 @@ settings are in jail.conf; look for the following parameters.
 * sender,
 * action (select one of the action_* define before it).
 
+To enable more than the basic monitoring of ssh logs, copy the relevant
+(commented-out) section from /etc/fail2ban/jail.conf to a specific file in
+
+    /etc/fail2ban/jail.d/${SERVICE}.local
+
 For the drops to be effective, the following PF rules needs to be added
 towards the top of /etc/pfctl.conf.
 

@@ -1,6 +1,6 @@
 $OpenBSD$
 --- config/jail.conf.orig	Tue Oct 28 02:49:40 2014
-+++ config/jail.conf	Sun Mar  8 13:18:46 2015
++++ config/jail.conf	Mon Mar  9 13:16:32 2015
 @@ -33,7 +33,7 @@
  [INCLUDES]
  
@@ -19,8 +19,11 @@ $OpenBSD$
  
  # The simplest action to take: ban only
  action_ = %(banaction)s[name=%(__name__)s, bantime="%(bantime)s", port="%(port)s", protocol="%(protocol)s", chain="%(chain)s"]
-@@ -209,90 +209,90 @@ port    = ssh
+@@ -207,520 +207,521 @@ action = %(action_)s
+ 
+ port    = ssh
  logpath = %(sshd_log)s
++enabled = true
  
  
 -[sshd-ddos]
@@ -147,7 +150,7 @@ $OpenBSD$
 -logpath = $(apache_error_log)s
 -maxretry = 1
 +# port    = http,https
-+# logpath = $(apache_error_log)s
++# logpath = %(apache_error_log)s
 +# maxretry = 1
  
 -[nginx-http-auth]
@@ -159,9 +162,29 @@ $OpenBSD$
 +# logpath = %(nginx_error_log)s
  
  
- # Ban attackers that try to use PHP's URL-fopen() functionality
-@@ -311,258 +311,258 @@ port    = http,https
- logpath = %(suhosin_log)s
+-# Ban attackers that try to use PHP's URL-fopen() functionality
+-# through GET/POST variables. - Experimental, with more than a year
+-# of usage in production environments.
++# # Ban attackers that try to use PHP's URL-fopen() functionality
++# # through GET/POST variables. - Experimental, with more than a year
++# # of usage in production environments.
+ 
+-[php-url-fopen]
++# [php-url-fopen]
+ 
+-port    = http,https
+-logpath = %(nginx_access_log)s %(apache_access_log)s
++# port    = http,https
++# logpath = %(nginx_access_log)s %(apache_access_log)s
+ 
+ 
+-[suhosin]
++# [suhosin]
+ 
+-port    = http,https
+-logpath = %(suhosin_log)s
++# port    = http,https
++# logpath = %(suhosin_log)s
  
  
 -[lighttpd-auth]
@@ -189,7 +212,7 @@ $OpenBSD$
 -port     = http,https
 -logpath  = /var/log/roundcube/userlogins
 +# port     = http,https
-+# logpath  = /var/www/roundcubemail/logs/errors
++# logpath  = /var/log/roundcube/userlogins
  
  
 -[openwebmail]
@@ -566,10 +589,53 @@ $OpenBSD$
 +# logpath = %(syslog_mail)s
  
  
- #
-@@ -591,42 +591,42 @@ logpath = %(syslog_mail)s
- # IMPORTANT: see filter.d/named-refused for instructions to enable logging
- # This jail blocks TCP traffic for DNS requests.
+-#
+-#
+-# DNS servers
+-#
++# #
++# #
++# # DNS servers
++# #
+ 
+ 
+-# !!! WARNING !!!
+-#   Since UDP is connection-less protocol, spoofing of IP and imitation
+-#   of illegal actions is way too simple.  Thus enabling of this filter
+-#   might provide an easy way for implementing a DoS against a chosen
+-#   victim. See
+-#    http://nion.modprobe.de/blog/archives/690-fail2ban-+-dns-fail.html
+-#   Please DO NOT USE this jail unless you know what you are doing.
+-#
+-# IMPORTANT: see filter.d/named-refused for instructions to enable logging
+-# This jail blocks UDP traffic for DNS requests.
+-# [named-refused-udp]
+-#
+-# filter   = named-refused
+-# port     = domain,953
+-# protocol = udp
+-# logpath  = /var/log/named/security.log
++# # !!! WARNING !!!
++# #   Since UDP is connection-less protocol, spoofing of IP and imitation
++# #   of illegal actions is way too simple.  Thus enabling of this filter
++# #   might provide an easy way for implementing a DoS against a chosen
++# #   victim. See
++# #    http://nion.modprobe.de/blog/archives/690-fail2ban-+-dns-fail.html
++# #   Please DO NOT USE this jail unless you know what you are doing.
++# #
++# # IMPORTANT: see filter.d/named-refused for instructions to enable logging
++# # This jail blocks UDP traffic for DNS requests.
++# # [named-refused-udp]
++# #
++# # filter   = named-refused
++# # port     = domain,953
++# # protocol = udp
++# # logpath  = /var/log/named/security.log
+ 
+-# IMPORTANT: see filter.d/named-refused for instructions to enable logging
+-# This jail blocks TCP traffic for DNS requests.
++# # IMPORTANT: see filter.d/named-refused for instructions to enable logging
++# # This jail blocks TCP traffic for DNS requests.
  
 -[named-refused]
 +# [named-refused]
@@ -593,9 +659,12 @@ $OpenBSD$
 +# logpath = /var/log/nsd.log
  
  
- #
- # Miscellaneous
- #
+-#
+-# Miscellaneous
+-#
++# #
++# # Miscellaneous
++# #
  
 -[asterisk]
 +# [asterisk]
@@ -631,12 +700,29 @@ $OpenBSD$
 +# maxretry = 10
  
  
- # To log wrong MySQL access attempts add to /etc/my.cnf in [mysqld] or
-@@ -640,11 +640,11 @@ maxretry = 10
- # for own logfile
- # [mysqld]
- # log-error=/var/log/mysqld.log
+-# To log wrong MySQL access attempts add to /etc/my.cnf in [mysqld] or
+-# equivalent section:
+-# log-warning = 2
+-#
+-# for syslog (daemon facility)
+-# [mysqld_safe]
+-# syslog
+-#
+-# for own logfile
+-# [mysqld]
+-# log-error=/var/log/mysqld.log
 -[mysqld-auth]
++# # To log wrong MySQL access attempts add to /etc/my.cnf in [mysqld] or
++# # equivalent section:
++# # log-warning = 2
++# #
++# # for syslog (daemon facility)
++# # [mysqld_safe]
++# # syslog
++# #
++# # for own logfile
++# # [mysqld]
++# # log-error=/var/log/mysqld.log
 +# [mysqld-auth]
  
 -port     = 3306
@@ -647,9 +733,31 @@ $OpenBSD$
 +# maxretry = 5
  
  
- # Jail for more extended banning of persistent abusers
-@@ -662,55 +662,55 @@ findtime = 86400   ; 1 day
- maxretry = 5
+-# Jail for more extended banning of persistent abusers
+-# !!! WARNING !!!
+-#   Make sure that your loglevel specified in fail2ban.conf/.local
+-#   is not at DEBUG level -- which might then cause fail2ban to fall into
+-#   an infinite loop constantly feeding itself with non-informative lines
+-[recidive]
++# # Jail for more extended banning of persistent abusers
++# # !!! WARNING !!!
++# #   Make sure that your loglevel specified in fail2ban.conf/.local
++# #   is not at DEBUG level -- which might then cause fail2ban to fall into
++# #   an infinite loop constantly feeding itself with non-informative lines
++# [recidive]
+ 
+-logpath  = /var/log/fail2ban.log
+-port     = all
+-protocol = all
+-bantime  = 604800  ; 1 week
+-findtime = 86400   ; 1 day
+-maxretry = 5
++# logpath  = /var/log/fail2ban.log
++# port     = all
++# protocol = all
++# bantime  = 604800  ; 1 week
++# findtime = 86400   ; 1 day
++# maxretry = 5
  
  
 -# Generic filter for PAM. Has to be used with action which bans all
@@ -730,16 +838,31 @@ $OpenBSD$
 -[oracleims]
 -# see "oracleims" filter file for configuration requirement for Oracle IMS v6 and above
 -enabled = false
+-logpath = /opt/sun/comms/messaging64/log/mail.log_current
+-maxretry = 6
+-banaction = iptables-allports
 +# [oracleims]
 +# # see "oracleims" filter file for configuration requirement for Oracle IMS v6 and above
 +# enabled = false
- logpath = /opt/sun/comms/messaging64/log/mail.log_current
- maxretry = 6
- banaction = iptables-allports
-@@ -723,4 +723,4 @@ port = 2222
- [portsentry]
- enabled  = false
- logpath  = /var/lib/portsentry/portsentry.history
++# logpath = /opt/sun/comms/messaging64/log/mail.log_current
++# maxretry = 6
++# banaction = iptables-allports
+ 
+-[directadmin]
+-enabled = false
+-logpath = /var/log/directadmin/login.log
+-port = 2222
++# [directadmin]
++# enabled = false
++# logpath = /var/log/directadmin/login.log
++# port = 2222
+ 
+-[portsentry]
+-enabled  = false
+-logpath  = /var/lib/portsentry/portsentry.history
 -maxretry = 1
 \ No newline at end of file
-+maxretry = 1
++# [portsentry]
++# enabled  = false
++# logpath  = /var/lib/portsentry/portsentry.history
++# maxretry = 1
