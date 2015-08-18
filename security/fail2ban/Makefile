@@ -1,6 +1,6 @@
 COMMENT =		daemon to ban hosts causing authentication errors
 V =			0.9.1
-DISTNAME =		fail2ban-${V}
+DISTNAME =		fail2ban-${V}p0
 CATEGORIES =		security
 HOMEPAGE =		http://www.fail2ban.org/
 

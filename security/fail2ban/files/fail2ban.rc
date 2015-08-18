@@ -1,7 +1,7 @@
 #!/bin/sh
 
 daemon="/usr/local/bin/fail2ban-client"
-daemon_flags=""
+daemon_flags="-x"
 #daemon_user="root"
 
 . /etc/rc.d/rc.subr

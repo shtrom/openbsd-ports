@@ -2,7 +2,7 @@
 
 COMMENT =		application for saving web pages and reading them later
 
-V=			1.9
+V=			1.9.1
 DISTNAME =		wallabag-${V}
 PKGNAME =		${DISTNAME}
 CATEGORIES =		www
