@@ -2,11 +2,11 @@
 
 COMMENT =	standard compliant weblog
 
-DISTNAME =	wordpress-4.2.2
+DISTNAME =	wordpress-4.3
 CATEGORIES =	www
 
 HOMEPAGE =	http://wordpress.org/
-MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
+MAINTAINER =	Olivier Mehani <shtrom+openbsd@ssji.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
