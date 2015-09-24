@@ -10,7 +10,7 @@ rc_bg=YES
 rc_reload=YES
 
 rc_start() {
-	${rcexec} "${daemon} -q start"
+	${rcexec} "${daemon} -q start ${_bg}"
 }
 
 rc_check() {
