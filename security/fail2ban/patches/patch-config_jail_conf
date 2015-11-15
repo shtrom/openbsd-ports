@@ -1,6 +1,6 @@
 $OpenBSD$
---- config/jail.conf.orig	Tue Oct 28 02:49:40 2014
-+++ config/jail.conf	Mon Mar  9 13:16:32 2015
+--- config/jail.conf.orig	Sat Aug  1 03:32:13 2015
++++ config/jail.conf	Sun Nov 15 08:32:57 2015
 @@ -33,7 +33,7 @@
  [INCLUDES]
  
@@ -10,7 +10,7 @@ $OpenBSD$
  
  # The DEFAULT allows a global definition of the options. They can be overridden
  # in each jail afterwards.
-@@ -148,7 +148,7 @@ port = 0:65535
+@@ -153,7 +153,7 @@ port = 0:65535
  # iptables-multiport, shorewall, etc) It is used to define
  # action_* variables. Can be overridden globally or per
  # section within jail.local file
@@ -19,11 +19,8 @@ $OpenBSD$
  
  # The simplest action to take: ban only
  action_ = %(banaction)s[name=%(__name__)s, bantime="%(bantime)s", port="%(port)s", protocol="%(protocol)s", chain="%(chain)s"]
-@@ -207,520 +207,521 @@ action = %(action_)s
- 
- port    = ssh
+@@ -218,170 +218,170 @@ port    = ssh
  logpath = %(sshd_log)s
-+enabled = true
  
  
 -[sshd-ddos]
@@ -133,6 +130,19 @@ $OpenBSD$
 +# maxretry = 2
  
  
+-[apache-fakegooglebot]
++# [apache-fakegooglebot]
+ 
+-port     = http,https
+-logpath  = %(apache_access_log)s
+-maxretry = 1
+-ignorecommand = %(ignorecommands_dir)s/apache-fakegooglebot <ip>
++# port     = http,https
++# logpath  = %(apache_access_log)s
++# maxretry = 1
++# ignorecommand = %(ignorecommands_dir)s/apache-fakegooglebot <ip>
+ 
+ 
 -[apache-modsecurity]
 +# [apache-modsecurity]
  
@@ -147,7 +157,7 @@ $OpenBSD$
 +# [apache-shellshock]
  
 -port    = http,https
--logpath = $(apache_error_log)s
+-logpath = %(apache_error_log)s
 -maxretry = 1
 +# port    = http,https
 +# logpath = %(apache_error_log)s
@@ -156,26 +166,34 @@ $OpenBSD$
 -[nginx-http-auth]
 +# [nginx-http-auth]
  
--ports   = http,https
+-port    = http,https
 -logpath = %(nginx_error_log)s
-+# ports   = http,https
++# port    = http,https
 +# logpath = %(nginx_error_log)s
  
+-[nginx-botsearch]
++# [nginx-botsearch]
  
--# Ban attackers that try to use PHP's URL-fopen() functionality
--# through GET/POST variables. - Experimental, with more than a year
--# of usage in production environments.
-+# # Ban attackers that try to use PHP's URL-fopen() functionality
-+# # through GET/POST variables. - Experimental, with more than a year
-+# # of usage in production environments.
+-port     = http,https
+-logpath  = %(nginx_error_log)s
+-maxretry = 2
++# port     = http,https
++# logpath  = %(nginx_error_log)s
++# maxretry = 2
+ 
+ # Ban attackers that try to use PHP's URL-fopen() functionality
+ # through GET/POST variables. - Experimental, with more than a year
+ # of usage in production environments.
  
 -[php-url-fopen]
 +# [php-url-fopen]
  
 -port    = http,https
--logpath = %(nginx_access_log)s %(apache_access_log)s
+-logpath = %(nginx_access_log)s
+-          %(apache_access_log)s
 +# port    = http,https
-+# logpath = %(nginx_access_log)s %(apache_access_log)s
++# logpath = %(nginx_access_log)s
++#           %(apache_access_log)s
  
  
 -[suhosin]
@@ -199,20 +217,17 @@ $OpenBSD$
 +# logpath = %(lighttpd_error_log)s
  
  
--#
--# Webmail and groupware servers
--#
-+# #
-+# # Webmail and groupware servers
-+# #
+ #
+ # Webmail and groupware servers
+ #
  
 -[roundcube-auth]
 +# [roundcube-auth]
  
 -port     = http,https
--logpath  = /var/log/roundcube/userlogins
+-logpath  = logpath = %(roundcube_errors_log)s
 +# port     = http,https
-+# logpath  = /var/log/roundcube/userlogins
++# logpath  = logpath = %(roundcube_errors_log)s
  
  
 -[openwebmail]
@@ -267,14 +282,18 @@ $OpenBSD$
 +# maxretry = 5
  
  
--#
--# Web Applications
--#
--#
-+# #
-+# # Web Applications
-+# #
-+# #
+ #
+@@ -389,33 +389,33 @@ maxretry = 5
+ #
+ #
+ 
+-[drupal-auth]
++# [drupal-auth]
+ 
+-port     = http,https
+-logpath  = %(syslog_daemon)s
++# port     = http,https
++# logpath  = %(syslog_daemon)s
  
 -[guacamole]
 +# [guacamole]
@@ -305,14 +324,19 @@ $OpenBSD$
 +# logpath = %(syslog_authpriv)s
  
  
--#
--# HTTP Proxy servers
--#
--#
-+# #
-+# # HTTP Proxy servers
-+# #
-+# #
+-[froxlor-auth]
++# [froxlor-auth]
+ 
+-port    = http,https
+-logpath  = %(syslog_authpriv)s
++# port    = http,https
++# logpath  = %(syslog_authpriv)s
+ 
+ 
+ #
+@@ -423,16 +423,16 @@ logpath  = %(syslog_authpriv)s
+ #
+ #
  
 -[squid]
 +# [squid]
@@ -331,12 +355,10 @@ $OpenBSD$
 +# port    = 3128
 +# logpath = /var/log/3proxy.log
  
--#
--# FTP servers
--#
-+# #
-+# # FTP servers
-+# #
+ 
+ #
+@@ -440,40 +440,40 @@ logpath = /var/log/3proxy.log
+ #
  
  
 -[proftpd]
@@ -397,16 +419,12 @@ $OpenBSD$
 +# logpath  = %(vsftpd_log)s
  
  
--#
--# Mail servers
--#
-+# #
-+# # Mail servers
-+# #
+ #
+@@ -481,86 +481,86 @@ logpath  = %(vsftpd_log)s
+ #
  
--# ASSP SMTP Proxy Jail
+ # ASSP SMTP Proxy Jail
 -[assp]
-+# # ASSP SMTP Proxy Jail
 +# [assp]
  
 -port     = smtp,465,submission
@@ -431,6 +449,17 @@ $OpenBSD$
 -logpath  = %(postfix_log)s
 +# port     = smtp,465,submission
 +# logpath  = %(postfix_log)s
+ 
+ 
+-[postfix-rbl]
++# [postfix-rbl]
+ 
+-port     = smtp,465,submission
+-logpath  = %(syslog_mail)s
+-maxretry = 1
++# port     = smtp,465,submission
++# logpath  = %(syslog_mail)s
++# maxretry = 1
  
  
 -[sendmail-auth]
@@ -462,11 +491,9 @@ $OpenBSD$
 +# logpath = /service/qmail/log/main/current
  
  
--# dovecot defaults to logging to the mail syslog facility
--# but can be set by syslog_facility in the dovecot configuration.
+ # dovecot defaults to logging to the mail syslog facility
+ # but can be set by syslog_facility in the dovecot configuration.
 -[dovecot]
-+# # dovecot defaults to logging to the mail syslog facility
-+# # but can be set by syslog_facility in the dovecot configuration.
 +# [dovecot]
  
 -port    = pop3,pop3s,imap,imaps,submission,465,sieve
@@ -520,14 +547,10 @@ $OpenBSD$
 +# logpath = /opt/kerio/mailserver/store/logs/security.log
  
  
--#
--# Mail servers authenticators: might be used for smtp,ftp,imap servers, so
--# all relevant ports get banned
--#
-+# #
-+# # Mail servers authenticators: might be used for smtp,ftp,imap servers, so
-+# # all relevant ports get banned
-+# #
+ #
+@@ -568,43 +568,43 @@ logpath = /opt/kerio/mailserver/store/logs/security.lo
+ # all relevant ports get banned
+ #
  
 -[courier-auth]
 +# [courier-auth]
@@ -589,53 +612,10 @@ $OpenBSD$
 +# logpath = %(syslog_mail)s
  
  
--#
--#
--# DNS servers
--#
-+# #
-+# #
-+# # DNS servers
-+# #
- 
- 
--# !!! WARNING !!!
--#   Since UDP is connection-less protocol, spoofing of IP and imitation
--#   of illegal actions is way too simple.  Thus enabling of this filter
--#   might provide an easy way for implementing a DoS against a chosen
--#   victim. See
--#    http://nion.modprobe.de/blog/archives/690-fail2ban-+-dns-fail.html
--#   Please DO NOT USE this jail unless you know what you are doing.
--#
--# IMPORTANT: see filter.d/named-refused for instructions to enable logging
--# This jail blocks UDP traffic for DNS requests.
--# [named-refused-udp]
--#
--# filter   = named-refused
--# port     = domain,953
--# protocol = udp
--# logpath  = /var/log/named/security.log
-+# # !!! WARNING !!!
-+# #   Since UDP is connection-less protocol, spoofing of IP and imitation
-+# #   of illegal actions is way too simple.  Thus enabling of this filter
-+# #   might provide an easy way for implementing a DoS against a chosen
-+# #   victim. See
-+# #    http://nion.modprobe.de/blog/archives/690-fail2ban-+-dns-fail.html
-+# #   Please DO NOT USE this jail unless you know what you are doing.
-+# #
-+# # IMPORTANT: see filter.d/named-refused for instructions to enable logging
-+# # This jail blocks UDP traffic for DNS requests.
-+# # [named-refused-udp]
-+# #
-+# # filter   = named-refused
-+# # port     = domain,953
-+# # protocol = udp
-+# # logpath  = /var/log/named/security.log
- 
--# IMPORTANT: see filter.d/named-refused for instructions to enable logging
--# This jail blocks TCP traffic for DNS requests.
-+# # IMPORTANT: see filter.d/named-refused for instructions to enable logging
-+# # This jail blocks TCP traffic for DNS requests.
+ #
+@@ -633,42 +633,42 @@ logpath = %(syslog_mail)s
+ # IMPORTANT: see filter.d/named-refused for instructions to enable logging
+ # This jail blocks TCP traffic for DNS requests.
  
 -[named-refused]
 +# [named-refused]
@@ -659,12 +639,9 @@ $OpenBSD$
 +# logpath = /var/log/nsd.log
  
  
--#
--# Miscellaneous
--#
-+# #
-+# # Miscellaneous
-+# #
+ #
+ # Miscellaneous
+ #
  
 -[asterisk]
 +# [asterisk]
@@ -700,29 +677,12 @@ $OpenBSD$
 +# maxretry = 10
  
  
--# To log wrong MySQL access attempts add to /etc/my.cnf in [mysqld] or
--# equivalent section:
--# log-warning = 2
--#
--# for syslog (daemon facility)
--# [mysqld_safe]
--# syslog
--#
--# for own logfile
--# [mysqld]
--# log-error=/var/log/mysqld.log
+ # To log wrong MySQL access attempts add to /etc/my.cnf in [mysqld] or
+@@ -682,11 +682,11 @@ maxretry = 10
+ # for own logfile
+ # [mysqld]
+ # log-error=/var/log/mysqld.log
 -[mysqld-auth]
-+# # To log wrong MySQL access attempts add to /etc/my.cnf in [mysqld] or
-+# # equivalent section:
-+# # log-warning = 2
-+# #
-+# # for syslog (daemon facility)
-+# # [mysqld_safe]
-+# # syslog
-+# #
-+# # for own logfile
-+# # [mysqld]
-+# # log-error=/var/log/mysqld.log
 +# [mysqld-auth]
  
 -port     = 3306
@@ -733,37 +693,28 @@ $OpenBSD$
 +# maxretry = 5
  
  
--# Jail for more extended banning of persistent abusers
--# !!! WARNING !!!
--#   Make sure that your loglevel specified in fail2ban.conf/.local
--#   is not at DEBUG level -- which might then cause fail2ban to fall into
--#   an infinite loop constantly feeding itself with non-informative lines
+ # Jail for more extended banning of persistent abusers
+@@ -696,87 +696,87 @@ maxretry = 5
+ #    an infinite loop constantly feeding itself with non-informative lines
+ # 2. Increase dbpurgeage defined in fail2ban.conf to e.g. 648000 (7.5 days)
+ #    to maintain entries for failed logins for sufficient amount of time
 -[recidive]
-+# # Jail for more extended banning of persistent abusers
-+# # !!! WARNING !!!
-+# #   Make sure that your loglevel specified in fail2ban.conf/.local
-+# #   is not at DEBUG level -- which might then cause fail2ban to fall into
-+# #   an infinite loop constantly feeding itself with non-informative lines
 +# [recidive]
  
 -logpath  = /var/log/fail2ban.log
--port     = all
--protocol = all
+-banaction = iptables-allports
 -bantime  = 604800  ; 1 week
 -findtime = 86400   ; 1 day
 -maxretry = 5
 +# logpath  = /var/log/fail2ban.log
-+# port     = all
-+# protocol = all
++# banaction = iptables-allports
 +# bantime  = 604800  ; 1 week
 +# findtime = 86400   ; 1 day
 +# maxretry = 5
  
  
--# Generic filter for PAM. Has to be used with action which bans all
--# ports such as iptables-allports, shorewall
-+# # Generic filter for PAM. Has to be used with action which bans all
-+# # ports such as iptables-allports, shorewall
+ # Generic filter for PAM. Has to be used with action which bans all
+ # ports such as iptables-allports, shorewall
  
 -[pam-generic]
 -# pam-generic filter can be customized to monitor specific subset of 'tty's
@@ -861,8 +812,32 @@ $OpenBSD$
 -enabled  = false
 -logpath  = /var/lib/portsentry/portsentry.history
 -maxretry = 1
-\ No newline at end of file
 +# [portsentry]
 +# enabled  = false
 +# logpath  = /var/lib/portsentry/portsentry.history
 +# maxretry = 1
+ 
+-[pass2allow-ftp]
+-# this pass2allow example allows FTP traffic after successful HTTP authentication
+-port         = ftp,ftp-data,ftps,ftps-data
+-# knocking_url variable must be overridden to some secret value in filter.d/apache-pass.local
+-filter       = apache-pass
+-# access log of the website with HTTP auth
+-logpath      = %(apache_access_log)s
+-blocktype    = RETURN
+-returntype   = DROP
+-bantime      = 3600
+-maxretry     = 1
+-findtime     = 1
++# [pass2allow-ftp]
++# # this pass2allow example allows FTP traffic after successful HTTP authentication
++# port         = ftp,ftp-data,ftps,ftps-data
++# # knocking_url variable must be overridden to some secret value in filter.d/apache-pass.local
++# filter       = apache-pass
++# # access log of the website with HTTP auth
++# logpath      = %(apache_access_log)s
++# blocktype    = RETURN
++# returntype   = DROP
++# bantime      = 3600
++# maxretry     = 1
++# findtime     = 1

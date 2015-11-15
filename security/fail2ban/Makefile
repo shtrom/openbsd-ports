@@ -1,5 +1,5 @@
 COMMENT =		daemon to ban hosts causing authentication errors
-V =			0.9.1
+V =			0.9.3
 DISTNAME =		fail2ban-${V}
 CATEGORIES =		security
 HOMEPAGE =		http://www.fail2ban.org/
@@ -22,9 +22,7 @@ MODPY_ADJ_FILES  =	bin/fail2ban-client \
 			bin/fail2ban-server \
 			bin/fail2ban-testcases \
 			fail2ban/tests/files/config/apache-auth/digest.py \
-			fail2ban/tests/files/ignorecommand.py \
-			lib/fail2ban/tests/files/ignorecommand.py \
-			lib/fail2ban/tests/files/config/apache-auth/digest.py
+			fail2ban/tests/files/ignorecommand.py
 
 NO_TEST =		Yes
 
