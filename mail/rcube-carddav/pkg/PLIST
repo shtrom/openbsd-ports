@@ -1,6 +1,4 @@
 @comment $OpenBSD$
-@owner www
-@group www
 roundcubemail/plugins/carddav/
 roundcubemail/plugins/carddav/.gitignore
 roundcubemail/plugins/carddav/ChangeLog
@@ -13,6 +11,7 @@ roundcubemail/plugins/carddav/carddav_backend.php
 roundcubemail/plugins/carddav/carddav_common.php
 roundcubemail/plugins/carddav/carddav_discovery.php
 roundcubemail/plugins/carddav/composer.json
+roundcubemail/plugins/carddav/config.inc.php.dist
 @sample roundcubemail/plugins/carddav/config.inc.php
 roundcubemail/plugins/carddav/dbinit/
 roundcubemail/plugins/carddav/dbinit/mysql.sql
@@ -171,3 +170,5 @@ roundcubemail/plugins/carddav/package.xml
 roundcubemail/plugins/carddav/skins/
 roundcubemail/plugins/carddav/skins/larry/
 roundcubemail/plugins/carddav/skins/larry/carddav.css
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}
