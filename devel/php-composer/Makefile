@@ -26,8 +26,10 @@ NO_TEST =		Yes
 
 do-install:
 	mkdir -p ${PREFIX}/bin
-	sed -i "s^#!/usr/bin/env php^${TRUEPREFIX}/bin/php-${MODPHP_VERSION}^" \
-		${FULLDISTDIR}/${P}-${V}.phar > ${PREFIX}/bin/${P}
+	cp ${FULLDISTDIR}/${P}-${V}.phar ${PREFIX}/bin/${P}-${V}.phar
+	echo '#!/bin/sh' > ${PREFIX}/bin/${P}
+	echo '${TRUEPREFIX}/bin/php-${MODPHP_VERSION} -d suhosin.executor.include.whitelist=phar ${TRUEPREFIX}/bin/${P}-${V}.phar $$*' >> \
+		${PREFIX}/bin/${P}
 	chmod a+x ${PREFIX}/bin/${P}
 
 .include <bsd.port.mk>
