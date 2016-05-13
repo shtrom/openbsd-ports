@@ -13,7 +13,7 @@ roundcubemail/plugins/carddav/carddav_backend.php
 roundcubemail/plugins/carddav/carddav_common.php
 roundcubemail/plugins/carddav/carddav_discovery.php
 roundcubemail/plugins/carddav/composer.json
-@sample roundcubemail/plugins/carddav/config.inc.php.dist
+@sample roundcubemail/plugins/carddav/config.inc.php
 roundcubemail/plugins/carddav/dbinit/
 roundcubemail/plugins/carddav/dbinit/mysql.sql
 roundcubemail/plugins/carddav/dbinit/postgres.sql

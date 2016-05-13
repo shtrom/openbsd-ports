@@ -31,5 +31,6 @@ SUBST_VARS =		INSTDIR
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cp -Rp ${WRKDIST} ${INSTDIR}/carddav
+	mv ${INSTDIR}/carddav/config.inc.php.dist ${INSTDIR}/carddav/config.inc.php
 
 .include <bsd.port.mk>
