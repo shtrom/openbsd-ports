@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile.template,v 1.73 2016/01/11 09:17:22 sthen Exp $
+#
 COMMENT =	CardDAV adapter for Roundcube
 V =		1.0.0
 P =		carddav
@@ -24,8 +26,8 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 PKG_ARCH =		*
 
-PREFIX=        		${VARBASE}/www
-INSTDIR=       		${PREFIX}/roundcubemail/plugins
+PREFIX =			${VARBASE}/www
+INSTDIR =		${PREFIX}/roundcubemail/plugins
 SUBST_VARS =		INSTDIR
 
 do-install:

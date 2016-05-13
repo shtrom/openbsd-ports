@@ -1,9 +1,20 @@
 To enable the CardDAV plugin, first run the following (depening on the
 database you are using):
 
-	MySQL     : mysql -h [db-server-name] -u [user] -p -D roundcubemail < ${PREFIX}/roundcubemail/plugins/carddav/dbinit/mysql.sql
-	PostgreSQL: psql -h[db-server-name] -Upostgres  < ${PREFIX}/roundcubemail/plugins/carddav/dbinit/postgres.sql
-	SQLite3   : sqlite3 ${PREFIX}/roundcubemail/db/sqlite.db < ${PREFIX}/roundcubemail/plugins/carddav/dbinit/sqlite3.sql
+* MySQL:
+
+  mysql -h [db-server-name] -u [user] -p -D roundcubemail < \
+    ${PREFIX}/roundcubemail/plugins/carddav/dbinit/mysql.sql
+
+* PostgreSQL:
+
+  psql -h[db-server-name] -Upostgres  < \
+    ${PREFIX}/roundcubemail/plugins/carddav/dbinit/postgres.sql
+
+* SQLite3:
+
+  sqlite3 ${PREFIX}/roundcubemail/db/sqlite.db < \
+    ${PREFIX}/roundcubemail/plugins/carddav/dbinit/sqlite3.sql
 
 Next, add 'carddav' to the $rcmail_config['plugins'] array in
 ${PREFIX}/roundcubemail/config/config.inc.php, e.g.,
@@ -11,7 +22,7 @@ ${PREFIX}/roundcubemail/config/config.inc.php, e.g.,
   $rcmail_config['plugins'] = array("carddav", ...);
 
 You will also need to review the
-${PREFIX}/roundcubemail/plugins/carddav/config.inc.php file. 
+${PREFIX}/roundcubemail/plugins/carddav/config.inc.php file.
 
 Finally, connet to RoundCube, go to Settings/Settings/CardDAV and follow
 the instructions of the Manager.
