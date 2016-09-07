@@ -1,0 +1,9 @@
+$OpenBSD$
+--- src/apache20/mod_chroot.c.orig	Wed Sep  7 14:16:19 2016
++++ src/apache20/mod_chroot.c	Wed Sep  7 14:17:22 2016
+@@ -1,4 +1,5 @@
+ #include <dlfcn.h>
++#include <unistd.h>
+ #include "ap_config.h"
+ #include "httpd.h"
+ #include "http_config.h"
