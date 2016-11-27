@@ -1,0 +1,32 @@
+$OpenBSD: README.template,v 1.4 2011/06/02 13:44:40 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Wallabag Configuration
+======================
+
+A default configuration file is provided in
+${INSTDIR}/app/config/parameters.yml.
+
+You'll need to edit that file to suit your needs, then run the following
+command to finish the setup.
+
+   cd ${INSTDIR}
+   doas -u www env SYMFONY_ENV=prod ${MODPHP_BIN} bin/console wallabag:install
+
+Webserver Configuration
+=======================
+
+Apache 2 (apache-httpd)
+-----------------------
+
+An example configuration file for Apache 2 is provided as
+${TRUEPREFIX}/conf/modules.sample/wallabag.conf. It maps `/wallabag` on
+your web server to Wallabag.
+
+To enable it, run the following command.
+
+    ln -s ${TRUEPREFIX}/conf/modules.sample/wallabag.conf \
+	    ${TRUEPREFIX}/conf/modules/

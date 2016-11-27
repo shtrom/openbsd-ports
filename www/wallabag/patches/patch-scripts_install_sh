@@ -1,0 +1,9 @@
+$OpenBSD$
+--- scripts/install.sh.orig	Thu Nov 24 11:10:59 2016
++++ scripts/install.sh	Thu Nov 24 11:13:57 2016
+@@ -13,4 +13,4 @@ TAG=$(git describe --tags $(git rev-list --tags --max-
+ 
+ git checkout $TAG
+ SYMFONY_ENV=$ENV $COMPOSER_COMMAND install --no-dev -o --prefer-dist
+-php bin/console wallabag:install --env=$ENV
++${MODPHP_BIN} bin/console wallabag:install --env=$ENV

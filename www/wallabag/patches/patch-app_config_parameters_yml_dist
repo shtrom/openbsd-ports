@@ -1,0 +1,24 @@
+$OpenBSD$
+--- app/config/parameters.yml.dist.orig	Fri Nov 25 12:23:25 2016
++++ app/config/parameters.yml.dist	Fri Nov 25 12:24:18 2016
+@@ -28,17 +28,17 @@ parameters:
+     locale:            en
+ 
+     # A secret key that's used to generate certain security-related tokens
+-    secret:            ovmpmAWXRCabNlMgzlzFXDYmCFfzGv
++    secret:            CHANGEME
+ 
+     # two factor stuff
+     twofactor_auth: true
+-    twofactor_sender: no-reply@wallabag.org
++    twofactor_sender: wallabag@example.net
+ 
+     # fosuser stuff
+     fosuser_registration: true
+     fosuser_confirmation: true
+ 
+-    from_email: no-reply@wallabag.org
++    from_email: wallabag@example.net
+ 
+     rss_limit: 50
+ 

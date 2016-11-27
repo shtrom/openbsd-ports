@@ -2,7 +2,7 @@
 
 COMMENT =		application for saving web pages and reading them later
 
-V=			1.9.1
+V=			2.1.5
 DISTNAME =		wallabag-${V}
 PKGNAME =		${DISTNAME}
 CATEGORIES =		www
@@ -13,43 +13,63 @@ MAINTAINER =		Olivier Mehani <shtrom-openbsd@ssji.net>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
-#GH_ACCOUNT =		wallabag
-#GH_PROJECT =		wallabag
-#GH_TAGNAME =		$V
-#GH_COMMIT =		44d35257e8
-MASTER_SITES0 =		https://github.com/wallabag/wallabag/archive/
-MASTER_SITES1 =		http://static.wallabag.org/files/
-DIST_SUBDIR =		${DISTNAME}
-DISTFILES =		${V}${EXTRACT_SUFX}:0 vendor.zip:1
+GH_ACCOUNT =		wallabag
+GH_PROJECT =		wallabag
+GH_TAGNAME =		$V
+# DIST_SUBDIR =		${DISTNAME}
 
-NO_BUILD =		Yes
-NO_TEST =		Yes
+NO_TEST =		Yes # Disable tests by default as they download more libraries into the package root
 PKG_ARCH =		*
 
 PREFIX =		${VARBASE}/www
 INSTDIR =		${PREFIX}/wallabag
-SUBST_VARS =		INSTDIR V
+SUBST_VARS =		INSTDIR V MODPHP_BIN
 
-MODULES =		lang/php 
+MODULES =		lang/php
+BUILD_DEPENDS =		devel/gmake
+TEST_DEPENDS =		devel/apache-ant
 RUN_DEPENDS =		textproc/libxml \
+			lang/php/${MODPHP_VERSION},-gd \
 			lang/php/${MODPHP_VERSION},-tidy \
 			lang/php/${MODPHP_VERSION},-curl
+do-build:
+	perl -pi -e '$$. == 1 && s|^.*env php.*$$|\#!${MODPHP_BIN}|;' \
+			-e 'close ARGV if eof;' \
+			$$(grep -IR '[e]nv php' ${WRKSRC}/ | sed s/:.*//)
+	# Avoid interactive configuration
+	cp ${WRKSRC}/app/config/parameters.yml.dist ${WRKSRC}/app/config/parameters.yml
+	cd ${WRKSRC}; SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist
+	rm ${WRKSRC}/app/config/parameters.yml
+	perl -pi -e '$$. == 1 && s|^.*env php.*$$|\#!${MODPHP_BIN}|;' \
+			-e 'close ARGV if eof;' \
+			$$(grep -IR '[e]nv php' ${WRKSRC}/vendor | sed s/:.*//)
+
+do-test:
+	cp ${WRKSRC}/app/config/parameters.yml.dist ${WRKSRC}/app/config/parameters.yml
+	cd ${WRKSRC}; gmake test
+	rm ${WRKSRC}/app/config/parameters.yml
 
 do-install:
-	mkdir -p ${INSTDIR}
-	cp -Rp ${WRKSRC}/* ${INSTDIR}
-	cp -Rp ${WRKSRC}/../vendor ${INSTDIR}
+	cp -Rp ${WRKSRC} ${INSTDIR}
+	rm -rf \
+		${INSTDIR}/docker \
+		${INSTDIR}/docs \
+		${INSTDIR}/tests
 	${INSTALL_DATA_DIR} ${PREFIX}/conf/modules.sample/
-	${INSTALL_DATA} ${FILESDIR}/wallabag.conf ${PREFIX}/conf/modules.sample/wallabag.conf.dist
-	find ${INSTDIR} -name .gitignore -exec rm {} \;
-	find ${INSTDIR} -name .htaccess -exec mv {} {}.dist \;
+	${INSTALL_DATA} ${FILESDIR}/wallabag.conf \
+		${PREFIX}/conf/modules.sample/wallabag.conf.dist
+	find ${INSTDIR} \( \
+		-name '*.orig' \
+		-o -name .gitignore \
+		-o -name .gitkeep \
+		\) -exec rm {} \;
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	chown www:www ${INSTDIR}/db
-	chown www:www ${INSTDIR}/cache
-	# XXX
-	chown www:www ${INSTDIR}/inc/3rdparty/htmlpurifier/HTMLPurifier/DefinitionCache/Serializer
+	chown -R www:www \
+		${INSTDIR}/app/config \
+		${INSTDIR}/bin \
+		${INSTDIR}/data/ \
+		${INSTDIR}/var \
+		${INSTDIR}/vendor
 
 .include <bsd.port.mk>

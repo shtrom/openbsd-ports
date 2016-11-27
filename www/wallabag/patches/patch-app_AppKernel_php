@@ -1,0 +1,14 @@
+$OpenBSD$
+
+The Generator Bundle is only installed in dev builds.
+
+--- app/AppKernel.php.orig	Thu Nov 24 22:42:22 2016
++++ app/AppKernel.php	Thu Nov 24 22:42:33 2016
+@@ -45,7 +45,6 @@ class AppKernel extends Kernel
+             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
+             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
+             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
+-            $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+             $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
+         }
+ 
