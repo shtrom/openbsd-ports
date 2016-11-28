@@ -129,6 +129,7 @@ wallabag/app/config/config_dev.yml
 wallabag/app/config/config_prod.yml
 wallabag/app/config/config_test.yml
 wallabag/app/config/parameters.yml.dist
+@sample wallabag/app/config/parameters.yml
 wallabag/app/config/parameters_test.yml
 wallabag/app/config/routing.yml
 wallabag/app/config/routing_dev.yml
