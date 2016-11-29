@@ -19,7 +19,7 @@ GH_PROJECT =		wallabag
 GH_TAGNAME =		$V
 # DIST_SUBDIR =		${DISTNAME}
 
-NO_TEST =		Yes # Disable tests by default as they download more libraries into the package root
+# NO_TEST =		Yes # Disable tests by default as they download more libraries into the package root
 PKG_ARCH =		*
 
 PREFIX =		${VARBASE}/www
@@ -32,8 +32,10 @@ TEST_DEPENDS =		devel/apache-ant
 RUN_DEPENDS =		textproc/libxml \
 			lang/php/${MODPHP_VERSION},-gd \
 			lang/php/${MODPHP_VERSION},-tidy \
-			lang/php/${MODPHP_VERSION},-curl
+			lang/php/${MODPHP_VERSION},-curl \
+			www/composer
 do-build:
+	XXX use find
 	perl -pi -e '$$. == 1 && s|^.*env php.*$$|\#!${MODPHP_BIN}|;' \
 			-e 'close ARGV if eof;' \
 			$$(grep -IR '[e]nv php' ${WRKSRC}/ | sed s/:.*//)
