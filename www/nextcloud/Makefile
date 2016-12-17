@@ -2,15 +2,14 @@
 
 COMMENT=		easy and universal access to shared and/or personal files
 
-V=			9.0.7
-DISTNAME=		owncloud-${V}
-EXTRACT_SUFX=		.tar.bz2
+V=			9.0.4
+DISTNAME=		nextcloud-${V}
 
 CATEGORIES=		www
 
-HOMEPAGE=		http://owncloud.org/
+HOMEPAGE=		http://nextcloud.org/
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Olivier Mehani <shtrom+openbsd@sji.net>
 
 # AGPLv3 (GNU Affero Public License)
 # jQuery: MIT / GPLv3
@@ -21,7 +20,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # Silk icons: Creative Commons Attribution
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://download.owncloud.org/community/
+GH_ACCOUNT =		nextcloud
+GH_PROJECT =		server
+GH_TAGNAME =		v$V
 
 MODULES=		lang/php
 
@@ -29,11 +30,11 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
-WRKDIST=		${WRKDIR}/owncloud
+WRKDIST=		${WRKDIR}/nextcloud
 
 PREFIX=			${VARBASE}/www
-INSTDIR=		${PREFIX}/owncloud
-TINSTDIR=		${TRUEPREFIX}/owncloud
+INSTDIR=		${PREFIX}/nextcloud
+TINSTDIR=		${TRUEPREFIX}/nextcloud
 VR=			${V:R}
 SUBST_VARS=		INSTDIR TINSTDIR MODPHP_BIN VR
 
@@ -67,7 +68,7 @@ do-install:
 		${INSTDIR}/occ
 
 	${INSTALL_DATA_DIR} ${PREFIX}/conf/modules.sample
-	${SUBST_CMD} -m 0644 -c ${FILESDIR}/httpd-owncloud.conf.dist.in \
-		${PREFIX}/conf/modules.sample/httpd-owncloud.conf.dist
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/httpd-nextcloud.conf.dist.in \
+		${PREFIX}/conf/modules.sample/httpd-nextcloud.conf.dist
 
 .include <bsd.port.mk>

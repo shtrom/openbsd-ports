@@ -4,11 +4,11 @@ $OpenBSD: README,v 1.44 2016/04/26 12:05:19 ajacoutot Exp $
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-ownCloud is installed under
+NextCloud is installed under
     ${INSTDIR}
 
 Official documentation is available at:
-    http://doc.owncloud.org/server/${VR}/admin_manual/
+    http://doc.nextcloud.org/server/${VR}/admin_manual/
 
 Post-installation instructions
 ==============================
@@ -18,9 +18,9 @@ Post-installation instructions
 
 chroot(2)
 ---------
-ownCloud attempts to use the UTF-8 locale, which does not work by
+NextCloud attempts to use the UTF-8 locale, which does not work by
 default inside the /var/www chroot. This causes warning messages in
-ownCloud's admin configuration page and logs. To prevent this problem,
+NextCloud's admin configuration page and logs. To prevent this problem,
 run the following as root:
     # mkdir -p /var/www/usr/share/locale/UTF-8/
     # cp /usr/share/locale/UTF-8/LC_CTYPE \
@@ -36,16 +36,16 @@ nginx
 -----
 TBD
 See:
-    https://doc.owncloud.org/server/${VR}/admin_manual/installation/nginx_configuration.html
+    https://doc.nextcloud.org/server/${VR}/admin_manual/installation/nginx_configuration.html
 
 Apache2
 -------
-Apache2 configuration for ownCloud is stored under:
-    ${PREFIX}/conf/modules.sample/httpd-owncloud.conf
+Apache2 configuration for NextCloud is stored under:
+    ${PREFIX}/conf/modules.sample/httpd-nextcloud.conf
 
 It needs to be enabled by running the following command after the apache-httpd
 package is installed:
-# ln -s ../modules.sample/httpd-owncloud.conf /var/www/conf/modules
+# ln -s ../modules.sample/httpd-nextcloud.conf /var/www/conf/modules
 # rcctl restart apache2
 
 PHP
@@ -65,13 +65,13 @@ or install xcache.
 
 Database configuration
 ----------------------
-See the following URL for setting up a database for ownCloud:
-    https://doc.owncloud.org/server/${VR}/admin_manual/configuration_database/linux_database_configuration.html
+See the following URL for setting up a database for NextCloud:
+    https://doc.nextcloud.org/server/${VR}/admin_manual/configuration_database/linux_database_configuration.html
 
-ownCloud can work with a PostgreSQL, MariaDB or SQLite3 database.
+NextCloud can work with a PostgreSQL, MariaDB or SQLite3 database.
 Support for SQLite3 is included with the main php package; to use
 another database, the corresponding package needs to be installed
-*before* setting up ownCloud:
+*before* setting up NextCloud:
     php-pdo_pgsql or php-pdo_mysql
 
 Configuration is done under:
@@ -82,21 +82,21 @@ When running chrooted, /var/www must be stripped from the paths.
 
 Cron job
 --------
-ownCloud needs to run background jobs on a regular basis. By default, it
+NextCloud needs to run background jobs on a regular basis. By default, it
 will execute one task with each page loaded ("AJAX" option in the admin
 interface). The prefered way is to use a cron(8) job instead.
-(see http://<hostname>/owncloud/index.php/settings/admin#backgroundjobs)
+(see http://<hostname>/nextcloud/index.php/settings/admin#backgroundjobs)
 e.g.
-*/15	*	*	*	*	/usr/bin/ftp -Vo - http://<hostname>/owncloud/cron.php >/dev/null
+*/15	*	*	*	*	/usr/bin/ftp -Vo - http://<hostname>/nextcloud/cron.php >/dev/null
 
 Memory caching
 --------------
-ownCloud server performance can be significantly improved with memory caching,
+NextCloud server performance can be significantly improved with memory caching,
 where frequently-requested objects are stored in memory for faster retrieval.
 Distributed caching and Transactional File Locking is provided by Redis, an
 in-memory data structure store.
 More information and configuration example are available at:
-    https://doc.owncloud.org/server/${VR}/admin_manual/configuration_server/caching_configuration.html#id4
+    https://doc.nextcloud.org/server/${VR}/admin_manual/configuration_server/caching_configuration.html#id4
 
 TL;DR
 You need a redis server running (available in the redis package) then adapt and
@@ -120,13 +120,13 @@ Finishing and validating the installation
 Make sure the web server can resolve its hostname (e.g. if chrooted, by
 creating /var/www/etc/hosts and/or /var/www/etc/resolv.conf).
 
-Accessing http://<hostname>/owncloud with a Web browser will finish the
+Accessing http://<hostname>/nextcloud with a Web browser will finish the
 installation and create a new admin user.
 
 Updating
 ========
 Before updating to a new release, read:
-    http://doc.owncloud.org/server/${VR}/admin_manual/maintenance/upgrade.html
+    http://doc.nextcloud.org/server/${VR}/admin_manual/maintenance/upgrade.html
 
 When using a PostgreSQL or MariaDB, the corresponding MDB2 php package
 must be installed to properly upgrade the database:
@@ -137,12 +137,12 @@ WebDAV access
 The personal WebDAV share can be accessed using the following URL (e.g.
 with Nautilus, Thunar or Doplhin) and the corresponding user and
 password for the share:
-    http://<hostname>/owncloud/remote.php/webdav/
+    http://<hostname>/nextcloud/remote.php/webdav/
 
 Synchronization
 ===============
-The "owncloudclient" package (net/owncloudclient) is a graphical (QT)
-application to synchronize with an ownCloud server.
+The "nextcloudclient" package (net/nextcloudclient) is a graphical (QT)
+application to synchronize with an NextCloud server.
 
 Apps and dependencies
 =====================

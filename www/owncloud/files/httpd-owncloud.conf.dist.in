@@ -1,6 +1,0 @@
-Alias /owncloud ${TINSTDIR}
-
-<Directory ${TINSTDIR}>
-    AllowOverride All
-    Require all granted
-</Directory>
