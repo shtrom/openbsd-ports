@@ -27,18 +27,16 @@ INSTDIR =		${PREFIX}/wallabag
 SUBST_VARS =		INSTDIR V MODPHP_BIN
 
 MODULES =		lang/php
-BUILD_DEPENDS =		devel/gmake
-TEST_DEPENDS =		devel/apache-ant
 RUN_DEPENDS =		textproc/libxml \
 			lang/php/${MODPHP_VERSION},-gd \
 			lang/php/${MODPHP_VERSION},-tidy \
 			lang/php/${MODPHP_VERSION},-curl \
 			www/composer
+BUILD_DEPENDS =		devel/gmake \
+			${RUN_DEPENDS}
+TEST_DEPENDS =		devel/apache-ant
+
 do-build:
-	XXX use find
-	perl -pi -e '$$. == 1 && s|^.*env php.*$$|\#!${MODPHP_BIN}|;' \
-			-e 'close ARGV if eof;' \
-			$$(grep -IR '[e]nv php' ${WRKSRC}/ | sed s/:.*//)
 	# Avoid interactive configuration
 	cp ${WRKSRC}/app/config/parameters.yml.dist ${WRKSRC}/app/config/parameters.yml
 	cd ${WRKSRC}; SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist
@@ -47,6 +45,7 @@ do-build:
 	perl -pi -e '$$. == 1 && s|^.*env php.*$$|\#!${MODPHP_BIN}|;' \
 			-e 'close ARGV if eof;' \
 			$$(grep -IR '[e]nv php' ${WRKSRC}/vendor | sed s/:.*//)
+	mv ${WRKSRC}/README.md ${WRKSRC}/README
 
 do-test:
 	cp ${WRKSRC}/app/config/parameters.yml.dist ${WRKSRC}/app/config/parameters.yml
