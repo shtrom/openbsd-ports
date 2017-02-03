@@ -2,7 +2,7 @@
 
 COMMENT =		application for saving web pages and reading them later
 
-V=			2.1.5
+V=			2.2.1
 DISTNAME =		wallabag-${V}
 PKGNAME =		${DISTNAME}
 CATEGORIES =		www
@@ -41,7 +41,6 @@ do-build:
 	cp ${WRKSRC}/app/config/parameters.yml.dist ${WRKSRC}/app/config/parameters.yml
 	cd ${WRKSRC}; SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist
 	rm ${WRKSRC}/app/config/parameters.yml
-	rm ${WRKSRC}/data/db/wallabag.sqlite
 	perl -pi -e '$$. == 1 && s|^.*env php.*$$|\#!${MODPHP_BIN}|;' \
 			-e 'close ARGV if eof;' \
 			$$(grep -IR '[e]nv php' ${WRKSRC}/vendor | sed s/:.*//)

@@ -1,11 +1,11 @@
 $OpenBSD$
---- app/config/parameters.yml.dist.orig	Fri Nov 25 12:23:25 2016
-+++ app/config/parameters.yml.dist	Fri Nov 25 12:24:18 2016
-@@ -28,17 +28,17 @@ parameters:
-     locale:            en
+--- app/config/parameters.yml.dist.orig	Fri Feb  3 06:21:42 2017
++++ app/config/parameters.yml.dist	Fri Feb  3 06:21:14 2017
+@@ -30,17 +30,17 @@ parameters:
+     locale: en
  
      # A secret key that's used to generate certain security-related tokens
--    secret:            ovmpmAWXRCabNlMgzlzFXDYmCFfzGv
+-    secret: ovmpmAWXRCabNlMgzlzFXDYmCFfzGv
 +    secret:            CHANGEME
  
      # two factor stuff
