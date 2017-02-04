@@ -56,7 +56,8 @@ do-install:
 	rm -rf \
 		${INSTDIR}/docker \
 		${INSTDIR}/docs \
-		${INSTDIR}/tests
+		${INSTDIR}/tests \
+		${INSTDIR}/var/cache/prod/*
 	${INSTALL_DATA_DIR} ${PREFIX}/conf/modules.sample/
 	${INSTALL_DATA} ${FILESDIR}/wallabag.conf \
 		${PREFIX}/conf/modules.sample/wallabag.conf.dist
