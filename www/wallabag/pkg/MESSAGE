@@ -39,3 +39,6 @@ schemas. This is done with
 
     cd ${INSTDIR}
     doas -u www bin/console doctrine:migrations:migrate --no-interaction -e=prod
+
+You might also need to update your configuration file. See section `Wallabag
+Configuration` above.
