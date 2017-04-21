@@ -557,7 +557,6 @@ wordpress/wp-content/plugins/akismet/views/get.php
 wordpress/wp-content/plugins/akismet/views/notice.php
 wordpress/wp-content/plugins/akismet/views/start.php
 wordpress/wp-content/plugins/akismet/views/stats.php
-wordpress/wp-content/plugins/akismet/views/strict.php
 wordpress/wp-content/plugins/akismet/wrapper.php
 wordpress/wp-content/plugins/hello.php
 wordpress/wp-content/plugins/index.php
