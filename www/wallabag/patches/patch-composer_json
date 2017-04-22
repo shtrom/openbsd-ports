@@ -1,0 +1,12 @@
+$OpenBSD$
+--- composer.json.orig	Sat Apr 22 11:38:51 2017
++++ composer.json	Sat Apr 22 11:39:40 2017
+@@ -115,7 +115,7 @@
+         "symfony-var-dir": "var",
+         "symfony-web-dir": "web",
+         "symfony-tests-dir": "tests",
+-        "symfony-assets-install": "symlink",
++        "symfony-assets-install": "relative",
+         "incenteev-parameters": {
+             "file": "app/config/parameters.yml"
+         }
