@@ -40,5 +40,10 @@ schemas. This is done with
     cd ${INSTDIR}
     doas -u www bin/console doctrine:migrations:migrate --no-interaction -e=prod
 
+You will also need to delete the php cache from the old version.
+
+    cd ${INSTDIR}
+    doas -u www rm -rf var/cache/prod/*
+
 You might also need to update your configuration file. See section `Wallabag
 Configuration` above.
