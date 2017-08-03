@@ -792,8 +792,6 @@ wallabag/vendor/composer/autoload_files.php
 wallabag/vendor/composer/autoload_namespaces.php
 wallabag/vendor/composer/autoload_psr4.php
 wallabag/vendor/composer/autoload_real.php
-@owner
-@group
 wallabag/vendor/composer/autoload_static.php
 wallabag/vendor/composer/ca-bundle/
 wallabag/vendor/composer/ca-bundle/LICENSE
@@ -803,17 +801,11 @@ wallabag/vendor/composer/ca-bundle/res/
 wallabag/vendor/composer/ca-bundle/res/cacert.pem
 wallabag/vendor/composer/ca-bundle/src/
 wallabag/vendor/composer/ca-bundle/src/CaBundle.php
-@owner root
-@group daemon
 wallabag/vendor/composer/installed.json
 wallabag/vendor/craue/
 wallabag/vendor/craue/config-bundle/
 wallabag/vendor/craue/config-bundle/.travis.yml
-@owner
-@group
 wallabag/vendor/craue/config-bundle/.travis_install_dependencies.sh
-@owner root
-@group daemon
 wallabag/vendor/craue/config-bundle/CHANGELOG.md
 wallabag/vendor/craue/config-bundle/Controller/
 wallabag/vendor/craue/config-bundle/Controller/SettingsController.php
@@ -861,8 +853,6 @@ wallabag/vendor/craue/config-bundle/Tests/IntegrationTestBundle/Resources/views/
 wallabag/vendor/craue/config-bundle/Tests/IntegrationTestBundle/Resources/views/Settings/
 wallabag/vendor/craue/config-bundle/Tests/IntegrationTestBundle/Resources/views/Settings/setting.html.twig
 wallabag/vendor/craue/config-bundle/Tests/IntegrationTestCase.php
-@owner
-@group
 wallabag/vendor/craue/config-bundle/Tests/Resources/
 wallabag/vendor/craue/config-bundle/Tests/Resources/TranslationsTest.php
 @owner root
@@ -2893,11 +2883,7 @@ wallabag/vendor/friendsofsymfony/rest-bundle/Tests/DependencyInjection/Compiler/
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/DependencyInjection/Compiler/ConfigurationCheckPassTest.php
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/DependencyInjection/Compiler/FormatListenerRulesPassTest.php
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/DependencyInjection/Compiler/SerializerConfigurationPassTest.php
-@owner
-@group
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/DependencyInjection/ConfigurationTest.php
-@owner root
-@group daemon
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/DependencyInjection/FOSRestExtensionTest.php
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/EventListener/
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/EventListener/AccessDeniedListenerTest.php
@@ -3036,13 +3022,9 @@ wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Routing/routin
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Serializer/
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Serializer/bundles.php
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Serializer/config.yml
-@owner
-@group
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Templating/
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Templating/bundles.php
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Templating/config.yml
-@owner root
-@group daemon
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Version/
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Version/bundles.php
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Version/config.yml
@@ -3100,11 +3082,7 @@ wallabag/vendor/friendsofsymfony/rest-bundle/View/View.php
 wallabag/vendor/friendsofsymfony/rest-bundle/View/ViewHandler.php
 wallabag/vendor/friendsofsymfony/rest-bundle/View/ViewHandlerInterface.php
 wallabag/vendor/friendsofsymfony/rest-bundle/composer.json
-@owner
-@group
 wallabag/vendor/friendsofsymfony/rest-bundle/phpunit
-@owner root
-@group daemon
 wallabag/vendor/friendsofsymfony/rest-bundle/phpunit.xml.dist
 wallabag/vendor/friendsofsymfony/user-bundle/
 wallabag/vendor/friendsofsymfony/user-bundle/.github/
@@ -3128,11 +3106,7 @@ wallabag/vendor/friendsofsymfony/user-bundle/Controller/SecurityController.php
 wallabag/vendor/friendsofsymfony/user-bundle/DependencyInjection/
 wallabag/vendor/friendsofsymfony/user-bundle/DependencyInjection/Compiler/
 wallabag/vendor/friendsofsymfony/user-bundle/DependencyInjection/Compiler/InjectRememberMeServicesPass.php
-@owner
-@group
 wallabag/vendor/friendsofsymfony/user-bundle/DependencyInjection/Compiler/InjectUserCheckerPass.php
-@owner root
-@group daemon
 wallabag/vendor/friendsofsymfony/user-bundle/DependencyInjection/Compiler/ValidationPass.php
 wallabag/vendor/friendsofsymfony/user-bundle/DependencyInjection/Configuration.php
 wallabag/vendor/friendsofsymfony/user-bundle/DependencyInjection/FOSUserExtension.php
@@ -3256,11 +3230,7 @@ wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundl
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.de.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.el.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.en.yml
-@owner
-@group
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.eo.yml
-@owner root
-@group daemon
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.es.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.et.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.eu.yml
@@ -3301,11 +3271,7 @@ wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.d
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.de.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.el.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.en.yml
-@owner
-@group
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.eo.yml
-@owner root
-@group daemon
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.es.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.eu.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fa.yml
@@ -3396,11 +3362,7 @@ wallabag/vendor/gedmo/doctrine-extensions/.travis.yml
 wallabag/vendor/gedmo/doctrine-extensions/LICENSE
 wallabag/vendor/gedmo/doctrine-extensions/README.md
 wallabag/vendor/gedmo/doctrine-extensions/composer.json
-@owner
-@group
 wallabag/vendor/gedmo/doctrine-extensions/composer7.json
-@owner root
-@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/doc/
 wallabag/vendor/gedmo/doctrine-extensions/doc/annotations.md
 wallabag/vendor/gedmo/doctrine-extensions/doc/blameable.md
@@ -3742,13 +3704,9 @@ wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity/Repository/Abstr
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity/Repository/ClosureTreeRepository.php
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity/Repository/MaterializedPathRepository.php
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity/Repository/NestedTreeRepository.php
-@owner
-@group
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Hydrator/
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Hydrator/ORM/
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Hydrator/ORM/TreeObjectHydrator.php
-@owner root
-@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Mapping/
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Mapping/Driver/
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Mapping/Driver/Annotation.php
@@ -3894,12 +3852,8 @@ wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.BaseCategory.dcm.yml
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.Category.dcm.yml
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.ClosureCategory.dcm.yml
-@owner
-@group
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.Embedded.dcm.yml
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.LoggableWithEmbedded.dcm.yml
-@owner root
-@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.MaterializedPathCategory.dcm.yml
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.Referenced.dcm.yml
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.Referencer.dcm.yml
@@ -3941,12 +3895,8 @@ wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/BaseCategory.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/Category.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/ClosureCategory.php
-@owner
-@group
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/Embedded.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/LoggableWithEmbedded.php
-@owner root
-@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/MaterializedPathCategory.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/Referenced.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/Referencer.php
@@ -4000,12 +3950,8 @@ wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Xml/SortableMappin
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Xml/TimestampableMappingTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Xml/TranslatableMappingTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Xml/UploadableMappingTest.php
-@owner
-@group
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Yaml/
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Yaml/LoggableMappingTest.php
-@owner root
-@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/ReferenceIntegrity/
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/ReferenceIntegrity/Fixture/
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/ReferenceIntegrity/Fixture/Document/
@@ -4336,11 +4282,7 @@ wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/Genealogy/Man
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/Genealogy/Person.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/Genealogy/Woman.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/MPCategory.php
-@owner
-@group
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/MPCategoryWithRootAssociation.php
-@owner root
-@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/MPCategoryWithTrimmedSeparator.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/MPFeaturesCategory.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/Mock/
@@ -4367,11 +4309,7 @@ wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MaterializedPathODMMo
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MaterializedPathODMMongoDBTreeLockingTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MaterializedPathORMFeaturesTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MaterializedPathORMRepositoryTest.php
-@owner
-@group
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MaterializedPathORMRootAssociationTest.php
-@owner root
-@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MaterializedPathORMTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MultInheritanceWithJoinedTableTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MultiInheritanceTest.php
@@ -4382,11 +4320,7 @@ wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/NestedTreeRootReposit
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/NestedTreeRootTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/RepositoryTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/TranslatableSluggableTreeTest.php
-@owner
-@group
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/TreeObjectHydratorTest.php
-@owner root
-@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/TreeTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Uploadable/
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Uploadable/FileInfo/
@@ -4881,11 +4815,7 @@ wallabag/vendor/hoa/compiler/Visitor/Dump.php
 wallabag/vendor/hoa/compiler/composer.json
 wallabag/vendor/hoa/consistency/
 wallabag/vendor/hoa/consistency/.State
-@owner
-@group
 wallabag/vendor/hoa/consistency/.travis.yml
-@owner root
-@group daemon
 wallabag/vendor/hoa/consistency/Autoloader.php
 wallabag/vendor/hoa/consistency/CHANGELOG.md
 wallabag/vendor/hoa/consistency/Consistency.php
@@ -5101,11 +5031,7 @@ wallabag/vendor/hoa/regex/Visitor/Isotropic.php
 wallabag/vendor/hoa/regex/composer.json
 wallabag/vendor/hoa/ruler/
 wallabag/vendor/hoa/ruler/.State
-@owner
-@group
 wallabag/vendor/hoa/ruler/.travis.yml
-@owner root
-@group daemon
 wallabag/vendor/hoa/ruler/Bin/
 wallabag/vendor/hoa/ruler/Bin/Assert.php
 wallabag/vendor/hoa/ruler/CHANGELOG.md
@@ -5421,11 +5347,7 @@ wallabag/vendor/j0k3r/graby-site-config/.peacefmonline.com.txt
 wallabag/vendor/j0k3r/graby-site-config/.reuters.com.txt
 wallabag/vendor/j0k3r/graby-site-config/.slashdot.org.txt
 wallabag/vendor/j0k3r/graby-site-config/.smashingmagazine.com.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/.stackexchange.com.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/.stanford.edu.txt
 wallabag/vendor/j0k3r/graby-site-config/.thueringer-allgemeine.de.txt
 wallabag/vendor/j0k3r/graby-site-config/.time.com.txt
@@ -5448,11 +5370,7 @@ wallabag/vendor/j0k3r/graby-site-config/512pixels.net.txt
 wallabag/vendor/j0k3r/graby-site-config/5by5.tv.txt
 wallabag/vendor/j0k3r/graby-site-config/7newsbelize.com.txt
 wallabag/vendor/j0k3r/graby-site-config/9gag.com.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/9to5mac.com.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/LICENSE.txt
 wallabag/vendor/j0k3r/graby-site-config/aachener-nachrichten.de.txt
 wallabag/vendor/j0k3r/graby-site-config/abc-luxe.com.txt
@@ -5504,11 +5422,7 @@ wallabag/vendor/j0k3r/graby-site-config/appleweblog.com.txt
 wallabag/vendor/j0k3r/graby-site-config/archdaily.com.txt
 wallabag/vendor/j0k3r/graby-site-config/archive.pressthink.org.txt
 wallabag/vendor/j0k3r/graby-site-config/archiveofourown.org.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/arretsurimages.net.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/arstechnica.co.uk.txt
 wallabag/vendor/j0k3r/graby-site-config/arstechnica.com.txt
 wallabag/vendor/j0k3r/graby-site-config/articles.boston.com.txt
@@ -5549,11 +5463,7 @@ wallabag/vendor/j0k3r/graby-site-config/bjango.com.txt
 wallabag/vendor/j0k3r/graby-site-config/bleacherreport.com.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.asmartbear.com.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.cloudflare.com.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/blog.eleven-labs.com.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/blog.fefe.de.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.instagram.com.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.instapaper.com.txt
@@ -5566,11 +5476,7 @@ wallabag/vendor/j0k3r/graby-site-config/blog.renren.com.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.sina.com.cn.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.spu.edu.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.trello.com.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/blog.trendmicro.com.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/blog.wells.ee.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.xebia.fr.txt
 wallabag/vendor/j0k3r/graby-site-config/blogs.faz.net.txt
@@ -5597,11 +5503,7 @@ wallabag/vendor/j0k3r/graby-site-config/brandeins.de.txt
 wallabag/vendor/j0k3r/graby-site-config/brandingstrategyinsider.com.txt
 wallabag/vendor/j0k3r/graby-site-config/brasil.elpais.com.txt
 wallabag/vendor/j0k3r/graby-site-config/brettterpstra.com.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/brightside.me.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/brisbanetimes.com.au.txt
 wallabag/vendor/j0k3r/graby-site-config/brooksreview.net.txt
 wallabag/vendor/j0k3r/graby-site-config/bt.no.txt
@@ -5625,11 +5527,7 @@ wallabag/vendor/j0k3r/graby-site-config/cbc.ca.txt
 wallabag/vendor/j0k3r/graby-site-config/cbn.com.txt
 wallabag/vendor/j0k3r/graby-site-config/cbsnews.com.txt
 wallabag/vendor/j0k3r/graby-site-config/chareidi.org.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/chefkoch.de.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/chinamining.org.txt
 wallabag/vendor/j0k3r/graby-site-config/chomsky.info.txt
 wallabag/vendor/j0k3r/graby-site-config/chrisltd.com.txt
@@ -5672,11 +5570,7 @@ wallabag/vendor/j0k3r/graby-site-config/counterpunch.org.txt
 wallabag/vendor/j0k3r/graby-site-config/crimemagazine.com.txt
 wallabag/vendor/j0k3r/graby-site-config/crimethinc.com.txt
 wallabag/vendor/j0k3r/graby-site-config/crn.de.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/crunchyroll.com.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/csmonitor.com.txt
 wallabag/vendor/j0k3r/graby-site-config/csnphilly.com.txt
 wallabag/vendor/j0k3r/graby-site-config/csoonline.com.txt
@@ -5690,22 +5584,14 @@ wallabag/vendor/j0k3r/graby-site-config/dagogtid.no.txt
 wallabag/vendor/j0k3r/graby-site-config/dailydot.com.txt
 wallabag/vendor/j0k3r/graby-site-config/dailykos.com.txt
 wallabag/vendor/j0k3r/graby-site-config/dailymail.co.uk.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/dailymotion.com.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/dailysabah.com.txt
 wallabag/vendor/j0k3r/graby-site-config/dailystar.com.lb.txt
 wallabag/vendor/j0k3r/graby-site-config/dansdata.com.txt
 wallabag/vendor/j0k3r/graby-site-config/dantri.com.vn.txt
 wallabag/vendor/j0k3r/graby-site-config/daringfireball.net.txt
 wallabag/vendor/j0k3r/graby-site-config/daserste.ndr.de.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/dbazi.com.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/dcurt.is.txt
 wallabag/vendor/j0k3r/graby-site-config/deadline.com.txt
 wallabag/vendor/j0k3r/graby-site-config/deadspin.com.txt
@@ -5789,11 +5675,7 @@ wallabag/vendor/j0k3r/graby-site-config/estadao.com.br.txt
 wallabag/vendor/j0k3r/graby-site-config/eternabuenosaires.com.txt
 wallabag/vendor/j0k3r/graby-site-config/eurogamer.net.txt
 wallabag/vendor/j0k3r/graby-site-config/evo.co.uk.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/eweek.com.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/explosm.net.txt
 wallabag/vendor/j0k3r/graby-site-config/expressen.se.txt
 wallabag/vendor/j0k3r/graby-site-config/extracine.com.txt
@@ -5821,11 +5703,7 @@ wallabag/vendor/j0k3r/graby-site-config/fnal.gov.txt
 wallabag/vendor/j0k3r/graby-site-config/focus-numerique.com.txt
 wallabag/vendor/j0k3r/graby-site-config/focus.de.txt
 wallabag/vendor/j0k3r/graby-site-config/fok.nl.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/fokus.se.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/foley.com.txt
 wallabag/vendor/j0k3r/graby-site-config/folklore.org.txt
 wallabag/vendor/j0k3r/graby-site-config/food.com.txt
@@ -5894,11 +5772,7 @@ wallabag/vendor/j0k3r/graby-site-config/groups.drupal.org.txt
 wallabag/vendor/j0k3r/graby-site-config/gsmarena.com.txt
 wallabag/vendor/j0k3r/graby-site-config/gulfnews.com.txt
 wallabag/vendor/j0k3r/graby-site-config/guokr.com.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/gurumed.org.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/haberler.com.txt
 wallabag/vendor/j0k3r/graby-site-config/habrahabr.ru.txt
 wallabag/vendor/j0k3r/graby-site-config/hackersrepublic.org.txt
@@ -5968,11 +5842,7 @@ wallabag/vendor/j0k3r/graby-site-config/infoworld.com.txt
 wallabag/vendor/j0k3r/graby-site-config/infzm.com.txt
 wallabag/vendor/j0k3r/graby-site-config/inhabitat.com.txt
 wallabag/vendor/j0k3r/graby-site-config/instagr.am.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/interviewmagazine.com.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/ipadclub.nl.txt
 wallabag/vendor/j0k3r/graby-site-config/ipadplanet.nl.txt
 wallabag/vendor/j0k3r/graby-site-config/iphoneaddict.fr.txt
@@ -5986,11 +5856,7 @@ wallabag/vendor/j0k3r/graby-site-config/it-connect.fr.txt
 wallabag/vendor/j0k3r/graby-site-config/itavisen.no.txt
 wallabag/vendor/j0k3r/graby-site-config/itmedia.co.jp.txt
 wallabag/vendor/j0k3r/graby-site-config/itnews.com.au.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/itsfoss.com.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/itstactical.com.txt
 wallabag/vendor/j0k3r/graby-site-config/itunes.apple.com.txt
 wallabag/vendor/j0k3r/graby-site-config/itwire.com.txt
@@ -6003,11 +5869,7 @@ wallabag/vendor/j0k3r/graby-site-config/javaworld.com.txt
 wallabag/vendor/j0k3r/graby-site-config/jdubuzz.com.txt
 wallabag/vendor/j0k3r/graby-site-config/jetzt.de.txt
 wallabag/vendor/j0k3r/graby-site-config/jetzt.sueddeutsche.de.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/jeuxvideo.com.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/jezebel.com.txt
 wallabag/vendor/j0k3r/graby-site-config/jjahnke.net.txt
 wallabag/vendor/j0k3r/graby-site-config/jneurosci.org.txt
@@ -6053,11 +5915,7 @@ wallabag/vendor/j0k3r/graby-site-config/lenta.ru.txt
 wallabag/vendor/j0k3r/graby-site-config/lesnumeriques.com.txt
 wallabag/vendor/j0k3r/graby-site-config/letraslibres.com.txt
 wallabag/vendor/j0k3r/graby-site-config/libcom.org.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/liberation.fr.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/lifehacker.co.uk.txt
 wallabag/vendor/j0k3r/graby-site-config/lifehacker.com.txt
 wallabag/vendor/j0k3r/graby-site-config/lifestyle.inquirer.net.txt
@@ -6075,11 +5933,7 @@ wallabag/vendor/j0k3r/graby-site-config/lrb.co.uk.txt
 wallabag/vendor/j0k3r/graby-site-config/luminous-landscape.com.txt
 wallabag/vendor/j0k3r/graby-site-config/lupa.cz.txt
 wallabag/vendor/j0k3r/graby-site-config/luxuo.com.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/lvsl.fr.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/lwn.net.txt
 wallabag/vendor/j0k3r/graby-site-config/m.bbc.co.uk.txt
 wallabag/vendor/j0k3r/graby-site-config/m.douban.com.txt
@@ -6131,11 +5985,7 @@ wallabag/vendor/j0k3r/graby-site-config/mlssoccer.com.txt
 wallabag/vendor/j0k3r/graby-site-config/mmo-champion.com.txt
 wallabag/vendor/j0k3r/graby-site-config/mnn.com.txt
 wallabag/vendor/j0k3r/graby-site-config/mno.hu.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/mobile.lemondeinformatique.fr.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/mobile.nytimes.com.txt
 wallabag/vendor/j0k3r/graby-site-config/mobile.twitter.com.txt
 wallabag/vendor/j0k3r/graby-site-config/mobilenet.cz.txt
@@ -6240,11 +6090,7 @@ wallabag/vendor/j0k3r/graby-site-config/penny-arcade.com.txt
 wallabag/vendor/j0k3r/graby-site-config/pentaxforums.com.txt
 wallabag/vendor/j0k3r/graby-site-config/phastidio.net.txt
 wallabag/vendor/j0k3r/graby-site-config/philadelphiaeagles.com.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/philstar.com.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/phoronix.com.txt
 wallabag/vendor/j0k3r/graby-site-config/photo.tutsplus.com.txt
 wallabag/vendor/j0k3r/graby-site-config/phototrend.fr.txt
@@ -6332,11 +6178,7 @@ wallabag/vendor/j0k3r/graby-site-config/saadaalnews.net.txt
 wallabag/vendor/j0k3r/graby-site-config/salon.com.txt
 wallabag/vendor/j0k3r/graby-site-config/salzburg.com.txt
 wallabag/vendor/j0k3r/graby-site-config/sanpedrosun.com.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/sargasso.nl.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/saveyourself.ca.txt
 wallabag/vendor/j0k3r/graby-site-config/sayidaty.net.txt
 wallabag/vendor/j0k3r/graby-site-config/sbnation.com.txt
@@ -6345,21 +6187,13 @@ wallabag/vendor/j0k3r/graby-site-config/scienceblogs.de.txt
 wallabag/vendor/j0k3r/graby-site-config/scienceticker.info.txt
 wallabag/vendor/j0k3r/graby-site-config/scientificamerican.com.txt
 wallabag/vendor/j0k3r/graby-site-config/scilogs.de.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/scnsrc.me.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/scotusblog.com.txt
 wallabag/vendor/j0k3r/graby-site-config/scripting.com.txt
 wallabag/vendor/j0k3r/graby-site-config/searchenginejournal.com.txt
 wallabag/vendor/j0k3r/graby-site-config/searchengineland.com.txt
 wallabag/vendor/j0k3r/graby-site-config/seattletransitblog.com.txt
-@owner
-@group
 wallabag/vendor/j0k3r/graby-site-config/secouchermoinsbete.fr.txt
-@owner root
-@group daemon
 wallabag/vendor/j0k3r/graby-site-config/secushare.org.txt
 wallabag/vendor/j0k3r/graby-site-config/select.yeeyan.org.txt
 wallabag/vendor/j0k3r/graby-site-config/semiaccurate.com.txt
