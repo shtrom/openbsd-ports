@@ -792,10 +792,28 @@ wallabag/vendor/composer/autoload_files.php
 wallabag/vendor/composer/autoload_namespaces.php
 wallabag/vendor/composer/autoload_psr4.php
 wallabag/vendor/composer/autoload_real.php
+@owner
+@group
+wallabag/vendor/composer/autoload_static.php
+wallabag/vendor/composer/ca-bundle/
+wallabag/vendor/composer/ca-bundle/LICENSE
+wallabag/vendor/composer/ca-bundle/README.md
+wallabag/vendor/composer/ca-bundle/composer.json
+wallabag/vendor/composer/ca-bundle/res/
+wallabag/vendor/composer/ca-bundle/res/cacert.pem
+wallabag/vendor/composer/ca-bundle/src/
+wallabag/vendor/composer/ca-bundle/src/CaBundle.php
+@owner root
+@group daemon
 wallabag/vendor/composer/installed.json
 wallabag/vendor/craue/
 wallabag/vendor/craue/config-bundle/
 wallabag/vendor/craue/config-bundle/.travis.yml
+@owner
+@group
+wallabag/vendor/craue/config-bundle/.travis_install_dependencies.sh
+@owner root
+@group daemon
 wallabag/vendor/craue/config-bundle/CHANGELOG.md
 wallabag/vendor/craue/config-bundle/Controller/
 wallabag/vendor/craue/config-bundle/Controller/SettingsController.php
@@ -843,6 +861,12 @@ wallabag/vendor/craue/config-bundle/Tests/IntegrationTestBundle/Resources/views/
 wallabag/vendor/craue/config-bundle/Tests/IntegrationTestBundle/Resources/views/Settings/
 wallabag/vendor/craue/config-bundle/Tests/IntegrationTestBundle/Resources/views/Settings/setting.html.twig
 wallabag/vendor/craue/config-bundle/Tests/IntegrationTestCase.php
+@owner
+@group
+wallabag/vendor/craue/config-bundle/Tests/Resources/
+wallabag/vendor/craue/config-bundle/Tests/Resources/TranslationsTest.php
+@owner root
+@group daemon
 wallabag/vendor/craue/config-bundle/Tests/Twig/
 wallabag/vendor/craue/config-bundle/Tests/Twig/Extension/
 wallabag/vendor/craue/config-bundle/Tests/Twig/Extension/ConfigTemplateExtensionIntegrationTest.php
@@ -863,8 +887,6 @@ wallabag/vendor/craue/config-bundle/Util/
 wallabag/vendor/craue/config-bundle/Util/Config.php
 wallabag/vendor/craue/config-bundle/composer.json
 wallabag/vendor/craue/config-bundle/phpunit.xml.dist
-wallabag/vendor/craue/config-bundle/travis.php.ini
-wallabag/vendor/craue/config-bundle/travis_install_dependencies.sh
 wallabag/vendor/doctrine/
 wallabag/vendor/doctrine/annotations/
 wallabag/vendor/doctrine/annotations/LICENSE
@@ -2871,6 +2893,11 @@ wallabag/vendor/friendsofsymfony/rest-bundle/Tests/DependencyInjection/Compiler/
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/DependencyInjection/Compiler/ConfigurationCheckPassTest.php
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/DependencyInjection/Compiler/FormatListenerRulesPassTest.php
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/DependencyInjection/Compiler/SerializerConfigurationPassTest.php
+@owner
+@group
+wallabag/vendor/friendsofsymfony/rest-bundle/Tests/DependencyInjection/ConfigurationTest.php
+@owner root
+@group daemon
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/DependencyInjection/FOSRestExtensionTest.php
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/EventListener/
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/EventListener/AccessDeniedListenerTest.php
@@ -3009,6 +3036,13 @@ wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Routing/routin
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Serializer/
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Serializer/bundles.php
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Serializer/config.yml
+@owner
+@group
+wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Templating/
+wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Templating/bundles.php
+wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Templating/config.yml
+@owner root
+@group daemon
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Version/
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Version/bundles.php
 wallabag/vendor/friendsofsymfony/rest-bundle/Tests/Functional/app/Version/config.yml
@@ -3066,6 +3100,11 @@ wallabag/vendor/friendsofsymfony/rest-bundle/View/View.php
 wallabag/vendor/friendsofsymfony/rest-bundle/View/ViewHandler.php
 wallabag/vendor/friendsofsymfony/rest-bundle/View/ViewHandlerInterface.php
 wallabag/vendor/friendsofsymfony/rest-bundle/composer.json
+@owner
+@group
+wallabag/vendor/friendsofsymfony/rest-bundle/phpunit
+@owner root
+@group daemon
 wallabag/vendor/friendsofsymfony/rest-bundle/phpunit.xml.dist
 wallabag/vendor/friendsofsymfony/user-bundle/
 wallabag/vendor/friendsofsymfony/user-bundle/.github/
@@ -3089,6 +3128,11 @@ wallabag/vendor/friendsofsymfony/user-bundle/Controller/SecurityController.php
 wallabag/vendor/friendsofsymfony/user-bundle/DependencyInjection/
 wallabag/vendor/friendsofsymfony/user-bundle/DependencyInjection/Compiler/
 wallabag/vendor/friendsofsymfony/user-bundle/DependencyInjection/Compiler/InjectRememberMeServicesPass.php
+@owner
+@group
+wallabag/vendor/friendsofsymfony/user-bundle/DependencyInjection/Compiler/InjectUserCheckerPass.php
+@owner root
+@group daemon
 wallabag/vendor/friendsofsymfony/user-bundle/DependencyInjection/Compiler/ValidationPass.php
 wallabag/vendor/friendsofsymfony/user-bundle/DependencyInjection/Configuration.php
 wallabag/vendor/friendsofsymfony/user-bundle/DependencyInjection/FOSUserExtension.php
@@ -3212,6 +3256,11 @@ wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundl
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.de.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.el.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.en.yml
+@owner
+@group
+wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.eo.yml
+@owner root
+@group daemon
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.es.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.et.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.eu.yml
@@ -3252,6 +3301,11 @@ wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.d
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.de.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.el.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.en.yml
+@owner
+@group
+wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.eo.yml
+@owner root
+@group daemon
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.es.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.eu.yml
 wallabag/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fa.yml
@@ -3342,6 +3396,11 @@ wallabag/vendor/gedmo/doctrine-extensions/.travis.yml
 wallabag/vendor/gedmo/doctrine-extensions/LICENSE
 wallabag/vendor/gedmo/doctrine-extensions/README.md
 wallabag/vendor/gedmo/doctrine-extensions/composer.json
+@owner
+@group
+wallabag/vendor/gedmo/doctrine-extensions/composer7.json
+@owner root
+@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/doc/
 wallabag/vendor/gedmo/doctrine-extensions/doc/annotations.md
 wallabag/vendor/gedmo/doctrine-extensions/doc/blameable.md
@@ -3683,6 +3742,13 @@ wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity/Repository/Abstr
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity/Repository/ClosureTreeRepository.php
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity/Repository/MaterializedPathRepository.php
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity/Repository/NestedTreeRepository.php
+@owner
+@group
+wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Hydrator/
+wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Hydrator/ORM/
+wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Hydrator/ORM/TreeObjectHydrator.php
+@owner root
+@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Mapping/
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Mapping/Driver/
 wallabag/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Mapping/Driver/Annotation.php
@@ -3828,6 +3894,12 @@ wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.BaseCategory.dcm.yml
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.Category.dcm.yml
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.ClosureCategory.dcm.yml
+@owner
+@group
+wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.Embedded.dcm.yml
+wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.LoggableWithEmbedded.dcm.yml
+@owner root
+@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.MaterializedPathCategory.dcm.yml
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.Referenced.dcm.yml
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Driver/Yaml/Mapping.Fixture.Yaml.Referencer.dcm.yml
@@ -3869,6 +3941,12 @@ wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/BaseCategory.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/Category.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/ClosureCategory.php
+@owner
+@group
+wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/Embedded.php
+wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/LoggableWithEmbedded.php
+@owner root
+@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/MaterializedPathCategory.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/Referenced.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Fixture/Yaml/Referencer.php
@@ -3922,6 +4000,12 @@ wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Xml/SortableMappin
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Xml/TimestampableMappingTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Xml/TranslatableMappingTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Xml/UploadableMappingTest.php
+@owner
+@group
+wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Yaml/
+wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Mapping/Yaml/LoggableMappingTest.php
+@owner root
+@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/ReferenceIntegrity/
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/ReferenceIntegrity/Fixture/
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/ReferenceIntegrity/Fixture/Document/
@@ -4252,6 +4336,11 @@ wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/Genealogy/Man
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/Genealogy/Person.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/Genealogy/Woman.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/MPCategory.php
+@owner
+@group
+wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/MPCategoryWithRootAssociation.php
+@owner root
+@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/MPCategoryWithTrimmedSeparator.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/MPFeaturesCategory.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/Fixture/Mock/
@@ -4278,6 +4367,11 @@ wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MaterializedPathODMMo
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MaterializedPathODMMongoDBTreeLockingTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MaterializedPathORMFeaturesTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MaterializedPathORMRepositoryTest.php
+@owner
+@group
+wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MaterializedPathORMRootAssociationTest.php
+@owner root
+@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MaterializedPathORMTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MultInheritanceWithJoinedTableTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/MultiInheritanceTest.php
@@ -4288,6 +4382,11 @@ wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/NestedTreeRootReposit
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/NestedTreeRootTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/RepositoryTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/TranslatableSluggableTreeTest.php
+@owner
+@group
+wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/TreeObjectHydratorTest.php
+@owner root
+@group daemon
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Tree/TreeTest.php
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Uploadable/
 wallabag/vendor/gedmo/doctrine-extensions/tests/Gedmo/Uploadable/FileInfo/
@@ -4782,6 +4881,11 @@ wallabag/vendor/hoa/compiler/Visitor/Dump.php
 wallabag/vendor/hoa/compiler/composer.json
 wallabag/vendor/hoa/consistency/
 wallabag/vendor/hoa/consistency/.State
+@owner
+@group
+wallabag/vendor/hoa/consistency/.travis.yml
+@owner root
+@group daemon
 wallabag/vendor/hoa/consistency/Autoloader.php
 wallabag/vendor/hoa/consistency/CHANGELOG.md
 wallabag/vendor/hoa/consistency/Consistency.php
@@ -4997,6 +5101,11 @@ wallabag/vendor/hoa/regex/Visitor/Isotropic.php
 wallabag/vendor/hoa/regex/composer.json
 wallabag/vendor/hoa/ruler/
 wallabag/vendor/hoa/ruler/.State
+@owner
+@group
+wallabag/vendor/hoa/ruler/.travis.yml
+@owner root
+@group daemon
 wallabag/vendor/hoa/ruler/Bin/
 wallabag/vendor/hoa/ruler/Bin/Assert.php
 wallabag/vendor/hoa/ruler/CHANGELOG.md
@@ -5312,6 +5421,11 @@ wallabag/vendor/j0k3r/graby-site-config/.peacefmonline.com.txt
 wallabag/vendor/j0k3r/graby-site-config/.reuters.com.txt
 wallabag/vendor/j0k3r/graby-site-config/.slashdot.org.txt
 wallabag/vendor/j0k3r/graby-site-config/.smashingmagazine.com.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/.stackexchange.com.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/.stanford.edu.txt
 wallabag/vendor/j0k3r/graby-site-config/.thueringer-allgemeine.de.txt
 wallabag/vendor/j0k3r/graby-site-config/.time.com.txt
@@ -5334,6 +5448,11 @@ wallabag/vendor/j0k3r/graby-site-config/512pixels.net.txt
 wallabag/vendor/j0k3r/graby-site-config/5by5.tv.txt
 wallabag/vendor/j0k3r/graby-site-config/7newsbelize.com.txt
 wallabag/vendor/j0k3r/graby-site-config/9gag.com.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/9to5mac.com.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/LICENSE.txt
 wallabag/vendor/j0k3r/graby-site-config/aachener-nachrichten.de.txt
 wallabag/vendor/j0k3r/graby-site-config/abc-luxe.com.txt
@@ -5385,6 +5504,11 @@ wallabag/vendor/j0k3r/graby-site-config/appleweblog.com.txt
 wallabag/vendor/j0k3r/graby-site-config/archdaily.com.txt
 wallabag/vendor/j0k3r/graby-site-config/archive.pressthink.org.txt
 wallabag/vendor/j0k3r/graby-site-config/archiveofourown.org.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/arretsurimages.net.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/arstechnica.co.uk.txt
 wallabag/vendor/j0k3r/graby-site-config/arstechnica.com.txt
 wallabag/vendor/j0k3r/graby-site-config/articles.boston.com.txt
@@ -5425,6 +5549,11 @@ wallabag/vendor/j0k3r/graby-site-config/bjango.com.txt
 wallabag/vendor/j0k3r/graby-site-config/bleacherreport.com.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.asmartbear.com.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.cloudflare.com.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/blog.eleven-labs.com.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/blog.fefe.de.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.instagram.com.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.instapaper.com.txt
@@ -5437,6 +5566,11 @@ wallabag/vendor/j0k3r/graby-site-config/blog.renren.com.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.sina.com.cn.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.spu.edu.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.trello.com.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/blog.trendmicro.com.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/blog.wells.ee.txt
 wallabag/vendor/j0k3r/graby-site-config/blog.xebia.fr.txt
 wallabag/vendor/j0k3r/graby-site-config/blogs.faz.net.txt
@@ -5463,6 +5597,11 @@ wallabag/vendor/j0k3r/graby-site-config/brandeins.de.txt
 wallabag/vendor/j0k3r/graby-site-config/brandingstrategyinsider.com.txt
 wallabag/vendor/j0k3r/graby-site-config/brasil.elpais.com.txt
 wallabag/vendor/j0k3r/graby-site-config/brettterpstra.com.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/brightside.me.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/brisbanetimes.com.au.txt
 wallabag/vendor/j0k3r/graby-site-config/brooksreview.net.txt
 wallabag/vendor/j0k3r/graby-site-config/bt.no.txt
@@ -5486,6 +5625,11 @@ wallabag/vendor/j0k3r/graby-site-config/cbc.ca.txt
 wallabag/vendor/j0k3r/graby-site-config/cbn.com.txt
 wallabag/vendor/j0k3r/graby-site-config/cbsnews.com.txt
 wallabag/vendor/j0k3r/graby-site-config/chareidi.org.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/chefkoch.de.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/chinamining.org.txt
 wallabag/vendor/j0k3r/graby-site-config/chomsky.info.txt
 wallabag/vendor/j0k3r/graby-site-config/chrisltd.com.txt
@@ -5528,6 +5672,11 @@ wallabag/vendor/j0k3r/graby-site-config/counterpunch.org.txt
 wallabag/vendor/j0k3r/graby-site-config/crimemagazine.com.txt
 wallabag/vendor/j0k3r/graby-site-config/crimethinc.com.txt
 wallabag/vendor/j0k3r/graby-site-config/crn.de.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/crunchyroll.com.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/csmonitor.com.txt
 wallabag/vendor/j0k3r/graby-site-config/csnphilly.com.txt
 wallabag/vendor/j0k3r/graby-site-config/csoonline.com.txt
@@ -5541,12 +5690,22 @@ wallabag/vendor/j0k3r/graby-site-config/dagogtid.no.txt
 wallabag/vendor/j0k3r/graby-site-config/dailydot.com.txt
 wallabag/vendor/j0k3r/graby-site-config/dailykos.com.txt
 wallabag/vendor/j0k3r/graby-site-config/dailymail.co.uk.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/dailymotion.com.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/dailysabah.com.txt
 wallabag/vendor/j0k3r/graby-site-config/dailystar.com.lb.txt
 wallabag/vendor/j0k3r/graby-site-config/dansdata.com.txt
 wallabag/vendor/j0k3r/graby-site-config/dantri.com.vn.txt
 wallabag/vendor/j0k3r/graby-site-config/daringfireball.net.txt
 wallabag/vendor/j0k3r/graby-site-config/daserste.ndr.de.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/dbazi.com.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/dcurt.is.txt
 wallabag/vendor/j0k3r/graby-site-config/deadline.com.txt
 wallabag/vendor/j0k3r/graby-site-config/deadspin.com.txt
@@ -5630,6 +5789,11 @@ wallabag/vendor/j0k3r/graby-site-config/estadao.com.br.txt
 wallabag/vendor/j0k3r/graby-site-config/eternabuenosaires.com.txt
 wallabag/vendor/j0k3r/graby-site-config/eurogamer.net.txt
 wallabag/vendor/j0k3r/graby-site-config/evo.co.uk.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/eweek.com.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/explosm.net.txt
 wallabag/vendor/j0k3r/graby-site-config/expressen.se.txt
 wallabag/vendor/j0k3r/graby-site-config/extracine.com.txt
@@ -5657,6 +5821,11 @@ wallabag/vendor/j0k3r/graby-site-config/fnal.gov.txt
 wallabag/vendor/j0k3r/graby-site-config/focus-numerique.com.txt
 wallabag/vendor/j0k3r/graby-site-config/focus.de.txt
 wallabag/vendor/j0k3r/graby-site-config/fok.nl.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/fokus.se.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/foley.com.txt
 wallabag/vendor/j0k3r/graby-site-config/folklore.org.txt
 wallabag/vendor/j0k3r/graby-site-config/food.com.txt
@@ -5725,6 +5894,11 @@ wallabag/vendor/j0k3r/graby-site-config/groups.drupal.org.txt
 wallabag/vendor/j0k3r/graby-site-config/gsmarena.com.txt
 wallabag/vendor/j0k3r/graby-site-config/gulfnews.com.txt
 wallabag/vendor/j0k3r/graby-site-config/guokr.com.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/gurumed.org.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/haberler.com.txt
 wallabag/vendor/j0k3r/graby-site-config/habrahabr.ru.txt
 wallabag/vendor/j0k3r/graby-site-config/hackersrepublic.org.txt
@@ -5794,6 +5968,11 @@ wallabag/vendor/j0k3r/graby-site-config/infoworld.com.txt
 wallabag/vendor/j0k3r/graby-site-config/infzm.com.txt
 wallabag/vendor/j0k3r/graby-site-config/inhabitat.com.txt
 wallabag/vendor/j0k3r/graby-site-config/instagr.am.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/interviewmagazine.com.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/ipadclub.nl.txt
 wallabag/vendor/j0k3r/graby-site-config/ipadplanet.nl.txt
 wallabag/vendor/j0k3r/graby-site-config/iphoneaddict.fr.txt
@@ -5807,6 +5986,11 @@ wallabag/vendor/j0k3r/graby-site-config/it-connect.fr.txt
 wallabag/vendor/j0k3r/graby-site-config/itavisen.no.txt
 wallabag/vendor/j0k3r/graby-site-config/itmedia.co.jp.txt
 wallabag/vendor/j0k3r/graby-site-config/itnews.com.au.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/itsfoss.com.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/itstactical.com.txt
 wallabag/vendor/j0k3r/graby-site-config/itunes.apple.com.txt
 wallabag/vendor/j0k3r/graby-site-config/itwire.com.txt
@@ -5819,6 +6003,11 @@ wallabag/vendor/j0k3r/graby-site-config/javaworld.com.txt
 wallabag/vendor/j0k3r/graby-site-config/jdubuzz.com.txt
 wallabag/vendor/j0k3r/graby-site-config/jetzt.de.txt
 wallabag/vendor/j0k3r/graby-site-config/jetzt.sueddeutsche.de.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/jeuxvideo.com.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/jezebel.com.txt
 wallabag/vendor/j0k3r/graby-site-config/jjahnke.net.txt
 wallabag/vendor/j0k3r/graby-site-config/jneurosci.org.txt
@@ -5864,6 +6053,11 @@ wallabag/vendor/j0k3r/graby-site-config/lenta.ru.txt
 wallabag/vendor/j0k3r/graby-site-config/lesnumeriques.com.txt
 wallabag/vendor/j0k3r/graby-site-config/letraslibres.com.txt
 wallabag/vendor/j0k3r/graby-site-config/libcom.org.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/liberation.fr.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/lifehacker.co.uk.txt
 wallabag/vendor/j0k3r/graby-site-config/lifehacker.com.txt
 wallabag/vendor/j0k3r/graby-site-config/lifestyle.inquirer.net.txt
@@ -5881,6 +6075,11 @@ wallabag/vendor/j0k3r/graby-site-config/lrb.co.uk.txt
 wallabag/vendor/j0k3r/graby-site-config/luminous-landscape.com.txt
 wallabag/vendor/j0k3r/graby-site-config/lupa.cz.txt
 wallabag/vendor/j0k3r/graby-site-config/luxuo.com.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/lvsl.fr.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/lwn.net.txt
 wallabag/vendor/j0k3r/graby-site-config/m.bbc.co.uk.txt
 wallabag/vendor/j0k3r/graby-site-config/m.douban.com.txt
@@ -5932,6 +6131,11 @@ wallabag/vendor/j0k3r/graby-site-config/mlssoccer.com.txt
 wallabag/vendor/j0k3r/graby-site-config/mmo-champion.com.txt
 wallabag/vendor/j0k3r/graby-site-config/mnn.com.txt
 wallabag/vendor/j0k3r/graby-site-config/mno.hu.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/mobile.lemondeinformatique.fr.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/mobile.nytimes.com.txt
 wallabag/vendor/j0k3r/graby-site-config/mobile.twitter.com.txt
 wallabag/vendor/j0k3r/graby-site-config/mobilenet.cz.txt
@@ -6036,6 +6240,11 @@ wallabag/vendor/j0k3r/graby-site-config/penny-arcade.com.txt
 wallabag/vendor/j0k3r/graby-site-config/pentaxforums.com.txt
 wallabag/vendor/j0k3r/graby-site-config/phastidio.net.txt
 wallabag/vendor/j0k3r/graby-site-config/philadelphiaeagles.com.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/philstar.com.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/phoronix.com.txt
 wallabag/vendor/j0k3r/graby-site-config/photo.tutsplus.com.txt
 wallabag/vendor/j0k3r/graby-site-config/phototrend.fr.txt
@@ -6123,6 +6332,11 @@ wallabag/vendor/j0k3r/graby-site-config/saadaalnews.net.txt
 wallabag/vendor/j0k3r/graby-site-config/salon.com.txt
 wallabag/vendor/j0k3r/graby-site-config/salzburg.com.txt
 wallabag/vendor/j0k3r/graby-site-config/sanpedrosun.com.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/sargasso.nl.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/saveyourself.ca.txt
 wallabag/vendor/j0k3r/graby-site-config/sayidaty.net.txt
 wallabag/vendor/j0k3r/graby-site-config/sbnation.com.txt
@@ -6131,11 +6345,21 @@ wallabag/vendor/j0k3r/graby-site-config/scienceblogs.de.txt
 wallabag/vendor/j0k3r/graby-site-config/scienceticker.info.txt
 wallabag/vendor/j0k3r/graby-site-config/scientificamerican.com.txt
 wallabag/vendor/j0k3r/graby-site-config/scilogs.de.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/scnsrc.me.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/scotusblog.com.txt
 wallabag/vendor/j0k3r/graby-site-config/scripting.com.txt
 wallabag/vendor/j0k3r/graby-site-config/searchenginejournal.com.txt
 wallabag/vendor/j0k3r/graby-site-config/searchengineland.com.txt
 wallabag/vendor/j0k3r/graby-site-config/seattletransitblog.com.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/secouchermoinsbete.fr.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/secushare.org.txt
 wallabag/vendor/j0k3r/graby-site-config/select.yeeyan.org.txt
 wallabag/vendor/j0k3r/graby-site-config/semiaccurate.com.txt
@@ -6146,6 +6370,11 @@ wallabag/vendor/j0k3r/graby-site-config/sf.eater.com.txt
 wallabag/vendor/j0k3r/graby-site-config/sfgate.com.txt
 wallabag/vendor/j0k3r/graby-site-config/sfweekly.com.txt
 wallabag/vendor/j0k3r/graby-site-config/shabayek.com.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/shahrsakhtafzar.com.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/shawnblanc.net.txt
 wallabag/vendor/j0k3r/graby-site-config/shifteleven.com.txt
 wallabag/vendor/j0k3r/graby-site-config/siasat.pk.txt
@@ -6221,6 +6450,11 @@ wallabag/vendor/j0k3r/graby-site-config/technologizer.com.txt
 wallabag/vendor/j0k3r/graby-site-config/technologyreview.com.txt
 wallabag/vendor/j0k3r/graby-site-config/techpinions.com.txt
 wallabag/vendor/j0k3r/graby-site-config/techradar.com.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/ted.com.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/telegraaf.nl.txt
 wallabag/vendor/j0k3r/graby-site-config/telegraph.co.uk.txt
 wallabag/vendor/j0k3r/graby-site-config/thanhnien.com.vn.txt
@@ -6270,6 +6504,11 @@ wallabag/vendor/j0k3r/graby-site-config/timeshighereducation.co.uk.txt
 wallabag/vendor/j0k3r/graby-site-config/timeshighereducation.com.txt
 wallabag/vendor/j0k3r/graby-site-config/tipb.com.txt
 wallabag/vendor/j0k3r/graby-site-config/titanic-magazin.de.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/tldp.org.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/tnr.com.txt
 wallabag/vendor/j0k3r/graby-site-config/tofugu.com.txt
 wallabag/vendor/j0k3r/graby-site-config/tomdispatch.com.txt
@@ -6288,6 +6527,11 @@ wallabag/vendor/j0k3r/graby-site-config/truthdig.com.txt
 wallabag/vendor/j0k3r/graby-site-config/tthfanfic.org.txt
 wallabag/vendor/j0k3r/graby-site-config/tuaw.com.txt
 wallabag/vendor/j0k3r/graby-site-config/tuhdo.github.io.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/turnoff.us.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby-site-config/tvtropes.org.txt
 wallabag/vendor/j0k3r/graby-site-config/tweakers.net.txt
 wallabag/vendor/j0k3r/graby-site-config/twitter.com.txt
@@ -6378,6 +6622,11 @@ wallabag/vendor/j0k3r/graby-site-config/zerohedge.com.txt
 wallabag/vendor/j0k3r/graby-site-config/zerokspot.com.txt
 wallabag/vendor/j0k3r/graby-site-config/zhihu.com.txt
 wallabag/vendor/j0k3r/graby-site-config/zive.cz.txt
+@owner
+@group
+wallabag/vendor/j0k3r/graby-site-config/zoomit.ir.txt
+@owner root
+@group daemon
 wallabag/vendor/j0k3r/graby/LICENCE
 wallabag/vendor/j0k3r/graby/composer.json
 wallabag/vendor/j0k3r/graby/log/
@@ -6578,12 +6827,23 @@ wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/.scrutinizer.yml
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/.travis.yml
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/CHANGELOG.md
+@owner
+@group
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/ContextFactory/
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/ContextFactory/ConfiguredContextFactory.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/DependencyInjection/
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/DependencyInjection/Compiler/
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/DependencyInjection/Compiler/CustomHandlersPass.php
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/DependencyInjection/Compiler/DoctrinePass.php
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/DependencyInjection/Compiler/RegisterEventListenersAndSubscribersPass.php
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/DependencyInjection/Compiler/ServiceMapPass.php
+@owner
+@group
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/DependencyInjection/Compiler/TwigExtensionPass.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/DependencyInjection/Configuration.php
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/DependencyInjection/JMSSerializerExtension.php
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/ExpressionLanguage/
@@ -6617,12 +6877,49 @@ wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Serializer/StopwatchE
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Templating/
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Templating/SerializerHelper.php
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/
+@owner
+@group
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/ContextFactory/
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/ContextFactory/ConfiguredContextFactoryTest.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/
+@owner
+@group
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/ConfigurationTest.php
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/CustomHandlerPassTest.php
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/DoctrinePassTest.php
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/EventSubscribersAndListenersPassTest.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/Fixture/
+@owner
+@group
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/Fixture/EventSubscriber.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/Fixture/ObjectUsingExpressionLanguage.php
+@owner
+@group
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/Fixture/ObjectUsingExpressionProperties.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/Fixture/SimpleObject.php
+@owner
+@group
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/Fixture/SubscribingHandler.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/Fixture/VersionedObject.php
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/JMSSerializerExtensionTest.php
+@owner
+@group
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/NamingStrategyTest.php
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/DependencyInjection/TwigExtensionPassTest.php
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/ExpressionLanguage/
+wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/ExpressionLanguage/ExpressionLanguageTest.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/Tests/bootstrap.php
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/UPGRADING.md
 wallabag/vendor/jms/serializer-bundle/JMS/SerializerBundle/composer.json
@@ -6640,7 +6937,17 @@ wallabag/vendor/jms/serializer/doc/LICENSE
 wallabag/vendor/jms/serializer/doc/configuration.rst
 wallabag/vendor/jms/serializer/doc/cookbook/
 wallabag/vendor/jms/serializer/doc/cookbook.rst
+@owner
+@group
+wallabag/vendor/jms/serializer/doc/cookbook/arrays.rst
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/doc/cookbook/exclusion_strategies.rst
+@owner
+@group
+wallabag/vendor/jms/serializer/doc/cookbook/stdclass.rst
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/doc/event_system.rst
 wallabag/vendor/jms/serializer/doc/handlers.rst
 wallabag/vendor/jms/serializer/doc/index.rst
@@ -6655,6 +6962,14 @@ wallabag/vendor/jms/serializer/src/
 wallabag/vendor/jms/serializer/src/JMS/
 wallabag/vendor/jms/serializer/src/JMS/Serializer/
 wallabag/vendor/jms/serializer/src/JMS/Serializer/AbstractVisitor.php
+@owner
+@group
+wallabag/vendor/jms/serializer/src/JMS/Serializer/Accessor/
+wallabag/vendor/jms/serializer/src/JMS/Serializer/Accessor/AccessorStrategyInterface.php
+wallabag/vendor/jms/serializer/src/JMS/Serializer/Accessor/DefaultAccessorStrategy.php
+wallabag/vendor/jms/serializer/src/JMS/Serializer/Accessor/ExpressionAccessorStrategy.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Annotation/
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Annotation/AccessType.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Annotation/Accessor.php
@@ -6673,6 +6988,11 @@ wallabag/vendor/jms/serializer/src/JMS/Serializer/Annotation/PreSerialize.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Annotation/ReadOnly.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Annotation/SerializedName.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Annotation/Since.php
+@owner
+@group
+wallabag/vendor/jms/serializer/src/JMS/Serializer/Annotation/SkipWhenEmpty.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Annotation/Type.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Annotation/Until.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Annotation/Version.php
@@ -6726,6 +7046,11 @@ wallabag/vendor/jms/serializer/src/JMS/Serializer/Exception/Exception.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Exception/ExpressionLanguageRequiredException.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Exception/InvalidArgumentException.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Exception/LogicException.php
+@owner
+@group
+wallabag/vendor/jms/serializer/src/JMS/Serializer/Exception/ObjectConstructionException.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Exception/RuntimeException.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Exception/UnsupportedFormatException.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Exception/ValidationFailedException.php
@@ -6753,6 +7078,11 @@ wallabag/vendor/jms/serializer/src/JMS/Serializer/Handler/HandlerRegistryInterfa
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Handler/LazyHandlerRegistry.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Handler/PhpCollectionHandler.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Handler/PropelCollectionHandler.php
+@owner
+@group
+wallabag/vendor/jms/serializer/src/JMS/Serializer/Handler/StdClassHandler.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Handler/SubscribingHandlerInterface.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/JsonDeserializationVisitor.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/JsonSerializationVisitor.php
@@ -6766,6 +7096,11 @@ wallabag/vendor/jms/serializer/src/JMS/Serializer/Metadata/Driver/DoctrineTypeDr
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Metadata/Driver/PhpDriver.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Metadata/Driver/XmlDriver.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Metadata/Driver/YamlDriver.php
+@owner
+@group
+wallabag/vendor/jms/serializer/src/JMS/Serializer/Metadata/ExpressionPropertyMetadata.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Metadata/PropertyMetadata.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Metadata/StaticPropertyMetadata.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Metadata/VirtualPropertyMetadata.php
@@ -6781,6 +7116,12 @@ wallabag/vendor/jms/serializer/src/JMS/Serializer/SerializerBuilder.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/SerializerInterface.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Twig/
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Twig/SerializerExtension.php
+@owner
+@group
+wallabag/vendor/jms/serializer/src/JMS/Serializer/Twig/SerializerRuntimeExtension.php
+wallabag/vendor/jms/serializer/src/JMS/Serializer/Twig/SerializerRuntimeHelper.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/src/JMS/Serializer/TypeParser.php
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Util/
 wallabag/vendor/jms/serializer/src/JMS/Serializer/Util/Writer.php
@@ -6803,6 +7144,11 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/AccessorSette
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/AllExcludedObject.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Article.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Author.php
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/AuthorExpressionAccess.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/AuthorList.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/AuthorReadOnly.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/AuthorReadOnlyPerClass.php
@@ -6819,6 +7165,12 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Discriminator
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Discriminator/Moped.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Discriminator/ObjectWithXmlAttributeDiscriminatorChild.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Discriminator/ObjectWithXmlAttributeDiscriminatorParent.php
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Discriminator/ObjectWithXmlNamespaceDiscriminatorChild.php
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Discriminator/ObjectWithXmlNamespaceDiscriminatorParent.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Discriminator/ObjectWithXmlNotCDataDiscriminatorChild.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Discriminator/ObjectWithXmlNotCDataDiscriminatorParent.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Discriminator/Vehicle.php
@@ -6842,6 +7194,12 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/DoctrinePHPCR
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/DoctrinePHPCR/Author.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/DoctrinePHPCR/BlogPost.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/DoctrinePHPCR/Comment.php
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ExclusionStrategy/
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ExclusionStrategy/AlwaysExcludeExclusionStrategy.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Garage.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/GetSetObject.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/GroupsObject.php
@@ -6851,31 +7209,71 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/InitializedBl
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/InitializedObjectConstructor.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/InlineChild.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/InlineChildEmpty.php
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/InlineChildWithGroups.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/InlineParent.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Input.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/InvalidGroupsObject.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/InvalidUsageOfXmlValue.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Log.php
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/MaxDepth/
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/MaxDepth/Gh236Bar.php
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/MaxDepth/Gh236Foo.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/NamedDateTimeArraysObject.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/NamedDateTimeImmutableArraysObject.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Node.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithAbsentXmlListNode.php
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithEmptyArrayAndHash.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithEmptyHash.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithEmptyNullableAndEmptyArrays.php
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithExpressionVirtualPropertiesAndExcludeAll.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithHandlerCallbacks.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithIntListAndIntMap.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithLifecycleCallbacks.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithNamespacesAndList.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithNullProperty.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithObjectProperty.php
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithToString.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithVersionedVirtualProperties.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithVirtualProperties.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithVirtualPropertiesAndExcludeAll.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithVirtualXmlProperties.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithXmlKeyValuePairs.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithXmlNamespaces.php
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithXmlNamespacesAndObjectProperty.php
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithXmlNamespacesAndObjectPropertyAuthor.php
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithXmlNamespacesAndObjectPropertyVirtual.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ObjectWithXmlRootNamespace.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Order.php
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ParentDoNotSkipWithEmptyChild.php
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/ParentSkipWithEmptyChild.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Person.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/PersonCollection.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/PersonLocation.php
@@ -6895,6 +7293,11 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/Tree.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/VehicleInterfaceGarage.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Fixtures/VersionedObject.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Handler/
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Handler/ArrayCollectionHandlerTest.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Handler/FormErrorHandlerTest.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Handler/PropelCollectionHandlerTest.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/
@@ -6908,43 +7311,83 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/PhpDri
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/XmlDriverTest.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/YamlDriverTest.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/AuthorExpressionAccess.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/AuthorReadOnly.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/AuthorReadOnlyPerClass.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/BlogPost.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/Discriminator.Car.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/Discriminator.Moped.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/Discriminator.ObjectWithXmlAttributeDiscriminatorParent.php
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/Discriminator.ObjectWithXmlNamespaceDiscriminatorParent.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/Discriminator.Vehicle.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/DiscriminatorGroup.Vehicle.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/Node.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/ObjectWithAbsentXmlListNode.php
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/ObjectWithExpressionVirtualPropertiesAndExcludeAll.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/ObjectWithHandlerCallbacks.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/ObjectWithVirtualProperties.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/ObjectWithVirtualPropertiesAndExcludeAll.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/ObjectWithXmlKeyValuePairs.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/ObjectWithXmlNamespaces.php
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/ParentSkipWithEmptyChild.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/Person.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/PersonSecret.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/Price.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/SimpleClassObject.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/php/SimpleSubClassObject.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/AuthorExpressionAccess.xml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/AuthorReadOnly.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/AuthorReadOnlyPerClass.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/BlogPost.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/Discriminator.Car.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/Discriminator.Moped.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/Discriminator.ObjectWithXmlAttributeDiscriminatorParent.xml
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/Discriminator.ObjectWithXmlNamespaceDiscriminatorParent.xml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/Discriminator.Vehicle.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/DiscriminatorGroup.Vehicle.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/GetSetObject.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/Node.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/ObjectWithAbsentXmlListNode.xml
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/ObjectWithExpressionVirtualPropertiesAndExcludeAll.xml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/ObjectWithHandlerCallbacks.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/ObjectWithVirtualProperties.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/ObjectWithVirtualPropertiesAndExcludeAll.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/ObjectWithXmlKeyValuePairs.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/ObjectWithXmlNamespaces.xml
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/ParentSkipWithEmptyChild.xml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/Person.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/PersonSecret.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/Price.xml
@@ -6958,21 +7401,41 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/ex
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/exclude_none/BlogPost.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/xml/invalid.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/AuthorExpressionAccess.yml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/AuthorReadOnly.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/AuthorReadOnlyPerClass.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/BlogPost.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/Discriminator.Car.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/Discriminator.Moped.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/Discriminator.ObjectWithXmlAttributeDiscriminatorParent.yml
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/Discriminator.ObjectWithXmlNamespaceDiscriminatorParent.yml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/Discriminator.Vehicle.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/DiscriminatorGroup.Vehicle.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/Node.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/ObjectWithAbsentXmlListNode.yml
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/ObjectWithExpressionVirtualPropertiesAndExcludeAll.yml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/ObjectWithHandlerCallbacks.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/ObjectWithVirtualProperties.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/ObjectWithVirtualPropertiesAndExcludeAll.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/ObjectWithXmlKeyValuePairs.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/ObjectWithXmlNamespaces.yml
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/ParentSkipWithEmptyChild.yml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/Person.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/PersonSecret.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Metadata/Driver/yml/Price.yml
@@ -6997,6 +7460,11 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/ContextTest
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/DateIntervalFormatTest.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/Doctrine/
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/Doctrine/IntegrationTest.php
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/Doctrine/ObjectConstructorTest.php
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/EventDispatcher/
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/EventDispatcher/EventDispatcherTest.php
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/EventDispatcher/Subscriber/
@@ -7027,6 +7495,11 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/array_n
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/array_objects.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/array_strings.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/article.xml
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/author_expression.xml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/blog_post.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/blog_post_unauthored.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/boolean_false.xml
@@ -7043,6 +7516,12 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/date_ti
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/date_time_immutable.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/date_time_immutable_no_cdata.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/date_time_no_cdata.xml
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/empty_child.xml
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/empty_child_skip.xml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/float.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/float_trailing_zero.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/form_errors.xml
@@ -7059,6 +7538,11 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/input.x
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/integer.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/lifecycle_callbacks.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/log.xml
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/maxdepth_skippabe_object.xml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/mixed_access_types.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/nested_form_errors.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/null.xml
@@ -7070,6 +7554,12 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/object_
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/object_with_namespaces_and_list.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/object_with_only_namespaces_and_list.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/object_with_xml_namespaces.xml
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/object_with_xml_namespaces_and_object_property.xml
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/object_with_xml_namespaces_and_object_property_virtual.xml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/object_with_xml_namespacesalias.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/object_with_xml_root_namespace.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/order.xml
@@ -7099,6 +7589,11 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/virtual
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/virtual_properties_map.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/virtual_values.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/xml_discriminator_attribute.xml
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/xml_discriminator_namespace.xml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/xml/xml_discriminator_not_cdata.xml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/accessor_order_child.yml
@@ -7116,6 +7611,11 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/array_n
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/array_objects.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/array_strings.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/article.yml
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/author_expression.yml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/blog_post.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/blog_post_unauthored.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/boolean_false.yml
@@ -7143,6 +7643,11 @@ wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/input.y
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/integer.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/lifecycle_callbacks.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/log.yml
+@owner
+@group
+wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/maxdepth_skippabe_object.yml
+@owner root
+@group daemon
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/mixed_access_types.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/null.yml
 wallabag/vendor/jms/serializer/tests/JMS/Serializer/Tests/Serializer/yml/nullable.yml
@@ -7208,6 +7713,11 @@ wallabag/vendor/kphoen/rulerz-bundle/Validator/Constraints/
 wallabag/vendor/kphoen/rulerz-bundle/Validator/Constraints/RuleValidator.php
 wallabag/vendor/kphoen/rulerz-bundle/Validator/Constraints/ValidRule.php
 wallabag/vendor/kphoen/rulerz-bundle/composer.json
+@owner
+@group
+wallabag/vendor/kphoen/rulerz/.editorconfig
+@owner root
+@group daemon
 wallabag/vendor/kphoen/rulerz/.styleci.yml
 wallabag/vendor/kphoen/rulerz/LICENSE
 wallabag/vendor/kphoen/rulerz/behat.yml
@@ -7566,9 +8076,17 @@ wallabag/vendor/mnapoli/piwik-twig-extension/src/PiwikTwigExtension.php
 wallabag/vendor/monolog/
 wallabag/vendor/monolog/monolog/
 wallabag/vendor/monolog/monolog/.php_cs
-wallabag/vendor/monolog/monolog/CHANGELOG.mdown
+@owner
+@group
+wallabag/vendor/monolog/monolog/CHANGELOG.md
+@owner root
+@group daemon
 wallabag/vendor/monolog/monolog/LICENSE
-wallabag/vendor/monolog/monolog/README.mdown
+@owner
+@group
+wallabag/vendor/monolog/monolog/README.md
+@owner root
+@group daemon
 wallabag/vendor/monolog/monolog/composer.json
 wallabag/vendor/monolog/monolog/doc/
 wallabag/vendor/monolog/monolog/doc/01-usage.md
@@ -8476,6 +8994,11 @@ wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/Adapter/FixedAdapter.php
 wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/Adapter/MandangoAdapter.php
 wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/Adapter/MongoAdapter.php
 wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/Adapter/NullAdapter.php
+@owner
+@group
+wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/Adapter/Propel2Adapter.php
+@owner root
+@group daemon
 wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/Adapter/PropelAdapter.php
 wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/Adapter/SolariumAdapter.php
 wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/Exception/
@@ -8502,8 +9025,18 @@ wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/View/Template/SemanticUiTem
 wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/View/Template/Template.php
 wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/View/Template/TemplateInterface.php
 wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/View/Template/TwitterBootstrap3Template.php
+@owner
+@group
+wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/View/Template/TwitterBootstrap4Template.php
+@owner root
+@group daemon
 wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/View/Template/TwitterBootstrapTemplate.php
 wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/View/TwitterBootstrap3View.php
+@owner
+@group
+wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/View/TwitterBootstrap4View.php
+@owner root
+@group daemon
 wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/View/TwitterBootstrapView.php
 wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/View/ViewFactory.php
 wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/View/ViewFactoryInterface.php
@@ -8511,10 +9044,19 @@ wallabag/vendor/pagerfanta/pagerfanta/src/Pagerfanta/View/ViewInterface.php
 wallabag/vendor/paragonie/
 wallabag/vendor/paragonie/random_compat/
 wallabag/vendor/paragonie/random_compat/CHANGELOG.md
-wallabag/vendor/paragonie/random_compat/ERRATA.md
 wallabag/vendor/paragonie/random_compat/LICENSE
+@owner
+@group
+wallabag/vendor/paragonie/random_compat/RATIONALE.md
+@owner root
+@group daemon
 wallabag/vendor/paragonie/random_compat/README.md
 wallabag/vendor/paragonie/random_compat/SECURITY.md
+@owner
+@group
+wallabag/vendor/paragonie/random_compat/build-phar.sh
+@owner root
+@group daemon
 wallabag/vendor/paragonie/random_compat/composer.json
 wallabag/vendor/paragonie/random_compat/dist/
 wallabag/vendor/paragonie/random_compat/dist/random_compat.phar.pubkey
@@ -8533,6 +9075,17 @@ wallabag/vendor/paragonie/random_compat/lib/random_bytes_openssl.php
 wallabag/vendor/paragonie/random_compat/lib/random_int.php
 wallabag/vendor/paragonie/random_compat/other/
 wallabag/vendor/paragonie/random_compat/other/build_phar.php
+@owner
+@group
+wallabag/vendor/paragonie/random_compat/other/ide_stubs/
+wallabag/vendor/paragonie/random_compat/other/ide_stubs/COM.php
+wallabag/vendor/paragonie/random_compat/other/ide_stubs/README.md
+wallabag/vendor/paragonie/random_compat/other/ide_stubs/com_exception.php
+wallabag/vendor/paragonie/random_compat/other/ide_stubs/libsodium.php
+wallabag/vendor/paragonie/random_compat/psalm-autoload.php
+wallabag/vendor/paragonie/random_compat/psalm.xml
+@owner root
+@group daemon
 wallabag/vendor/php-amqplib/
 wallabag/vendor/php-amqplib/php-amqplib/
 wallabag/vendor/php-amqplib/php-amqplib/CHANGELOG.md
@@ -9427,6 +9980,11 @@ wallabag/vendor/sensio/framework-extra-bundle/Configuration/Security.php
 wallabag/vendor/sensio/framework-extra-bundle/Configuration/Template.php
 wallabag/vendor/sensio/framework-extra-bundle/DependencyInjection/
 wallabag/vendor/sensio/framework-extra-bundle/DependencyInjection/Compiler/
+@owner
+@group
+wallabag/vendor/sensio/framework-extra-bundle/DependencyInjection/Compiler/AddExpressionLanguageProvidersPass.php
+@owner root
+@group daemon
 wallabag/vendor/sensio/framework-extra-bundle/DependencyInjection/Compiler/AddParamConverterPass.php
 wallabag/vendor/sensio/framework-extra-bundle/DependencyInjection/Compiler/LegacyPass.php
 wallabag/vendor/sensio/framework-extra-bundle/DependencyInjection/Configuration.php
@@ -9478,6 +10036,13 @@ wallabag/vendor/sensio/framework-extra-bundle/Tests/Configuration/
 wallabag/vendor/sensio/framework-extra-bundle/Tests/Configuration/ConfigurationAnnotationTest.php
 wallabag/vendor/sensio/framework-extra-bundle/Tests/Configuration/RouteTest.php
 wallabag/vendor/sensio/framework-extra-bundle/Tests/DependencyInjection/
+@owner
+@group
+wallabag/vendor/sensio/framework-extra-bundle/Tests/DependencyInjection/Compiler/
+wallabag/vendor/sensio/framework-extra-bundle/Tests/DependencyInjection/Compiler/AddExpressionLanguageProvidersPassTest.php
+wallabag/vendor/sensio/framework-extra-bundle/Tests/DependencyInjection/Compiler/AddParamConverterPassTest.php
+@owner root
+@group daemon
 wallabag/vendor/sensio/framework-extra-bundle/Tests/DependencyInjection/SensioFrameworkExtraExtensionTest.php
 wallabag/vendor/sensio/framework-extra-bundle/Tests/EventListener/
 wallabag/vendor/sensio/framework-extra-bundle/Tests/EventListener/ControllerListenerTest.php
@@ -9495,6 +10060,11 @@ wallabag/vendor/sensio/framework-extra-bundle/Tests/EventListener/PsrResponseLis
 wallabag/vendor/sensio/framework-extra-bundle/Tests/EventListener/SecurityListenerTest.php
 wallabag/vendor/sensio/framework-extra-bundle/Tests/Fixtures/
 wallabag/vendor/sensio/framework-extra-bundle/Tests/Fixtures/ActionArgumentsBundle/
+@owner
+@group
+wallabag/vendor/sensio/framework-extra-bundle/Tests/Fixtures/ActionArgumentsBundle/ActionArgumentsBundle.php
+@owner root
+@group daemon
 wallabag/vendor/sensio/framework-extra-bundle/Tests/Fixtures/ActionArgumentsBundle/Controller/
 wallabag/vendor/sensio/framework-extra-bundle/Tests/Fixtures/ActionArgumentsBundle/Controller/NullableArgumentsController.php
 wallabag/vendor/sensio/framework-extra-bundle/Tests/Fixtures/FooBundle/
@@ -9524,6 +10094,13 @@ wallabag/vendor/sensio/framework-extra-bundle/Tests/Fixtures/TestKernel.php
 wallabag/vendor/sensio/framework-extra-bundle/Tests/Fixtures/cache/
 wallabag/vendor/sensio/framework-extra-bundle/Tests/Fixtures/config/
 wallabag/vendor/sensio/framework-extra-bundle/Tests/Fixtures/config/config.yml
+@owner
+@group
+wallabag/vendor/sensio/framework-extra-bundle/Tests/Fixtures/config/nullable_type/
+wallabag/vendor/sensio/framework-extra-bundle/Tests/Fixtures/config/nullable_type/config.yml
+wallabag/vendor/sensio/framework-extra-bundle/Tests/Fixtures/config/nullable_type/routing.yml
+@owner root
+@group daemon
 wallabag/vendor/sensio/framework-extra-bundle/Tests/Fixtures/config/routing.yml
 wallabag/vendor/sensio/framework-extra-bundle/Tests/Functional/
 wallabag/vendor/sensio/framework-extra-bundle/Tests/Functional/NullableAnnotationTest.php
@@ -12046,6 +12623,11 @@ wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/xml/ov
 wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/xml/overwriting_import.xml
 wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/xml/parameterized_handlers.xml
 wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/xml/process_psr_3_messages_disabled.xml
+@owner
+@group
+wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/xml/server_log.xml
+@owner root
+@group daemon
 wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/xml/single_email_recipient.xml
 wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/yml/
 wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/yml/handlers_with_channels.yml
@@ -12059,6 +12641,11 @@ wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/yml/ov
 wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/yml/overwriting_import.yml
 wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/yml/parameterized_handlers.yml
 wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/yml/process_psr_3_messages_disabled.yml
+@owner
+@group
+wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/yml/server_log.yml
+@owner root
+@group daemon
 wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/yml/single_email_recipient.yml
 wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/MonologExtensionTest.php
 wallabag/vendor/symfony/monolog-bundle/Tests/DependencyInjection/XmlMonologExtensionTest.php
@@ -12332,8 +12919,20 @@ wallabag/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/Fixtures/Perso
 wallabag/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/Fixtures/SingleAssociationToIntIdEntity.php
 wallabag/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/Fixtures/SingleIntIdEntity.php
 wallabag/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/Fixtures/SingleIntIdNoToStringEntity.php
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/Fixtures/SingleIntIdStringWrapperNameEntity.php
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/Fixtures/SingleStringCastableIdEntity.php
 wallabag/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/Fixtures/SingleStringIdEntity.php
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/Fixtures/Type/
+wallabag/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/Fixtures/Type/StringWrapper.php
+wallabag/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/Fixtures/Type/StringWrapperType.php
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/Fixtures/User.php
 wallabag/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/Form/
 wallabag/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/Form/ChoiceList/
@@ -12657,6 +13256,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInj
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/ConfigCachePass.php
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/ContainerBuilderDebugDumpPass.php
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/ControllerArgumentValueResolverPass.php
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/DataCollectorTranslatorPass.php
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/FormPass.php
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/LoggingTranslatorPass.php
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/ProfilerPass.php
@@ -12846,6 +13450,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/Depende
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/CachePoolPassTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/ConfigCachePassTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/ControllerArgumentValueResolverPassTest.php
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/DataCollectorTranslatorPassTest.php
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/FormPassTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/LoggingTranslatorPassTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/ProfilerPassTest.php
@@ -13318,6 +13927,12 @@ wallabag/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/DataCollector/
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/DataCollector/SecurityDataCollectorTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/DependencyInjection/
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/DependencyInjection/Compiler/
+wallabag/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/DependencyInjection/Compiler/AddSecurityVotersPassTest.php
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/DependencyInjection/CompleteConfigurationTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/DependencyInjection/Fixtures/
 wallabag/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/DependencyInjection/Fixtures/UserProvider/
@@ -13795,6 +14410,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Cache/Tests/Adapter/PhpArr
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Cache/Tests/Adapter/PhpArrayAdapterWithFallbackTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Cache/Tests/Adapter/PhpFilesAdapterTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Cache/Tests/Adapter/PredisAdapterTest.php
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Cache/Tests/Adapter/PredisClusterAdapterTest.php
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Cache/Tests/Adapter/ProxyAdapterTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Cache/Tests/Adapter/RedisAdapterTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Cache/Tests/Adapter/RedisArrayAdapterTest.php
@@ -14076,6 +14696,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/FileLocatorTe
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Again/
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Again/foo.xml
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/BarNode.php
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Builder/
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Builder/BarNodeDefinition.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Builder/NodeBuilder.php
@@ -14295,6 +14920,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/app
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/application_renderexception_doublewidth1.txt
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/application_renderexception_doublewidth1decorated.txt
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/application_renderexception_doublewidth2.txt
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/application_renderexception_escapeslines.txt
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/application_run1.txt
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/application_run2.txt
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/application_run3.txt
@@ -14719,6 +15349,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/
 wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Extension/ExtensionTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/
 wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/CustomDefinition.php
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/DeprecatedClass.php
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/FactoryDummy.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/containers/
 wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/containers/CustomContainer.php
@@ -14780,6 +15415,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/
 wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/php/services8.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/php/services9.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/php/services9_compiled.php
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/php/services_private_frozen.php
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/php/simple.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/xml/
 wallabag/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/xml/extension1/
@@ -15431,6 +16071,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Extension/Core/
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Extension/Core/Type/DateIntervalTypeTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Extension/Core/Type/DateTimeTypeTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Extension/Core/Type/DateTypeTest.php
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Extension/Core/Type/ExtendedChoiceTypeTest.php
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Extension/Core/Type/FileTypeTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Extension/Core/Type/FormTypeTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Extension/Core/Type/IntegerTypeTest.php
@@ -15486,6 +16131,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/Author
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/AuthorInterface.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/AuthorType.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/ChoiceSubType.php
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/ChoiceTypeExtension.php
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/CustomArrayObject.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/FBooType.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/FixedDataTransformer.php
@@ -15663,6 +16313,13 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/Sessi
 wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/Session/Storage/Proxy/NativeProxyTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/Session/Storage/Proxy/SessionHandlerProxyTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/StreamedResponseTest.php
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/schema/
+wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/schema/http-status-codes.rng
+wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/schema/iana-registry.rng
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/composer.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/phpunit.xml.dist
 wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/
@@ -15875,6 +16532,12 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Tests/Exception
 wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Tests/Exception/UnprocessableEntityHttpExceptionTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Tests/Exception/UnsupportedMediaTypeHttpExceptionTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Tests/Fixtures/
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Tests/Fixtures/123/
+wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Tests/Fixtures/123/Kernel123.php
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Tests/Fixtures/BaseBundle/
 wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Tests/Fixtures/BaseBundle/Resources/
 wallabag/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Tests/Fixtures/BaseBundle/Resources/foo.txt
@@ -16119,7 +16782,6 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/curren
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/en_ER.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/en_FJ.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/en_FK.json
-wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/en_GB.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/en_GD.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/en_GG.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/en_GH.json
@@ -16179,6 +16841,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/curren
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/es_419.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/es_AR.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/es_BO.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/es_BR.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/es_CL.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/es_CO.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/es_CR.json
@@ -16300,6 +16967,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/curren
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/pt.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/pt_AO.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/pt_CV.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/pt_LU.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/pt_MO.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/pt_MZ.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/currencies/pt_PT.json
@@ -16377,6 +17049,12 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/langua
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/am.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/ar.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/ar_EG.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/ar_LY.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/ar_SA.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/as.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/az.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/az_Cyrl.json
@@ -16384,6 +17062,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/langua
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/bg.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/bm.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/bn.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/bn_IN.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/bo.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/br.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/bs.json
@@ -16394,18 +17077,57 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/langua
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/cy.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/da.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/de.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/de_AT.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/de_CH.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/de_LU.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/dz.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/ee.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/el.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/en.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/en_AU.json
-wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/en_GB.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/en_IN.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/en_NZ.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/eo.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_419.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_AR.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_BO.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_CL.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_CO.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_CR.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_DO.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_EC.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_GT.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_HN.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_MX.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_NI.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_PA.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_PE.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_PR.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_PY.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_SV.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_US.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/es_VE.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/et.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/eu.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/fa.json
@@ -16414,6 +17136,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/langua
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/fi.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/fo.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/fr.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/fr_BE.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/fr_CA.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/fr_CH.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/fy.json
@@ -16458,6 +17185,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/langua
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/mk.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/ml.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/mn.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/mo.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/mr.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/ms.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/mt.json
@@ -16481,12 +17213,22 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/langua
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/rm.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/rn.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/ro.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/ro_MD.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/ru.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/rw.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/se.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/se_FI.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sg.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sh.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sh_BA.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/si.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sk.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sl.json
@@ -16494,11 +17236,33 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/langua
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/so.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sq.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sr.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sr_BA.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sr_Cyrl_BA.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sr_Cyrl_ME.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sr_Cyrl_XK.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sr_Latn.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sr_Latn_BA.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sr_Latn_ME.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sr_Latn_XK.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sr_ME.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sr_XK.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sv.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sv_FI.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sw.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sw_CD.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/sw_KE.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/ta.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/te.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/languages/th.json
@@ -16528,6 +17292,12 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locale
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/am.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ar.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ar_EG.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ar_LY.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ar_SA.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/as.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/az.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/az_AZ.json
@@ -16536,6 +17306,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locale
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/bg.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/bm.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/bn.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/bn_IN.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/bo.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/br.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/bs.json
@@ -16547,18 +17322,59 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locale
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/cy.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/da.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/de.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/de_AT.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/de_CH.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/de_LU.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/dz.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ee.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/el.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/en.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/en_IN.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/en_NH.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/en_RH.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/eo.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_419.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_AR.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_BO.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_CL.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_CO.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_CR.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_DO.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_EC.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_GT.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_HN.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_MX.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_NI.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_PA.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_PE.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_PY.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_US.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/es_VE.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/et.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/eu.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/fa.json
@@ -16567,7 +17383,17 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locale
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/fi.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/fo.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/fr.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/fr_BE.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/fr_CA.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/fr_CH.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/fy.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ga.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/gd.json
@@ -16597,6 +17423,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locale
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/km.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/kn.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ko.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ko_KP.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ks.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/kw.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ky.json
@@ -16640,7 +17471,17 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locale
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/rm.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/rn.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ro.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ro_MD.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ru.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ru_UA.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/rw.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/se.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/se_FI.json
@@ -16658,10 +17499,32 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locale
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_BA.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_CS.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_Cyrl_BA.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_Cyrl_CS.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_Cyrl_ME.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_Cyrl_XK.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_Cyrl_YU.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_Latn.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_Latn_BA.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_Latn_CS.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_Latn_ME.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_Latn_XK.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_Latn_YU.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_ME.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sr_RS.json
@@ -16671,6 +17534,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locale
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sv_FI.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sw.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sw_CD.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/sw_KE.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/ta.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/te.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/locales/th.json
@@ -16706,6 +17574,12 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/region
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ak.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/am.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ar.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ar_LY.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ar_SA.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/as.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/az.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/az_Cyrl.json
@@ -16713,6 +17587,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/region
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/bg.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/bm.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/bn.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/bn_IN.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/bo.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/bo_IN.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/br.json
@@ -16724,6 +17603,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/region
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/cy.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/da.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/de.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/de_AT.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/de_CH.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/dz.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ee.json
@@ -16731,8 +17615,37 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/region
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/en.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/eo.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_419.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_AR.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_BO.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_CL.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_CO.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_CR.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_DO.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_EC.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_GT.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_HN.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_MX.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_NI.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_PA.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_PE.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_PR.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_PY.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_SV.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_US.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/es_VE.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/et.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/eu.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/fa.json
@@ -16741,6 +17654,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/region
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/fi.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/fo.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/fr.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/fr_BE.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/fr_CA.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/fy.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ga.json
@@ -16769,6 +17687,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/region
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/km.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/kn.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ko.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ko_KP.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ks.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/kw.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ky.json
@@ -16784,6 +17707,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/region
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/mk.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ml.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/mn.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/mo.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/mr.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ms.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/mt.json
@@ -16807,12 +17735,27 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/region
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/rm.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/rn.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ro.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ro_MD.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ru.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ru_UA.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/rw.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/se.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/se_FI.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sg.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sh.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sh_BA.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/si.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sk.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sl.json
@@ -16820,10 +17763,32 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/region
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/so.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sq.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sr.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sr_BA.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sr_Cyrl_BA.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sr_Cyrl_ME.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sr_Cyrl_XK.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sr_Latn.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sr_Latn_BA.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sr_Latn_ME.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sr_Latn_XK.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sr_ME.json
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sr_XK.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sv.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sw.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sw_CD.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/sw_KE.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/ta.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/te.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/regions/th.json
@@ -16870,7 +17835,17 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/script
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/scripts/ee.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/scripts/el.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/scripts/en.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/scripts/en_IN.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/scripts/es.json
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/scripts/es_419.json
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/scripts/es_MX.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/scripts/et.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/data/scripts/eu.json
@@ -17772,6 +18747,11 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/Http/Tests/Firewa
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/Http/Tests/Firewall/RemoteUserAuthenticationListenerTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/Http/Tests/Firewall/SimplePreAuthenticationListenerTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/Http/Tests/Firewall/SwitchUserListenerTest.php
+@owner
+@group
+wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/Http/Tests/Firewall/UsernamePasswordFormAuthenticationListenerTest.php
+@owner root
+@group daemon
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/Http/Tests/Firewall/X509AuthenticationListenerTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/Http/Tests/FirewallMapTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/Http/Tests/FirewallTest.php
@@ -17795,10 +18775,6 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/Http/composer.jso
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/Http/phpunit.xml.dist
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/LICENSE
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/README.md
-wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/Tests/
-wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/Tests/Http/
-wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/Tests/Http/Firewall/
-wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/Tests/Http/Firewall/UsernamePasswordFormAuthenticationListenerTest.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/composer.json
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Security/phpunit.xml.dist
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Serializer/
@@ -18639,7 +19615,6 @@ wallabag/vendor/symfony/symfony/src/Symfony/Component/Workflow/Dumper/StateMachi
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Workflow/Event/
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Workflow/Event/Event.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Workflow/Event/GuardEvent.php
-wallabag/vendor/symfony/symfony/src/Symfony/Component/Workflow/Event/TransitionEvent.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Workflow/EventListener/
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Workflow/EventListener/AuditTrailListener.php
 wallabag/vendor/symfony/symfony/src/Symfony/Component/Workflow/Exception/
@@ -19228,6 +20203,11 @@ wallabag/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/default.test
 wallabag/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/dynamic_filter.test
 wallabag/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/escape.test
 wallabag/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/escape_html_attr.test
+@owner
+@group
+wallabag/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/escape_javascript.test
+@owner root
+@group daemon
 wallabag/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/escape_non_supported_charset.test
 wallabag/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/first.test
 wallabag/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/force_escape.test
