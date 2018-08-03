@@ -2,7 +2,7 @@
 
 COMMENT =	standard compliant weblog
 
-DISTNAME =	wordpress-4.9.7
+DISTNAME =	wordpress-4.9.8
 CATEGORIES =	www
 
 HOMEPAGE =	http://wordpress.org/
