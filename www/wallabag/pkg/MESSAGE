@@ -10,7 +10,8 @@ Wallabag Configuration
 A default configuration file is provided in
 ${INSTDIR}/app/config/parameters.yml.
 
-You'll need to edit that file to suit your needs, then run the following
+You'll need to edit that file to suit your needs. You will want to
+change the `secret`, at the very least). You can then run the following
 command to finish the setup.
 
    cd ${INSTDIR}
@@ -43,7 +44,7 @@ schemas. This is done with
 You will also need to delete the php cache from the old version.
 
     cd ${INSTDIR}
-    doas -u www rm -rf var/cache/prod/*
+    doas -u www bin/console cache:clear --env=prod
 
 You might also need to update your configuration file. See section `Wallabag
 Configuration` above.
