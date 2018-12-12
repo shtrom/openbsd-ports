@@ -2,7 +2,7 @@
 
 COMMENT =	standard compliant weblog
 
-DISTNAME =	wordpress-4.9.8
+DISTNAME =	wordpress-5.0
 CATEGORIES =	www
 
 HOMEPAGE =	http://wordpress.org/
@@ -15,7 +15,7 @@ MASTER_SITES =	${HOMEPAGE}
 
 MODULES =	lang/php
 
-RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-mysql
+RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-mysqli
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
