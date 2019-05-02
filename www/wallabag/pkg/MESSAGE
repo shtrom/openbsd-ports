@@ -32,19 +32,18 @@ To enable it, run the following command.
     ln -s ${TRUEPREFIX}/conf/modules.sample/wallabag.conf \
 	    ${TRUEPREFIX}/conf/modules/
 
-Update from older version
-=========================
+iUpgrade from older version
+=========================++
 
-When updating from an older version, you might have to migrate your database
+When updating from an older version, you will also need to delete the
+php cache from the old version.  You might have to migrate your database
 schemas. This is done with
 
     cd ${INSTDIR}
-    doas -u www bin/console doctrine:migrations:migrate --no-interaction -e=prod
-
-You will also need to delete the php cache from the old version.
-
-    cd ${INSTDIR}
     doas -u www bin/console cache:clear --env=prod
+    # if the previous command failed, try
+    doas -u www rm -rf var/cache/prod/*
+    doas -u www bin/console doctrine:migrations:migrate --no-interaction -e=prod
 
 You might also need to update your configuration file. See section `Wallabag
 Configuration` above.

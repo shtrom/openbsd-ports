@@ -1,9 +1,0 @@
-$OpenBSD$
---- bin/console.orig	Sat Dec 17 23:42:43 2016
-+++ bin/console	Sat Dec 17 23:43:59 2016
-@@ -1,4 +1,4 @@
--#!/usr/bin/env php
-+#!/usr/local/bin/php-5.6
- <?php
- 
- use Symfony\Bundle\FrameworkBundle\Console\Application;

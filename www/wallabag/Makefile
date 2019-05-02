@@ -2,7 +2,7 @@
 
 COMMENT =		application for saving web pages and reading them later
 
-V=			2.3.2
+V=			2.3.7
 DISTNAME =		wallabag-${V}
 PKGNAME =		${DISTNAME}
 CATEGORIES =		www
@@ -54,6 +54,7 @@ do-test:
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
 	rm -rf \
+		${INSTDIR}/Makefile \
 		${INSTDIR}/docker \
 		${INSTDIR}/docs \
 		${INSTDIR}/tests \
@@ -66,6 +67,11 @@ do-install:
 		-o -name .gitignore \
 		-o -name .gitkeep \
 		\) -exec rm {} \;
+
+	perl -pi -e '$$. == 1 && s|^#!.*php.*$$|\#!${MODPHP_BIN}|;' \
+		-e 'close ARGV if eof;' ${INSTDIR}/bin/*
+	chmod +x ${INSTDIR}/bin/*
+
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 	chown -R www:www \
 		${INSTDIR}/app/config \
