@@ -15,7 +15,7 @@ change the `secret`, at the very least). You can then run the following
 command to finish the setup.
 
    cd ${INSTDIR}
-   doas -u www env bin/console wallabag:install -e=prod
+   doas -u www env bin/console wallabag:install -e prod
 
 Webserver Configuration
 =======================
@@ -40,10 +40,9 @@ php cache from the old version.  You might have to migrate your database
 schemas. This is done with
 
     cd ${INSTDIR}
-    doas -u www bin/console cache:clear --env=prod
-    # if the previous command failed, try
     doas -u www rm -rf var/cache/prod/*
-    doas -u www bin/console doctrine:migrations:migrate --no-interaction -e=prod
+    doas -u www bin/console cache:clear -e prod
+    doas -u www bin/console doctrine:migrations:migrate --no-interaction -e prod
 
 You might also need to update your configuration file. See section `Wallabag
 Configuration` above.

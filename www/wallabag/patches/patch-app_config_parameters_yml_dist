@@ -2,7 +2,7 @@ $OpenBSD$
 Index: app/config/parameters.yml.dist
 --- app/config/parameters.yml.dist.orig
 +++ app/config/parameters.yml.dist
-@@ -35,17 +35,17 @@ parameters:
+@@ -36,17 +36,17 @@ parameters:
      locale: en
  
      # A secret key that's used to generate certain security-related tokens

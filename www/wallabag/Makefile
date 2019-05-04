@@ -2,7 +2,7 @@
 
 COMMENT =		application for saving web pages and reading them later
 
-V=			2.3.7
+V=			2.4pre
 DISTNAME =		wallabag-${V}
 PKGNAME =		${DISTNAME}
 CATEGORIES =		www
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 GH_ACCOUNT =		wallabag
 GH_PROJECT =		wallabag
-GH_TAGNAME =		$V
+# GH_TAGNAME =		$V
+GH_COMMIT =		522e37ad274361dde697da13a92ff3f846599822
 # DIST_SUBDIR =		${DISTNAME}
 
 # NO_TEST =		Yes # Disable tests by default as they download more libraries into the package root
@@ -39,7 +40,8 @@ TEST_DEPENDS =		devel/apache-ant
 do-build:
 	# Avoid interactive configuration
 	cp ${WRKSRC}/app/config/parameters.yml.dist ${WRKSRC}/app/config/parameters.yml
-	cd ${WRKSRC}; SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist
+	cp ${FILESDIR}/composer.lock ${WRKSRC}
+	cd ${WRKSRC}; COMPOSER_MEMORY_LIMIT=-1 SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist
 	rm ${WRKSRC}/app/config/parameters.yml
 	perl -pi -e '$$. == 1 && s|^.*env php.*$$|\#!${MODPHP_BIN}|;' \
 			-e 'close ARGV if eof;' \
