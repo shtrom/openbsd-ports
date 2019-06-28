@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/13 20:40:47 okan Exp $
+${P5SITE}/FCGI/
+${P5SITE}/FCGI/Client/
+${P5SITE}/FCGI/Client.pm
+${P5SITE}/FCGI/Client/Connection.pm
+${P5SITE}/FCGI/Client/Constant.pm
+${P5SITE}/FCGI/Client/Record.pm
+${P5SITE}/FCGI/Client/RecordFactory.pm
+${P5SITE}/FCGI/Client/RecordHeader.pm
+@man man/man3p/FCGI::Client.3p
+@man man/man3p/FCGI::Client::Connection.3p
+@man man/man3p/FCGI::Client::Constant.3p
+@man man/man3p/FCGI::Client::Record.3p
+@man man/man3p/FCGI::Client::RecordFactory.3p
+@man man/man3p/FCGI::Client::RecordHeader.3p
